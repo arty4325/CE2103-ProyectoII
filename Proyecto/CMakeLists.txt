@@ -18,7 +18,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-add_executable(Battle_Space main.cpp main.h)
+add_executable(Battle_Space main.cpp main.h GameWindow.cpp GameWindow.h Cell.cpp RowsList.cpp RowsList.h)
 
 target_link_libraries(Battle_Space Qt5::Core Qt5::Gui Qt5::Widgets)
 

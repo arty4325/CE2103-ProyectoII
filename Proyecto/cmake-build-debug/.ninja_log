@@ -1,17 +1,60 @@
 # ninja log v5
-1	19	1682544817402718529	Battle_Space_autogen/timestamp	29dfd31d45f2e8d5
-0	30	1682544834889385849	build.ninja	6b0190036ee98086
-1	19	1682544817402718529	Battle_Space_autogen/mocs_compilation.cpp	29dfd31d45f2e8d5
-19	1690	1682544819076051925	CMakeFiles/Battle_Space.dir/nave_jugador.cpp.o	6f0ad854311bb4a6
-1690	2050	1682544819429385271	Battle_Space	6188998d09b2a6f9
-1	9	1679613865359636686	/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-Proyecto1/Proyecto/cmake-build-debug/Battle_Space_autogen/mocs_compilation.cpp	2b7369b72d65c6b1
-1	19	1682544817402718529	/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/mocs_compilation.cpp	29dfd31d45f2e8d5
-19	31	1682544817416051863	CMakeFiles/Battle_Space.dir/Battle_Space_autogen/mocs_compilation.cpp.o	f892fa045621da3d
-1	19	1682544817402718529	/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/timestamp	29dfd31d45f2e8d5
-1	72	1682544834889385849	build.ninja	11ff88a61d91ddab
-0	11	1682544834906052517	Battle_Space_autogen/timestamp	29dfd31d45f2e8d5
-0	11	1682544834906052517	Battle_Space_autogen/mocs_compilation.cpp	29dfd31d45f2e8d5
-0	11	1682544834906052517	/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/timestamp	29dfd31d45f2e8d5
-0	11	1682544834906052517	/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/mocs_compilation.cpp	29dfd31d45f2e8d5
-11	1702	1682544836596052580	CMakeFiles/Battle_Space.dir/main.cpp.o	b4608d4e6b35824b
-1702	1990	1682544836882719256	Battle_Space	15279af4466c8f0a
+21	2323	1682649622576008692	CMakeFiles/Battle_Space.dir/RowsList.cpp.o	38ac760f7a1b6141
+2	17	1682650331928821382	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/timestamp	72989433e62c66c0
+2	17	1682650331928821382	Battle_Space_autogen/timestamp	72989433e62c66c0
+0	153	1682649310615651609	build.ninja	2d26566e5914c545
+2	17	1682650331928821382	Battle_Space_autogen/mocs_compilation.cpp	72989433e62c66c0
+18	2805	1682650334716822402	CMakeFiles/Battle_Space.dir/GameWindow.cpp.o	8c80fa50b3c5da33
+2806	3389	1682650335296822614	Battle_Space	6580874c5d379fd2
+2	17	1682650331928821382	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/mocs_compilation.cpp	72989433e62c66c0
+18	2366	1682650246460790110	CMakeFiles/Battle_Space.dir/Cell.cpp.o	47527420c18041a7
+288	4100	1682649758692189031	CMakeFiles/Battle_Space.dir/main.cpp.o	cf07b845d00b732f
+288	3375	1682649757964188066	CMakeFiles/Battle_Space.dir/Battle_Space_autogen/mocs_compilation.cpp.o	b6b6c47cd2f2182e
+4	28	1682650346196826605	Battle_Space_autogen/timestamp	72989433e62c66c0
+4	28	1682650346196826605	Battle_Space_autogen/mocs_compilation.cpp	72989433e62c66c0
+4	28	1682650346196826605	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/timestamp	72989433e62c66c0
+4	28	1682650346196826605	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/mocs_compilation.cpp	72989433e62c66c0
+30	2891	1682650349056827651	CMakeFiles/Battle_Space.dir/GameWindow.cpp.o	8c80fa50b3c5da33
+2891	3517	1682650349676827877	Battle_Space	6580874c5d379fd2
+2	16	1682650369608835171	Battle_Space_autogen/timestamp	72989433e62c66c0
+2	16	1682650369608835171	Battle_Space_autogen/mocs_compilation.cpp	72989433e62c66c0
+2	16	1682650369608835171	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/timestamp	72989433e62c66c0
+2	16	1682650369608835171	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/mocs_compilation.cpp	72989433e62c66c0
+17	2793	1682650372380836185	CMakeFiles/Battle_Space.dir/GameWindow.cpp.o	8c80fa50b3c5da33
+2793	3409	1682650372992836409	Battle_Space	6580874c5d379fd2
+2	16	1682650383080840101	Battle_Space_autogen/timestamp	72989433e62c66c0
+2	16	1682650383080840101	Battle_Space_autogen/mocs_compilation.cpp	72989433e62c66c0
+2	16	1682650383080840101	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/timestamp	72989433e62c66c0
+2	16	1682650383080840101	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/mocs_compilation.cpp	72989433e62c66c0
+17	2791	1682650385852841115	CMakeFiles/Battle_Space.dir/GameWindow.cpp.o	8c80fa50b3c5da33
+2791	3378	1682650386436841328	Battle_Space	6580874c5d379fd2
+3	17	1682650437364859970	Battle_Space_autogen/timestamp	72989433e62c66c0
+3	17	1682650437364859970	Battle_Space_autogen/mocs_compilation.cpp	72989433e62c66c0
+3	17	1682650437364859970	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/timestamp	72989433e62c66c0
+3	17	1682650437364859970	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/mocs_compilation.cpp	72989433e62c66c0
+18	2367	1682650439712860830	CMakeFiles/Battle_Space.dir/Cell.cpp.o	47527420c18041a7
+2368	2983	1682650440320861052	Battle_Space	6580874c5d379fd2
+2	18	1682650466968872374	Battle_Space_autogen/timestamp	72989433e62c66c0
+2	18	1682650466968872374	Battle_Space_autogen/mocs_compilation.cpp	72989433e62c66c0
+2	18	1682650466968872374	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/timestamp	72989433e62c66c0
+2	18	1682650466968872374	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/mocs_compilation.cpp	72989433e62c66c0
+20	2329	1682650469276873619	CMakeFiles/Battle_Space.dir/Cell.cpp.o	47527420c18041a7
+2329	2901	1682650469844873925	Battle_Space	6580874c5d379fd2
+2	16	1682650496636888391	Battle_Space_autogen/timestamp	72989433e62c66c0
+2	16	1682650496636888391	Battle_Space_autogen/mocs_compilation.cpp	72989433e62c66c0
+2	16	1682650496636888391	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/timestamp	72989433e62c66c0
+2	16	1682650496636888391	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/mocs_compilation.cpp	72989433e62c66c0
+18	2306	1682650498924889626	CMakeFiles/Battle_Space.dir/Cell.cpp.o	47527420c18041a7
+2306	2867	1682650499480889927	Battle_Space	6580874c5d379fd2
+3	17	1682650527876905256	Battle_Space_autogen/timestamp	72989433e62c66c0
+3	17	1682650527876905256	Battle_Space_autogen/mocs_compilation.cpp	72989433e62c66c0
+3	17	1682650527876905256	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/timestamp	72989433e62c66c0
+3	17	1682650527876905256	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/mocs_compilation.cpp	72989433e62c66c0
+18	3136	1682650530992906937	CMakeFiles/Battle_Space.dir/GameWindow.cpp.o	8c80fa50b3c5da33
+3137	3840	1682650531692907315	Battle_Space	6580874c5d379fd2
+3	18	1682650552608918604	Battle_Space_autogen/timestamp	72989433e62c66c0
+3	18	1682650552608918604	Battle_Space_autogen/mocs_compilation.cpp	72989433e62c66c0
+3	18	1682650552608918604	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/timestamp	72989433e62c66c0
+3	18	1682650552608918604	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/mocs_compilation.cpp	72989433e62c66c0
+19	3107	1682650555696920271	CMakeFiles/Battle_Space.dir/GameWindow.cpp.o	8c80fa50b3c5da33
+3107	3664	1682650556248920569	Battle_Space	6580874c5d379fd2
