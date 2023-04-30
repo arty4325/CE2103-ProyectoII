@@ -4,13 +4,14 @@
 #include <vector>
 #include <QGraphicsPixmapItem>
 
+using namespace std;
+
 class Cell: public QGraphicsPixmapItem{
 public:
-    Cell();
-    Cell(int type);
+    Cell(char type,QGraphicsItem *parent = nullptr);
 
 private:
-    int type;
+    char type;
 };
 
 

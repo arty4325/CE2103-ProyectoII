@@ -7,16 +7,19 @@
 
 #include <QGraphicsView>
 #include <QGraphicsScene>
-#include <vector>
+#include <string>
+#include <iostream>
 
 class GameWindow: public QGraphicsView{
-Q_OBJECT
 public:
     GameWindow(QWidget * parent = 0);
 private:
     QGraphicsScene* scene_;
     int cellSize_;
+    QString pattern;
 
+    void CreateMap();
+    void CreateLevels(int lvl);
 };
 
 
