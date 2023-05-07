@@ -3,9 +3,9 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeReloadState">
     <option name="reloaded" value="true" />
   </component>
@@ -20,7 +20,39 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="748ca08c-f005-43cf-a87c-e9fda4db17f0" name="Changes" comment="" />
+    <list default="true" id="748ca08c-f005-43cf-a87c-e9fda4db17f0" name="Changes" comment="Se crean los mapas para los niveles">
+      <change afterPath="$PROJECT_DIR$/Entidad.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Entidad.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/Fantasma1.pixil" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/Fantasma1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/Fantasma2.pixil" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/Fantasma2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/Fantasma3.pixil" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/Fantasma3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/Fantasma4.pixil" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/Fantasma4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/pacman1.pixil" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/pacman1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/pixel1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/pixel2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2023-05-02T03-25-20-0740.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/GameWindow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/GameWindow.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RowsList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ListaFantasmas.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RowsList.h" beforeDir="false" afterPath="$PROJECT_DIR$/ListaFantasmas.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Battle_Space" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Battle_Space" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Battle_Space_autogen/deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Battle_Space_autogen/deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space_autogen.dir/AutogenInfo.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space_autogen.dir/AutogenInfo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space_autogen.dir/ParseCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space_autogen.dir/ParseCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +63,11 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectApplicationVersion">
@@ -50,17 +87,31 @@
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto",
+    "last_opened_file_path": "/home/monicaegm/CE2103-ProyectoII/Proyecto/Images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Images" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Images" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="CEPacman" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pacman" TARGET_NAME="Battle_Space" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Pacman" RUN_TARGET_NAME="Battle_Space">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CEPacman" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Battle_Space" TARGET_NAME="Battle_Space" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Battle_Space" RUN_TARGET_NAME="Battle_Space">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -75,7 +126,29 @@
       <option name="presentableId" value="Default" />
       <updated>1682544790508</updated>
       <workItem from="1682544791532" duration="104000" />
+      <workItem from="1682603414690" duration="78000" />
+      <workItem from="1682603580933" duration="5030000" />
+      <workItem from="1682609007951" duration="9000" />
+      <workItem from="1682609072765" duration="1632000" />
+      <workItem from="1682647431970" duration="5292000" />
+      <workItem from="1682879117906" duration="12165000" />
+      <workItem from="1683421850132" duration="1980000" />
     </task>
+    <task id="LOCAL-00001" summary="Se agregan imagenes y una ventana">
+      <created>1682651133334</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682651133334</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Se crean los mapas para los niveles">
+      <created>1682886368634</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682886368634</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -86,5 +159,10 @@
     <isAutomaticCheckingOnLaunch value="false" />
     <isAutomaticFoundErrors value="true" />
     <isAutomaticFoundErrors value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Se agregan imagenes y una ventana" />
+    <MESSAGE value="Se crean los mapas para los niveles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se crean los mapas para los niveles" />
   </component>
 </project>

@@ -8,28 +8,16 @@
 #include <QTimer>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include "GameWindow.h"
 
 
 int main(int argc, char *argv[]) {
-    QApplication app(argc, argv);
+    QApplication a(argc, argv);
 
-    // Crear la ventana principal
-    QWidget *window = new QWidget;
-    window->setWindowTitle("Mi Interfaz Simple");
+    // create a game of pacman
+    GameWindow* gamewindow = new GameWindow();
+    gamewindow->show();
 
-    // Crear un botón
-    QPushButton *button = new QPushButton("Haz clic aquí");
+    return a.exec();
 
-    // Crear un layout y agregar el botón al layout
-    QVBoxLayout *layout = new QVBoxLayout;
-    layout->addWidget(button);
-
-    // Establecer el layout en la ventana principal
-    window->setLayout(layout);
-
-    // Mostrar la ventana principal
-    window->show();
-
-    // Ejecutar la aplicación
-    return app.exec();
 }

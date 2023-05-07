@@ -1,7 +1,7 @@
 
 cmake_minimum_required(VERSION 3.5)
 
-project(Battle_Space)
+project(Pacman)
 
 find_package(Qt5 COMPONENTS Core Gui Widgets REQUIRED)
 
@@ -18,7 +18,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-add_executable(Battle_Space main.cpp main.h)
+add_executable(Battle_Space main.cpp main.h GameWindow.cpp GameWindow.h Cell.cpp ListaFantasmas.cpp ListaFantasmas.h Listas/ListaSimple.cpp Listas/Node.cpp Entidad.cpp Entidad.h)
 
 target_link_libraries(Battle_Space Qt5::Core Qt5::Gui Qt5::Widgets)
 
