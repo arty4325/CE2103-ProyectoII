@@ -1,17 +1,7 @@
 # ninja log v5
-1	19	1682544817402718529	Battle_Space_autogen/timestamp	29dfd31d45f2e8d5
-0	30	1682544834889385849	build.ninja	6b0190036ee98086
-1	19	1682544817402718529	Battle_Space_autogen/mocs_compilation.cpp	29dfd31d45f2e8d5
-19	1690	1682544819076051925	CMakeFiles/Battle_Space.dir/nave_jugador.cpp.o	6f0ad854311bb4a6
-1690	2050	1682544819429385271	Battle_Space	6188998d09b2a6f9
-1	9	1679613865359636686	/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-Proyecto1/Proyecto/cmake-build-debug/Battle_Space_autogen/mocs_compilation.cpp	2b7369b72d65c6b1
-1	19	1682544817402718529	/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/mocs_compilation.cpp	29dfd31d45f2e8d5
-19	31	1682544817416051863	CMakeFiles/Battle_Space.dir/Battle_Space_autogen/mocs_compilation.cpp.o	f892fa045621da3d
-1	19	1682544817402718529	/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/timestamp	29dfd31d45f2e8d5
-1	72	1682544834889385849	build.ninja	11ff88a61d91ddab
 0	11	1682544834906052517	Battle_Space_autogen/timestamp	29dfd31d45f2e8d5
+1	72	1683477475661160277	build.ninja	11ff88a61d91ddab
 0	11	1682544834906052517	Battle_Space_autogen/mocs_compilation.cpp	29dfd31d45f2e8d5
-0	11	1682544834906052517	/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/timestamp	29dfd31d45f2e8d5
-0	11	1682544834906052517	/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/mocs_compilation.cpp	29dfd31d45f2e8d5
-11	1702	1682544836596052580	CMakeFiles/Battle_Space.dir/main.cpp.o	b4608d4e6b35824b
 1702	1990	1682544836882719256	Battle_Space	15279af4466c8f0a
+11	1702	1682544836596052580	CMakeFiles/Battle_Space.dir/main.cpp.o	b4608d4e6b35824b
+19	31	1682544817416051863	CMakeFiles/Battle_Space.dir/Battle_Space_autogen/mocs_compilation.cpp.o	f892fa045621da3d

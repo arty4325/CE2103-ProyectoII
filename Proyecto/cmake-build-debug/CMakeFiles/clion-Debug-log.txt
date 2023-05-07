@@ -1,6 +1,6 @@
-/var/lib/snapd/snap/clion/234/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/var/lib/snapd/snap/clion/234/bin/ninja/linux/x64/ninja -G Ninja -S "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto" -B "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug"
--- The C compiler identification is GNU 12.2.1
--- The CXX compiler identification is GNU 12.2.1
+/home/monicaegm/Downloads/clion-2022.3.3/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/monicaegm/Downloads/clion-2022.3.3/bin/ninja/linux/x64/ninja -G Ninja -S /home/monicaegm/CE2103-ProyectoII/Proyecto -B /home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug
+-- The C compiler identification is GNU 11.3.0
+-- The CXX compiler identification is GNU 11.3.0
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
 -- Check for working C compiler: /usr/bin/cc - skipped
@@ -13,4 +13,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug
+-- Build files have been written to: /home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug
