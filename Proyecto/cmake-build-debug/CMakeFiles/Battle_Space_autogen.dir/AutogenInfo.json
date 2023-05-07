@@ -94,9 +94,21 @@
 			null
 		],
 		[
+			"/home/monicaegm/CE2103-ProyectoII/Proyecto/Entidad.h",
+			"MU",
+			"EWIEGA46WW/moc_Entidad.cpp",
+			null
+		],
+		[
 			"/home/monicaegm/CE2103-ProyectoII/Proyecto/GameWindow.h",
 			"MU",
 			"EWIEGA46WW/moc_GameWindow.cpp",
+			null
+		],
+		[
+			"/home/monicaegm/CE2103-ProyectoII/Proyecto/ListaFantasmas.h",
+			"MU",
+			"EWIEGA46WW/moc_ListaFantasmas.cpp",
 			null
 		],
 		[
@@ -109,12 +121,6 @@
 			"/home/monicaegm/CE2103-ProyectoII/Proyecto/Listas/Node.h",
 			"MU",
 			"G3BQM6G2MN/moc_Node.cpp",
-			null
-		],
-		[
-			"/home/monicaegm/CE2103-ProyectoII/Proyecto/RowsList.h",
-			"MU",
-			"EWIEGA46WW/moc_RowsList.cpp",
 			null
 		],
 		[
@@ -175,8 +181,14 @@
 	"SOURCES" : 
 	[
 		[ "/home/monicaegm/CE2103-ProyectoII/Proyecto/Cell.cpp", "MU", null ],
+		[ "/home/monicaegm/CE2103-ProyectoII/Proyecto/Entidad.cpp", "MU", null ],
 		[
 			"/home/monicaegm/CE2103-ProyectoII/Proyecto/GameWindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/monicaegm/CE2103-ProyectoII/Proyecto/ListaFantasmas.cpp",
 			"MU",
 			null
 		],
@@ -190,7 +202,6 @@
 			"MU",
 			null
 		],
-		[ "/home/monicaegm/CE2103-ProyectoII/Proyecto/RowsList.cpp", "MU", null ],
 		[ "/home/monicaegm/CE2103-ProyectoII/Proyecto/main.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

@@ -2,14 +2,16 @@ Battle_Space_autogen/timestamp: \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/CMakeLists.txt \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/Cell.cpp \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/Cell.h \
+	/home/monicaegm/CE2103-ProyectoII/Proyecto/Entidad.cpp \
+	/home/monicaegm/CE2103-ProyectoII/Proyecto/Entidad.h \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/GameWindow.cpp \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/GameWindow.h \
+	/home/monicaegm/CE2103-ProyectoII/Proyecto/ListaFantasmas.cpp \
+	/home/monicaegm/CE2103-ProyectoII/Proyecto/ListaFantasmas.h \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/Listas/ListaSimple.cpp \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/Listas/ListaSimple.h \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/Listas/Node.cpp \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/Listas/Node.h \
-	/home/monicaegm/CE2103-ProyectoII/Proyecto/RowsList.cpp \
-	/home/monicaegm/CE2103-ProyectoII/Proyecto/RowsList.h \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/CMakeFiles/3.25.2/CMakeCCompiler.cmake \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/CMakeFiles/3.25.2/CMakeCXXCompiler.cmake \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/CMakeFiles/3.25.2/CMakeSystem.cmake \

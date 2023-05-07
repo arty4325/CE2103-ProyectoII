@@ -9,17 +9,22 @@
 #include <QGraphicsScene>
 #include <string>
 #include <iostream>
+#include "Entidad.h"
+#include "ListaFantasmas.h"
 
 class GameWindow: public QGraphicsView{
 public:
     GameWindow(QWidget * parent = 0);
 private:
-    QGraphicsScene* scene_;
-    int cellSize_;
     QString pattern;
+    int nivel = 1;
+
+    Entidad *pacman = new Entidad(5);
+    ListaFantasmas* Fantasmas = new ListaFantasmas();
 
     void CreateMap();
     void CreateLevels(int lvl);
+    void keyPressEvent(QKeyEvent *event);
 };
 
 
