@@ -17,6 +17,7 @@
 #include "Cell.h"
 #include "GameWindow.h"
 #include "Entidad.h"
+#include "Enemigo1.h"
 
 using namespace std;
 
@@ -28,6 +29,9 @@ GameWindow::GameWindow(QWidget * parent){
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(900, 600);
 
+
+
+
     for (int i = 1; i <= 4;i++){
         cout<<"a;ade fantasma";
         Entidad *fantasma = new Entidad(i);
@@ -37,8 +41,15 @@ GameWindow::GameWindow(QWidget * parent){
         scene->addItem(Fantasmas->findFantasma(i));
 
     }
-    pacman = new Entidad(5);
-    scene->addItem(pacman);
+    //pacman = new Entidad(5);
+    //scene->addItem(pacman);
+
+    Enemigo1 *enemigo1 = new Enemigo1();
+    enemigo1 ->setPos(500, 500);
+    scene -> addItem(enemigo1);
+
+
+
 
     CreateLevels(nivel);
 
@@ -47,6 +58,7 @@ GameWindow::GameWindow(QWidget * parent){
 void GameWindow::CreateMap() {
     int ypos = 0;
     int xpos = 7;
+
 
     for (int i = 0; i < this->pattern.length(); i++) { // Por cada simbolo en el QString coloca el sprite correspondiente
         QChar c = this->pattern.at(i);

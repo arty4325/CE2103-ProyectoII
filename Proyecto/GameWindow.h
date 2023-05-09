@@ -11,6 +11,8 @@
 #include <iostream>
 #include "Entidad.h"
 #include "ListaFantasmas.h"
+#include "Enemigo1.h"
+
 
 class GameWindow: public QGraphicsView{
 public:
@@ -18,7 +20,6 @@ public:
 private:
     QString pattern;
     int nivel = 1;
-
     Entidad *pacman = new Entidad(5);
     ListaFantasmas* Fantasmas = new ListaFantasmas();
 
