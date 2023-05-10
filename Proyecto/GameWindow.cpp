@@ -25,6 +25,7 @@ GameWindow::GameWindow(QWidget * parent){
     QGraphicsScene *scene = new QGraphicsScene(); // Se crea la escena
     scene -> setSceneRect(0, 0, 900, 600);
 
+
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(900, 600);
@@ -32,26 +33,21 @@ GameWindow::GameWindow(QWidget * parent){
 
 
 
-    for (int i = 1; i <= 4;i++){
-        cout<<"a;ade fantasma";
-        Entidad *fantasma = new Entidad(i);
-        Fantasmas->insertarFantasma(fantasma);
+    CreateLevels(nivel);
 
-        //Fantasmas->findFantasma(i)->setPos(100, 100);
-        scene->addItem(Fantasmas->findFantasma(i));
+    playerpacman = new PlayerPacman();
+    playerpacman -> setPos(400, 400);
+    scene -> addItem(playerpacman);
 
-    }
-    //pacman = new Entidad(5);
-    //scene->addItem(pacman);
-
-    Enemigo1 *enemigo1 = new Enemigo1();
-    enemigo1 ->setPos(500, 500);
+    enemigo1 = new Enemigo1();
+    enemigo1 -> setPos(500, 500);
     scene -> addItem(enemigo1);
 
 
 
-
-    CreateLevels(nivel);
+    setScene(scene);
+    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setFixedSize(900, 600);
 
     show();
 }
@@ -71,7 +67,7 @@ void GameWindow::CreateMap() {
             Cell *cell = new Cell(0);
             cell->setPos(xpos, ypos);
             scene()->addItem(cell);
-
+            /*
             if (i == 102) { //Coloca los fantasmas
                 int c = xpos;
 
@@ -84,8 +80,11 @@ void GameWindow::CreateMap() {
             if (i == 199) { //Coloca a Pacman
                 pacman->setPos(xpos, ypos);
                 }
+            */
             xpos = xpos + 50;
+
         }
+
         if (c == "1") {
             Cell *cell = new Cell(1);
             cell->setPos(xpos, ypos);
@@ -101,16 +100,24 @@ void GameWindow::keyPressEvent(QKeyEvent *event)
         CreateLevels(nivel);
     }
     if (event->key() == Qt::Key_W) {
-        pacman->setPos(+0,+50);
+        //pacman->setPos(+0,+50);
+        playerpacman -> setPos(playerpacman -> pos().x(), playerpacman -> pos().y() - 50);
+        cout << "Se estripa w" << endl;
     }
     if (event->key() == Qt::Key_S) {
-        pacman->setPos(+0,-50);
+        //pacman->setPos(+0,-50);
+        playerpacman -> setPos(playerpacman -> pos().x(), playerpacman -> pos().y()+50);
+        cout << "Se estripa S" << endl;
     }
     if (event->key() == Qt::Key_A) {
-        pacman->setPos(-50,+0);
+        //pacman->setPos(-50,+0);
+        playerpacman -> setPos(playerpacman -> pos().x() - 50, playerpacman -> pos().y());
+        cout << "Se estripa A" << endl;
     }
     if (event->key() == Qt::Key_D) {
-        pacman->setPos(+50,+0);
+        //pacman->setPos(+50,+0);
+        playerpacman -> setPos(playerpacman -> pos().x() + 50, playerpacman -> pos().y());
+        cout << "Se estripa D" << endl;
     }
 }
 void GameWindow::CreateLevels(int lvl){

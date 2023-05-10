@@ -9,14 +9,16 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include "GameWindow.h"
+#include "MenuDificultades.h"
 
+MenuDificultades * menuGeneral;
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
 
     // create a game of pacman
-    GameWindow* gamewindow = new GameWindow();
-    gamewindow->show();
+    menuGeneral = new MenuDificultades();
+    menuGeneral -> show();
 
     return a.exec();
 
