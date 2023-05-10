@@ -43,11 +43,27 @@ GameWindow::GameWindow(QWidget * parent){
     enemigo1 -> setPos(500, 500);
     scene -> addItem(enemigo1);
 
-
-
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(900, 600);
+
+    labelVidas = new QLabel(this); // Label de la cantidad de vidas
+    labelVidas ->setText("Vidas: " + QString::number(vidas));
+    labelVidas -> setStyleSheet("color: white; font-weight: bold; font-size: 14pt; font-family: Times;");
+    labelVidas -> move(7, 0);
+    labelVidas -> show();
+
+    labelPuntaje = new QLabel(this); // Label del puntaje
+    labelPuntaje ->setText("Puntaje: " + QString::number(puntaje));
+    labelPuntaje -> setStyleSheet("color: white; font-weight: bold; font-size: 14pt; font-family: Times;");
+    labelPuntaje -> move(420, 0);
+    labelPuntaje -> show();
+
+    labelNivel = new QLabel(this); // Label del nivel
+    labelNivel ->setText("Nivel: " + QString::number(nivel));
+    labelNivel -> setStyleSheet("color: white; font-weight: bold; font-size: 14pt; font-family: Times;");
+    labelNivel -> move(820, 0);
+    labelNivel -> show();
 
     show();
 }
@@ -97,6 +113,7 @@ void GameWindow::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_K) { //La letra K crea nuevos niveles
         nivel = nivel + 1;
+        labelNivel->setText("Nivel: "+ QString::number(nivel));
         CreateLevels(nivel);
     }
     if (event->key() == Qt::Key_W) {
