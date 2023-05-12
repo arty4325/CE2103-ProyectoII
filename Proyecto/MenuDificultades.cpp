@@ -48,7 +48,7 @@ MenuDificultades::MenuDificultades(QWidget *parent) {
     QGraphicsProxyWidget *proxy_normal = new QGraphicsProxyWidget();
     proxy_normal ->setWidget(botonNormal);
     scene -> addItem(proxy_normal);
-    proxy_normal -> setPos(400, 500);
+    proxy_normal -> setPos(350, 500);
     connect(botonNormal, &QPushButton::released, this, &MenuDificultades::medium);
 
     setScene(scene);
