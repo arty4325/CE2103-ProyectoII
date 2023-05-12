@@ -18,6 +18,8 @@
 #include "GameWindow.h"
 #include "Entidad.h"
 #include "Enemigo1.h"
+#include "Puntos.h"
+#include "GameFinished.h"
 
 using namespace std;
 
@@ -29,9 +31,6 @@ GameWindow::GameWindow(QWidget * parent){
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(900, 600);
-
-
-
 
     CreateLevels(nivel);
 
@@ -83,6 +82,11 @@ void GameWindow::CreateMap() {
             Cell *cell = new Cell(0);
             cell->setPos(xpos, ypos);
             scene()->addItem(cell);
+
+            Puntos *punto = new Puntos();
+            punto->setPos(xpos,ypos);
+            scene()->addItem(punto);
+
             /*
             if (i == 102) { //Coloca los fantasmas
                 int c = xpos;
@@ -114,6 +118,13 @@ void GameWindow::keyPressEvent(QKeyEvent *event)
     if (event->key() == Qt::Key_K) { //La letra K crea nuevos niveles
         nivel = nivel + 1;
         labelNivel->setText("Nivel: "+ QString::number(nivel));
+        if (nivel > 3){
+            GameFinished *gamefinished;
+            gamefinished = new GameFinished();
+            gamefinished -> setPuntaje(this->puntaje);
+            gamefinished->show();
+            this->close();
+        }
         CreateLevels(nivel);
     }
     if (event->key() == Qt::Key_W) {

@@ -24,7 +24,7 @@ private:
     int nivel = 1;
     int puntaje = 0;
     int vidas = 3;
-    //Entidad *pacman = new Entidad(5);
+
     ListaFantasmas* Fantasmas = new ListaFantasmas();
 
     PlayerPacman *playerpacman;

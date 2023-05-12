@@ -6,6 +6,8 @@ Battle_Space_autogen/timestamp: \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/Enemigo1.h \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/Entidad.cpp \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/Entidad.h \
+	/home/monicaegm/CE2103-ProyectoII/Proyecto/GameFinished.cpp \
+	/home/monicaegm/CE2103-ProyectoII/Proyecto/GameFinished.h \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/GameWindow.cpp \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/GameWindow.h \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/ListaFantasmas.cpp \
@@ -20,6 +22,8 @@ Battle_Space_autogen/timestamp: \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/NodeList.h \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/PlayerPacman.cpp \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/PlayerPacman.h \
+	/home/monicaegm/CE2103-ProyectoII/Proyecto/Puntos.cpp \
+	/home/monicaegm/CE2103-ProyectoII/Proyecto/Puntos.h \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/SimpleList.cpp \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/SimpleList.h \
 	/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/CMakeFiles/3.25.2/CMakeCCompiler.cmake \
