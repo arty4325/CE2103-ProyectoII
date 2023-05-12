@@ -26,12 +26,113 @@ GameWindow::GameWindow(QWidget * parent){
     scene -> setSceneRect(0, 0, 900, 600);
 
 
+
+    for(int i = 0; i < 12; i++){
+        SimpleList<SimpleList<int>> fila;
+        for(int j = 0; j < 18; j++){
+            SimpleList<int> informacion;
+            fila.insertHead(informacion);
+        }
+        matriz.insertHead(fila);
+    }
+    for(int i = 0; i < 12; i++){
+        for(int k = 0; k < 18; k++){
+            matriz.getPosVal(i).getPosVal(k).insertHead(0);
+        }
+    }
+
+    matriz.getPosVal(0).getPosVal(0).insertHead(1);
+
+    // Se agrega el contorno del mapa como obstaculo
+    for(int w = 0; w < 18; w++){
+        matriz.getPosVal(0).getPosVal(w).insertHead(1);
+    }
+    for(int k = 1; k < 12; k++){
+        matriz.getPosVal(k).getPosVal(16).insertHead(1);
+    }
+    for(int z = 0; z < 17; z++){
+        matriz.getPosVal(11).getPosVal(z).insertHead(1);
+    }
+    for(int c = 1; c < 11; c++){
+        matriz.getPosVal(c).getPosVal(0).insertHead(1);
+    }
+
+
+    //Se agregan las paredes de la columna 1
+    matriz.getPosVal(1).getPosVal(3).insertHead(1);
+    matriz.getPosVal(1).getPosVal(15).insertHead(1);
+
+    // Se agregan laas paredes de la columna 2
+    matriz.getPosVal(2).getPosVal(6).insertHead(1);
+    matriz.getPosVal(2).getPosVal(7).insertHead(1);
+    matriz.getPosVal(2).getPosVal(8).insertHead(1);
+    matriz.getPosVal(2).getPosVal(9).insertHead(1);
+    matriz.getPosVal(2).getPosVal(10).insertHead(1);
+    matriz.getPosVal(2).getPosVal(11).insertHead(1);
+
+    //Se agregan las paredes de la columna 3
+    matriz.getPosVal(3).getPosVal(1).insertHead(1);
+    matriz.getPosVal(3).getPosVal(16).insertHead(1);
+
+    //Se agregan las paredes de la columna 4
+    matriz.getPosVal(4).getPosVal(4).insertHead(1);
+    matriz.getPosVal(4).getPosVal(5).insertHead(1);
+    matriz.getPosVal(4).getPosVal(6).insertHead(1);
+    matriz.getPosVal(4).getPosVal(7).insertHead(1);
+
+    matriz.getPosVal(4).getPosVal(10).insertHead(1);
+    matriz.getPosVal(4).getPosVal(11).insertHead(1);
+    matriz.getPosVal(4).getPosVal(12).insertHead(1);
+    matriz.getPosVal(4).getPosVal(13).insertHead(1);
+
+    //Se agregan las paredes de la columna 5
+    matriz.getPosVal(5).getPosVal(4).insertHead(1);
+    matriz.getPosVal(5).getPosVal(5).insertHead(1);
+    matriz.getPosVal(5).getPosVal(6).insertHead(1);
+
+    matriz.getPosVal(5).getPosVal(11).insertHead(1);
+    matriz.getPosVal(5).getPosVal(12).insertHead(1);
+    matriz.getPosVal(5).getPosVal(13).insertHead(1);
+
+    //Se agregaan las paredes de la columna 7
+    matriz.getPosVal(7).getPosVal(5).insertHead(1);
+    matriz.getPosVal(7).getPosVal(6).insertHead(1);
+    matriz.getPosVal(7).getPosVal(7).insertHead(1);
+    matriz.getPosVal(7).getPosVal(8).insertHead(1);
+    matriz.getPosVal(7).getPosVal(9).insertHead(1);
+    matriz.getPosVal(7).getPosVal(10).insertHead(1);
+    matriz.getPosVal(7).getPosVal(11).insertHead(1);
+    matriz.getPosVal(7).getPosVal(12).insertHead(1);
+
+    //Se agregan las paredes de la columna 8
+    matriz.getPosVal(8).getPosVal(1).insertHead(1);
+    matriz.getPosVal(8).getPosVal(8).insertHead(1);
+    matriz.getPosVal(8).getPosVal(9).insertHead(1);
+    matriz.getPosVal(8).getPosVal(16).insertHead(1);
+
+    //se agregan las paredes de la columna 9
+    matriz.getPosVal(9).getPosVal(1).insertHead(1);
+    matriz.getPosVal(9).getPosVal(2).insertHead(1);
+    matriz.getPosVal(9).getPosVal(3).insertHead(1);
+    matriz.getPosVal(9).getPosVal(8).insertHead(1);
+    matriz.getPosVal(9).getPosVal(9).insertHead(1);
+    matriz.getPosVal(9).getPosVal(14).insertHead(1);
+    matriz.getPosVal(9).getPosVal(15).insertHead(1);
+    matriz.getPosVal(9).getPosVal(16).insertHead(1);
+
+    //Se agregan las paredes de la columna 10
+    matriz.getPosVal(10).getPosVal(5).insertHead(1);
+    matriz.getPosVal(10).getPosVal(6).insertHead(1);
+    matriz.getPosVal(10).getPosVal(11).insertHead(1);
+    matriz.getPosVal(10).getPosVal(12).insertHead(1);
+
+
+
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(900, 600);
 
-
-
+    
 
     CreateLevels(nivel);
 

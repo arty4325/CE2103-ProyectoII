@@ -13,6 +13,8 @@
 #include "ListaFantasmas.h"
 #include "Enemigo1.h"
 #include "PlayerPacman.h"
+#include "SimpleList.h"
+#include "SimpleList.cpp"
 
 
 class GameWindow: public QGraphicsView{
@@ -26,6 +28,7 @@ private:
 
     PlayerPacman *playerpacman;
     Enemigo1 *enemigo1;
+    SimpleList<SimpleList<SimpleList<int>>> matriz;
 
     void CreateMap();
     void CreateLevels(int lvl);
