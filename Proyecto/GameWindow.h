@@ -9,11 +9,8 @@
 #include <QGraphicsScene>
 #include <string>
 #include <iostream>
-<<<<<<< HEAD
 #include <QLabel>
-=======
 #include <QTimer>
->>>>>>> Arturo
 #include "Entidad.h"
 #include "ListaFantasmas.h"
 #include "Enemigo1.h"
@@ -31,11 +28,9 @@ public:
 private:
     QString pattern;
     int nivel = 1;
-<<<<<<< HEAD
     int puntaje = 0;
     int vidas = 3;
 
-=======
     int pacmanX;
     int pacmanY;
 
@@ -54,7 +49,6 @@ private:
     QTimer* movementFourthEnemy;
 
     //Entidad *pacman = new Entidad(5);
->>>>>>> Arturo
     ListaFantasmas* Fantasmas = new ListaFantasmas();
 
     PlayerPacman *playerpacman;

@@ -18,12 +18,9 @@
 #include "GameWindow.h"
 #include "Entidad.h"
 #include "Enemigo1.h"
-<<<<<<< HEAD
 #include "Puntos.h"
 #include "GameFinished.h"
-=======
 #include <QTimer>
->>>>>>> Arturo
 
 using namespace std;
 
@@ -135,11 +132,8 @@ GameWindow::GameWindow(QWidget * parent){
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(900, 600);
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> Arturo
     CreateLevels(nivel);
 
     playerpacman = new PlayerPacman();
@@ -180,8 +174,6 @@ GameWindow::GameWindow(QWidget * parent){
     enemigo1 -> setPos(350, 500);
     scene -> addItem(enemigo1);
 
-<<<<<<< HEAD
-=======
     enemigo2 = new Enemigo2();
     enemigo2 -> setPos(400, 50);
     scene -> addItem(enemigo2);
@@ -215,7 +207,6 @@ GameWindow::GameWindow(QWidget * parent){
     movementFourthEnemy -> start();
 
 
->>>>>>> Arturo
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(900, 600);

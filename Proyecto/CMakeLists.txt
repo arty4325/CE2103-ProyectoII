@@ -18,11 +18,8 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-<<<<<<< HEAD
-add_executable(Battle_Space main.cpp main.h GameWindow.cpp GameWindow.h Cell.cpp ListaFantasmas.cpp ListaFantasmas.h Listas/ListaSimple.cpp Listas/Node.cpp Entidad.cpp Entidad.h SimpleList.cpp SimpleList.h NodeList.cpp NodeList.h Enemigo1.cpp Enemigo1.h MenuDificultades.cpp MenuDificultades.h PlayerPacman.cpp PlayerPacman.h Puntos.cpp Puntos.h GameFinished.cpp GameFinished.h)
-=======
-add_executable(Battle_Space main.cpp main.h GameWindow.cpp GameWindow.h Cell.cpp ListaFantasmas.cpp ListaFantasmas.h Listas/ListaSimple.cpp Listas/Node.cpp Entidad.cpp Entidad.h SimpleList.cpp SimpleList.h NodeList.cpp NodeList.h Enemigo1.cpp Enemigo1.h MenuDificultades.cpp MenuDificultades.h PlayerPacman.cpp PlayerPacman.h Enemigo2.cpp Enemigo2.h Enemigo3.cpp Enemigo3.h Enemigo4.cpp Enemigo4.h)
->>>>>>> Arturo
+add_executable(Battle_Space main.cpp main.h GameWindow.cpp GameWindow.h Cell.cpp ListaFantasmas.cpp ListaFantasmas.h Listas/ListaSimple.cpp Listas/Node.cpp Entidad.cpp Entidad.h SimpleList.cpp SimpleList.h NodeList.cpp NodeList.h Enemigo1.cpp Enemigo1.h MenuDificultades.cpp MenuDificultades.h PlayerPacman.cpp PlayerPacman.h Puntos.cpp Puntos.h GameFinished.cpp GameFinished.h Enemigo2.cpp Enemigo2.h Enemigo3.cpp Enemigo3.h Enemigo4.cpp Enemigo4.h)
+
 
 target_link_libraries(Battle_Space Qt5::Core Qt5::Gui Qt5::Widgets)
 
