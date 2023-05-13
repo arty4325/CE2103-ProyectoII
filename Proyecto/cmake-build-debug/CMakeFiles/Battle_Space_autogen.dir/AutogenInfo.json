@@ -100,7 +100,29 @@
 			null
 		],
 		[
+<<<<<<< HEAD
 			"/home/monicaegm/CE2103-ProyectoII/Proyecto/Entidad.h",
+=======
+			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/Enemigo2.h",
+			"MU",
+			"EWIEGA46WW/moc_Enemigo2.cpp",
+			null
+		],
+		[
+			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/Enemigo3.h",
+			"MU",
+			"EWIEGA46WW/moc_Enemigo3.cpp",
+			null
+		],
+		[
+			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/Enemigo4.h",
+			"MU",
+			"EWIEGA46WW/moc_Enemigo4.cpp",
+			null
+		],
+		[
+			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/Entidad.h",
+>>>>>>> Arturo
 			"MU",
 			"EWIEGA46WW/moc_Entidad.cpp",
 			null
@@ -236,7 +258,26 @@
 			null
 		],
 		[
+<<<<<<< HEAD
 			"/home/monicaegm/CE2103-ProyectoII/Proyecto/ListaFantasmas.cpp",
+=======
+			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/Enemigo2.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/Enemigo3.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/Enemigo4.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/Entidad.cpp",
+>>>>>>> Arturo
 			"MU",
 			null
 		],

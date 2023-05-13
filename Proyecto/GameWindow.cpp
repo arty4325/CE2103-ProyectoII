@@ -18,8 +18,12 @@
 #include "GameWindow.h"
 #include "Entidad.h"
 #include "Enemigo1.h"
+<<<<<<< HEAD
 #include "Puntos.h"
 #include "GameFinished.h"
+=======
+#include <QTimer>
+>>>>>>> Arturo
 
 using namespace std;
 
@@ -28,20 +32,190 @@ GameWindow::GameWindow(QWidget * parent){
     scene -> setSceneRect(0, 0, 900, 600);
 
 
+
+    for(int i = 0; i < 12; i++){
+        SimpleList<SimpleList<int>> fila;
+        for(int j = 0; j < 18; j++){
+            SimpleList<int> informacion;
+            fila.insertHead(informacion);
+        }
+        matriz.insertHead(fila);
+    }
+
+
+    matriz.getPosVal(0).getPosVal(0).insertHead(1);
+
+    // Se agrega el contorno del mapa como obstaculo
+    for(int w = 0; w < 18; w++){
+        matriz.getPosVal(0).getPosVal(w).insertHead(1);
+    }
+    for(int k = 1; k < 12; k++){
+        matriz.getPosVal(k).getPosVal(16).insertHead(1);
+    }
+    for(int z = 0; z < 17; z++){
+        matriz.getPosVal(11).getPosVal(z).insertHead(1);
+    }
+    for(int c = 1; c < 11; c++){
+        matriz.getPosVal(c).getPosVal(0).insertHead(1);
+    }
+
+
+    //Se agregan las paredes de la columna 1
+    matriz.getPosVal(1).getPosVal(3).insertHead(1);
+    matriz.getPosVal(1).getPosVal(15).insertHead(1);
+
+    // Se agregan laas paredes de la columna 2
+    matriz.getPosVal(2).getPosVal(6).insertHead(1);
+    matriz.getPosVal(2).getPosVal(7).insertHead(1);
+    matriz.getPosVal(2).getPosVal(8).insertHead(1);
+    matriz.getPosVal(2).getPosVal(9).insertHead(1);
+    matriz.getPosVal(2).getPosVal(10).insertHead(1);
+    matriz.getPosVal(2).getPosVal(11).insertHead(1);
+
+    //Se agregan las paredes de la columna 3
+    matriz.getPosVal(3).getPosVal(1).insertHead(1);
+    matriz.getPosVal(3).getPosVal(16).insertHead(1);
+
+    //Se agregan las paredes de la columna 4
+    matriz.getPosVal(4).getPosVal(4).insertHead(1);
+    matriz.getPosVal(4).getPosVal(5).insertHead(1);
+    matriz.getPosVal(4).getPosVal(6).insertHead(1);
+    matriz.getPosVal(4).getPosVal(7).insertHead(1);
+
+    matriz.getPosVal(4).getPosVal(10).insertHead(1);
+    matriz.getPosVal(4).getPosVal(11).insertHead(1);
+    matriz.getPosVal(4).getPosVal(12).insertHead(1);
+    matriz.getPosVal(4).getPosVal(13).insertHead(1);
+
+    //Se agregan las paredes de la columna 5
+    matriz.getPosVal(5).getPosVal(4).insertHead(1);
+    matriz.getPosVal(5).getPosVal(5).insertHead(1);
+    matriz.getPosVal(5).getPosVal(6).insertHead(1);
+
+    matriz.getPosVal(5).getPosVal(11).insertHead(1);
+    matriz.getPosVal(5).getPosVal(12).insertHead(1);
+    matriz.getPosVal(5).getPosVal(13).insertHead(1);
+
+    //Se agregaan las paredes de la columna 7
+    matriz.getPosVal(7).getPosVal(5).insertHead(1);
+    matriz.getPosVal(7).getPosVal(6).insertHead(1);
+    matriz.getPosVal(7).getPosVal(7).insertHead(1);
+    matriz.getPosVal(7).getPosVal(8).insertHead(1);
+    matriz.getPosVal(7).getPosVal(9).insertHead(1);
+    matriz.getPosVal(7).getPosVal(10).insertHead(1);
+    matriz.getPosVal(7).getPosVal(11).insertHead(1);
+    matriz.getPosVal(7).getPosVal(12).insertHead(1);
+
+    //Se agregan las paredes de la columna 8
+    matriz.getPosVal(8).getPosVal(1).insertHead(1);
+    matriz.getPosVal(8).getPosVal(8).insertHead(1);
+    matriz.getPosVal(8).getPosVal(9).insertHead(1);
+    matriz.getPosVal(8).getPosVal(16).insertHead(1);
+
+    //se agregan las paredes de la columna 9
+    matriz.getPosVal(9).getPosVal(1).insertHead(1);
+    matriz.getPosVal(9).getPosVal(2).insertHead(1);
+    matriz.getPosVal(9).getPosVal(3).insertHead(1);
+    matriz.getPosVal(9).getPosVal(8).insertHead(1);
+    matriz.getPosVal(9).getPosVal(9).insertHead(1);
+    matriz.getPosVal(9).getPosVal(14).insertHead(1);
+    matriz.getPosVal(9).getPosVal(15).insertHead(1);
+    matriz.getPosVal(9).getPosVal(16).insertHead(1);
+
+
+    //Se agregan las paredes de la columna 10
+    matriz.getPosVal(10).getPosVal(5).insertHead(1);
+    matriz.getPosVal(10).getPosVal(6).insertHead(1);
+    matriz.getPosVal(10).getPosVal(11).insertHead(1);
+    matriz.getPosVal(10).getPosVal(12).insertHead(1);
+
+    cout << mapa[7][9] << endl;
+
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(900, 600);
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> Arturo
     CreateLevels(nivel);
 
     playerpacman = new PlayerPacman();
-    playerpacman -> setPos(400, 400);
+    playerpacman -> setPos(400, 300);
     scene -> addItem(playerpacman);
+    pacmanX = 8;
+    pacmanY = 6;
+
+    Enemy1X = 7;
+    Enemy1Y = 10;
+
+    Enemy2X = 8;
+    Enemy2Y = 1;
+
+    Enemy3X = 9;
+    Enemy3Y = 1;
+
+    Enemy4X = 10;
+    Enemy4Y = 10;
+
+    direc1X = 0;
+    direc1Y = 0;
+    moving1 = false;
+
+    direc2X = 0;
+    direc2Y = 0;
+    moving2 = false;
+
+    direc3X = 0;
+    direc3Y = 0;
+    moving3 = false;
+
+    direc4X = 0;
+    direc4Y = 0;
+    moving4 = false;
 
     enemigo1 = new Enemigo1();
-    enemigo1 -> setPos(500, 500);
+    enemigo1 -> setPos(350, 500);
     scene -> addItem(enemigo1);
 
+<<<<<<< HEAD
+=======
+    enemigo2 = new Enemigo2();
+    enemigo2 -> setPos(400, 50);
+    scene -> addItem(enemigo2);
+
+    enemigo3 = new Enemigo3();
+    enemigo3 -> setPos(450, 50);
+    scene -> addItem(enemigo3);
+
+    enemigo4 = new Enemigo4();
+    enemigo4 -> setPos(500, 500);
+    scene -> addItem(enemigo4);
+
+    movementFirstEnemy = new QTimer(this);
+    connect(movementFirstEnemy, &QTimer::timeout, this, &GameWindow::MoveFirstEnemy);
+    movementFirstEnemy ->setInterval(500);
+    movementFirstEnemy -> start();
+
+    movementSecondEnemy = new QTimer(this);
+    connect(movementSecondEnemy, &QTimer::timeout, this, &GameWindow::MoveSecondEnemy);
+    movementSecondEnemy ->setInterval(500);
+    movementSecondEnemy -> start();
+
+    movementThirdEnemy =  new QTimer(this);
+    connect(movementThirdEnemy, &QTimer::timeout, this, &GameWindow::MoveThirdEnemy);
+    movementThirdEnemy -> setInterval(500);
+    movementThirdEnemy -> start();
+
+    movementFourthEnemy = new QTimer(this);
+    connect(movementFourthEnemy, &QTimer::timeout, this, &GameWindow::MoveFourthEnemy);
+    movementFourthEnemy -> setInterval(500);
+    movementFourthEnemy -> start();
+
+
+>>>>>>> Arturo
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(900, 600);
@@ -128,24 +302,56 @@ void GameWindow::keyPressEvent(QKeyEvent *event)
         CreateLevels(nivel);
     }
     if (event->key() == Qt::Key_W) {
-        //pacman->setPos(+0,+50);
-        playerpacman -> setPos(playerpacman -> pos().x(), playerpacman -> pos().y() - 50);
-        cout << "Se estripa w" << endl;
+        //pacman->setPos(+0,+50)
+        cout << pacmanX << pacmanY << endl;
+        cout << pacmanX << pacmanY - 1 << endl;
+        cout << mapa[pacmanX][pacmanY - 1] << endl;
+        if(mapa[pacmanY - 1][pacmanX] == 0) {
+            pacmanY -= 1;
+            playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() - 50);
+            cout << "Se estripa w" << endl;
+        } else {
+            cout << "Hay obstaculo" << endl;
+        }
     }
     if (event->key() == Qt::Key_S) {
+        cout << pacmanX << pacmanY << endl;
+        cout << pacmanX << pacmanY + 1<< endl;
+        cout << mapa[pacmanY + 1][pacmanX] << endl;
         //pacman->setPos(+0,-50);
-        playerpacman -> setPos(playerpacman -> pos().x(), playerpacman -> pos().y()+50);
-        cout << "Se estripa S" << endl;
+        if(mapa[pacmanY + 1][pacmanX] == 0) {
+            pacmanY += 1;
+            playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() + 50);
+            cout << "Se estripa S" << endl;
+        } else {
+            cout << "Hay obsctaculo" << endl;
+        }
     }
     if (event->key() == Qt::Key_A) {
+        cout << pacmanX << pacmanY << endl;
+        cout << pacmanX - 1 << pacmanY << endl;
+        cout << mapa[pacmanY][pacmanX - 1] << endl;
         //pacman->setPos(-50,+0);
-        playerpacman -> setPos(playerpacman -> pos().x() - 50, playerpacman -> pos().y());
-        cout << "Se estripa A" << endl;
+        if(mapa[pacmanY][pacmanX - 1] == 0) {
+            pacmanX -= 1;
+            playerpacman->setPos(playerpacman->pos().x() - 50, playerpacman->pos().y());
+            cout << "Se estripa A" << endl;
+        } else {
+            cout << "Hay obstaculo" << endl;
+        }
     }
     if (event->key() == Qt::Key_D) {
-        //pacman->setPos(+50,+0);
-        playerpacman -> setPos(playerpacman -> pos().x() + 50, playerpacman -> pos().y());
-        cout << "Se estripa D" << endl;
+        cout << pacmanX << pacmanY << endl;
+        cout << pacmanX + 1 << pacmanY << endl;
+        cout << mapa[pacmanX + 1][pacmanY] << endl;
+        if(mapa[pacmanY][pacmanX + 1] == 0) {
+            pacmanX += 1;
+            //pacman->setPos(+50,+0);
+            playerpacman->setPos(playerpacman->pos().x() + 50, playerpacman->pos().y());
+            cout << "Se estripa D" << endl;
+        } else {
+            cout << "Hay obstaculo" << endl;
+        }
     }
 }
 void GameWindow::CreateLevels(int lvl){
@@ -169,6 +375,218 @@ void GameWindow::CreateLevels(int lvl){
             this-> pattern ="111111111111111111n100100000000001001n101101111111101101n100000001100000001n101100100001001101n100000100001000001n101100001100001101n10000011111000001n111100001100001111n100001001100100001n101101100001101101n111111111111111111";
             CreateMap();
             break;
+        }
+    }
+}
+
+void GameWindow::MoveFirstEnemy() {
+    if (moving1 == false){
+        int num = QRandomGenerator::global() -> bounded(0, 4); // escoge numero random del 0 al 3
+        if(num == 0){
+            // Me quiero mover hacia arriba
+            // Tengo que revisar si puedo
+            if(mapa[Enemy1Y -  1][Enemy1X] == 0){
+                moving1 = true;
+                direc1X = 0;
+                direc1Y = -1;
+            } else {
+                return MoveFirstEnemy();
+            }
+        } else if(num == 1){
+            if(mapa[Enemy1Y][Enemy1X + 1] == 0){
+                moving1 = true;
+                direc1X = 1;
+                direc1Y = 0;
+            } else {
+                return MoveFirstEnemy();
+            }
+
+        } else if(num == 2){
+            if(mapa[Enemy1Y + 1][Enemy1X] == 0){
+                moving1 = true;
+                direc1X = 0;
+                direc1Y =  1;
+            } else {
+                return MoveFirstEnemy();
+            }
+
+        } else if(num == 3){
+            if(mapa[Enemy1Y][Enemy1X - 1] == 0){
+                moving1 = true;
+                direc1X = -1;
+                direc1Y = 0;
+            } else {
+                return MoveFirstEnemy();
+            }
+        }
+    }
+    else {
+        if(mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] == 0) {
+            cout << mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] << Enemy1Y + direc1Y << Enemy1X + direc1X << endl;
+            Enemy1Y += direc1Y;
+            Enemy1X += direc1X;
+            enemigo1->setPos(enemigo1->pos().x() + direc1X*50, enemigo1->pos().y() + direc1Y*50);
+        } else {
+            moving1 = false;
+        }
+    }
+}
+
+void GameWindow::MoveSecondEnemy() {
+    if(moving2 == false){
+        int num = QRandomGenerator::global() -> bounded(0, 4); // escoge numero random del 0 al 3
+        if(num == 0){
+            // Me quiero mover hacia arriba
+            // Tengo que revisar si puedo
+            if(mapa[Enemy2Y -  1][Enemy2X] == 0){
+                moving2 = true;
+                direc2X = 0;
+                direc2Y = -1;
+            } else {
+                return MoveSecondEnemy();
+            }
+        } else if(num == 1){
+            if(mapa[Enemy2Y][Enemy2X + 1] == 0){
+                moving2 = true;
+                direc2X = 1;
+                direc2Y = 0;
+            } else {
+                return MoveSecondEnemy();
+            }
+
+        } else if(num == 2){
+            if(mapa[Enemy2Y + 1][Enemy2X] == 0){
+                moving2 = true;
+                direc2X = 0;
+                direc2Y =  1;
+            } else {
+                return MoveSecondEnemy();
+            }
+
+        } else if(num == 3){
+            if(mapa[Enemy2Y][Enemy2X - 1] == 0){
+                moving2 = true;
+                direc2X = -1;
+                direc2Y = 0;
+            } else {
+                return MoveSecondEnemy();
+            }
+        }
+    }
+    else {
+        if(mapa[Enemy2Y + direc2Y][Enemy2X + direc2X] == 0) {
+            cout << mapa[Enemy2Y + direc2Y][Enemy2X + direc2X] << Enemy2Y + direc2Y << Enemy2X + direc2X << endl;
+            Enemy2Y += direc2Y;
+            Enemy2X += direc2X;
+            enemigo2->setPos(enemigo2->pos().x() + direc2X*50, enemigo2->pos().y() + direc2Y*50);
+        } else {
+            moving2 = false;
+        }
+    }
+}
+
+void GameWindow::MoveThirdEnemy() {
+    if(moving3 == false){
+        int num = QRandomGenerator::global() -> bounded(0, 4); // escoge numero random del 0 al 3
+        if(num == 0){
+            // Me quiero mover hacia arriba
+            // Tengo que revisar si puedo
+            if(mapa[Enemy3Y -  1][Enemy3X] == 0){
+                moving3 = true;
+                direc3X = 0;
+                direc3Y = -1;
+            } else {
+                return MoveSecondEnemy();
+            }
+        } else if(num == 1){
+            if(mapa[Enemy3Y][Enemy3X + 1] == 0){
+                moving3 = true;
+                direc3X = 1;
+                direc3Y = 0;
+            } else {
+                return MoveThirdEnemy();
+            }
+
+        } else if(num == 2){
+            if(mapa[Enemy3Y + 1][Enemy3X] == 0){
+                moving3 = true;
+                direc3X = 0;
+                direc3Y =  1;
+            } else {
+                return MoveThirdEnemy();
+            }
+
+        } else if(num == 3){
+            if(mapa[Enemy3Y][Enemy3X - 1] == 0){
+                moving3 = true;
+                direc3X = -1;
+                direc3Y = 0;
+            } else {
+                return MoveThirdEnemy();
+            }
+        }
+    }
+    else {
+        if(mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] == 0) {
+            cout << mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] << Enemy3Y + direc3Y << Enemy3X + direc3X << endl;
+            Enemy3Y += direc3Y;
+            Enemy3X += direc3X;
+            enemigo3->setPos(enemigo3->pos().x() + direc3X*50, enemigo3->pos().y() + direc3Y*50);
+        } else {
+            moving3 = false;
+        }
+    }
+}
+
+void GameWindow::MoveFourthEnemy() {
+    if(moving4 == false){
+        int num = QRandomGenerator::global() -> bounded(0, 4); // escoge numero random del 0 al 3
+        if(num == 0){
+            // Me quiero mover hacia arriba
+            // Tengo que revisar si puedo
+            if(mapa[Enemy4Y -  1][Enemy4X] == 0){
+                moving4 = true;
+                direc4X = 0;
+                direc4Y = -1;
+            } else {
+                return MoveFourthEnemy();
+            }
+        } else if(num == 1){
+            if(mapa[Enemy4Y][Enemy4X + 1] == 0){
+                moving4 = true;
+                direc4X = 1;
+                direc4Y = 0;
+            } else {
+                return MoveFourthEnemy();
+            }
+
+        } else if(num == 2){
+            if(mapa[Enemy4Y + 1][Enemy4X] == 0){
+                moving4 = true;
+                direc4X = 0;
+                direc4Y =  1;
+            } else {
+                return MoveFourthEnemy();
+            }
+
+        } else if(num == 3){
+            if(mapa[Enemy4Y][Enemy4X - 1] == 0){
+                moving4 = true;
+                direc4X = -1;
+                direc4Y = 0;
+            } else {
+                return MoveFourthEnemy();
+            }
+        }
+    }
+    else {
+        if(mapa[Enemy4Y + direc4Y][Enemy4X + direc4X] == 0) {
+            cout << mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] << Enemy3Y + direc3Y << Enemy3X + direc3X << endl;
+            Enemy4Y += direc4Y;
+            Enemy4X += direc4X;
+            enemigo4->setPos(enemigo4->pos().x() + direc4X*50, enemigo4->pos().y() + direc4Y*50);
+        } else {
+            moving4 = false;
         }
     }
 }

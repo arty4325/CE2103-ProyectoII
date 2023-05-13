@@ -169,6 +169,30 @@ build CMakeFiles/Battle_Space.dir/GameFinished.cpp.o: CXX_COMPILER__Battle_Space
   OBJECT_DIR = CMakeFiles/Battle_Space.dir
   OBJECT_FILE_DIR = CMakeFiles/Battle_Space.dir
 
+build CMakeFiles/Battle_Space.dir/Enemigo2.cpp.o: CXX_COMPILER__Battle_Space_Debug /home/oscaraad/TEC/2023SEMI/Datos$ II/CE2103-ProyectoII/Proyecto/Enemigo2.cpp || cmake_object_order_depends_target_Battle_Space
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Battle_Space.dir/Enemigo2.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -fPIC
+  INCLUDES = -I"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/include" -isystem /usr/include/qt -isystem /usr/include/qt/QtCore -isystem /usr/lib/qt/mkspecs/linux-g++ -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtWidgets
+  OBJECT_DIR = CMakeFiles/Battle_Space.dir
+  OBJECT_FILE_DIR = CMakeFiles/Battle_Space.dir
+
+build CMakeFiles/Battle_Space.dir/Enemigo3.cpp.o: CXX_COMPILER__Battle_Space_Debug /home/oscaraad/TEC/2023SEMI/Datos$ II/CE2103-ProyectoII/Proyecto/Enemigo3.cpp || cmake_object_order_depends_target_Battle_Space
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Battle_Space.dir/Enemigo3.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -fPIC
+  INCLUDES = -I"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/include" -isystem /usr/include/qt -isystem /usr/include/qt/QtCore -isystem /usr/lib/qt/mkspecs/linux-g++ -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtWidgets
+  OBJECT_DIR = CMakeFiles/Battle_Space.dir
+  OBJECT_FILE_DIR = CMakeFiles/Battle_Space.dir
+
+build CMakeFiles/Battle_Space.dir/Enemigo4.cpp.o: CXX_COMPILER__Battle_Space_Debug /home/oscaraad/TEC/2023SEMI/Datos$ II/CE2103-ProyectoII/Proyecto/Enemigo4.cpp || cmake_object_order_depends_target_Battle_Space
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Battle_Space.dir/Enemigo4.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -fPIC
+  INCLUDES = -I"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/include" -isystem /usr/include/qt -isystem /usr/include/qt/QtCore -isystem /usr/lib/qt/mkspecs/linux-g++ -isystem /usr/include/qt/QtGui -isystem /usr/include/qt/QtWidgets
+  OBJECT_DIR = CMakeFiles/Battle_Space.dir
+  OBJECT_FILE_DIR = CMakeFiles/Battle_Space.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Battle_Space
@@ -177,7 +201,11 @@ build CMakeFiles/Battle_Space.dir/GameFinished.cpp.o: CXX_COMPILER__Battle_Space
 #############################################
 # Link the executable Battle_Space
 
+<<<<<<< HEAD
 build Battle_Space: CXX_EXECUTABLE_LINKER__Battle_Space_Debug CMakeFiles/Battle_Space.dir/Battle_Space_autogen/mocs_compilation.cpp.o CMakeFiles/Battle_Space.dir/main.cpp.o CMakeFiles/Battle_Space.dir/GameWindow.cpp.o CMakeFiles/Battle_Space.dir/Cell.cpp.o CMakeFiles/Battle_Space.dir/ListaFantasmas.cpp.o CMakeFiles/Battle_Space.dir/Listas/ListaSimple.cpp.o CMakeFiles/Battle_Space.dir/Listas/Node.cpp.o CMakeFiles/Battle_Space.dir/Entidad.cpp.o CMakeFiles/Battle_Space.dir/SimpleList.cpp.o CMakeFiles/Battle_Space.dir/NodeList.cpp.o CMakeFiles/Battle_Space.dir/Enemigo1.cpp.o CMakeFiles/Battle_Space.dir/MenuDificultades.cpp.o CMakeFiles/Battle_Space.dir/PlayerPacman.cpp.o CMakeFiles/Battle_Space.dir/Puntos.cpp.o CMakeFiles/Battle_Space.dir/GameFinished.cpp.o | /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.3 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3 || Battle_Space_autogen Battle_Space_autogen_timestamp_deps
+=======
+build Battle_Space: CXX_EXECUTABLE_LINKER__Battle_Space_Debug CMakeFiles/Battle_Space.dir/Battle_Space_autogen/mocs_compilation.cpp.o CMakeFiles/Battle_Space.dir/main.cpp.o CMakeFiles/Battle_Space.dir/GameWindow.cpp.o CMakeFiles/Battle_Space.dir/Cell.cpp.o CMakeFiles/Battle_Space.dir/ListaFantasmas.cpp.o CMakeFiles/Battle_Space.dir/Listas/ListaSimple.cpp.o CMakeFiles/Battle_Space.dir/Listas/Node.cpp.o CMakeFiles/Battle_Space.dir/Entidad.cpp.o CMakeFiles/Battle_Space.dir/SimpleList.cpp.o CMakeFiles/Battle_Space.dir/NodeList.cpp.o CMakeFiles/Battle_Space.dir/Enemigo1.cpp.o CMakeFiles/Battle_Space.dir/MenuDificultades.cpp.o CMakeFiles/Battle_Space.dir/PlayerPacman.cpp.o CMakeFiles/Battle_Space.dir/Enemigo2.cpp.o CMakeFiles/Battle_Space.dir/Enemigo3.cpp.o CMakeFiles/Battle_Space.dir/Enemigo4.cpp.o | /usr/lib/libQt5Widgets.so.5.15.8 /usr/lib/libQt5Gui.so.5.15.8 /usr/lib/libQt5Core.so.5.15.8 || Battle_Space_autogen Battle_Space_autogen_timestamp_deps
+>>>>>>> Arturo
   FLAGS = -g
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3  /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.3  /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3
   OBJECT_DIR = CMakeFiles/Battle_Space.dir
