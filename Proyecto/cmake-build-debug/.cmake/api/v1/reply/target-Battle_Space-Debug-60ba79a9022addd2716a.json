@@ -111,7 +111,10 @@
 				14,
 				16,
 				18,
-				20
+				20,
+				22,
+				24,
+				26
 			]
 		}
 	],
@@ -181,7 +184,10 @@
 				14,
 				16,
 				18,
-				20
+				20,
+				22,
+				24,
+				26
 			]
 		},
 		{
@@ -196,21 +202,24 @@
 				15,
 				17,
 				19,
-				21
+				21,
+				23,
+				25,
+				27
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				22
+				28
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				23
+				29
 			]
 		}
 	],
@@ -338,6 +347,39 @@
 		{
 			"backtrace" : 1,
 			"path" : "PlayerPacman.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Enemigo2.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Enemigo2.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Enemigo3.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Enemigo3.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Enemigo4.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Enemigo4.h",
 			"sourceGroupIndex" : 1
 		},
 		{

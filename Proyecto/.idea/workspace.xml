@@ -21,10 +21,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="748ca08c-f005-43cf-a87c-e9fda4db17f0" name="Changes" comment="Se crean los mapas para los niveles">
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2023-05-09T23-48-21-0279.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/GameWindow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/GameWindow.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Battle_Space" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Battle_Space" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Battle_Space_autogen/deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Battle_Space_autogen/deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +66,7 @@
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto",
+    "last_opened_file_path": "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-Proyecto1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -80,12 +85,12 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="CEPacman" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pacman" TARGET_NAME="Battle_Space" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Pacman" RUN_TARGET_NAME="Battle_Space">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="CEPacman" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pacman" TARGET_NAME="Battle_Space" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Pacman" RUN_TARGET_NAME="Battle_Space">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -109,6 +114,7 @@
       <workItem from="1683421850132" duration="1980000" />
       <workItem from="1683598449553" duration="553000" />
       <workItem from="1683677845198" duration="632000" />
+      <workItem from="1683958568148" duration="10723000" />
     </task>
     <task id="LOCAL-00001" summary="Se agregan imagenes y una ventana">
       <created>1682651133334</created>
