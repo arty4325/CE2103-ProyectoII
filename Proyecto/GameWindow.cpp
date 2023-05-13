@@ -16,7 +16,6 @@
 #include <iterator>
 #include "Cell.h"
 #include "GameWindow.h"
-#include "Entidad.h"
 #include "Enemigo1.h"
 #include "Puntos.h"
 #include "GameFinished.h"
@@ -28,7 +27,7 @@ GameWindow::GameWindow(QWidget * parent){
     QGraphicsScene *scene = new QGraphicsScene(); // Se crea la escena
     scene -> setSceneRect(0, 0, 900, 600);
 
-
+    puntoslista = new puntosLista();
 
     for(int i = 0; i < 12; i++){
         SimpleList<SimpleList<int>> fila;
@@ -221,6 +220,7 @@ GameWindow::GameWindow(QWidget * parent){
     labelPuntaje ->setText("Puntaje: " + QString::number(puntaje));
     labelPuntaje -> setStyleSheet("color: white; font-weight: bold; font-size: 14pt; font-family: Times;");
     labelPuntaje -> move(420, 0);
+    labelPuntaje->setFixedSize(1000, 30); // establece el ancho en 100 píxeles y la altura en 30 píxeles
     labelPuntaje -> show();
 
     labelNivel = new QLabel(this); // Label del nivel
@@ -249,25 +249,13 @@ void GameWindow::CreateMap() {
             scene()->addItem(cell);
 
             Puntos *punto = new Puntos();
+            punto->setId(iden);
             punto->setPos(xpos,ypos);
             scene()->addItem(punto);
+            iden = iden + 1;
+            puntoslista->insertarPuntos(punto);
 
-            /*
-            if (i == 102) { //Coloca los fantasmas
-                int c = xpos;
-
-                for (int j = 1; j <= nivel; j++) {
-                    cout<<"j"<<j;
-                    Fantasmas->findFantasma(j)->setPos(c, ypos);
-                    c = c + 50;
-                }
-            }
-            if (i == 199) { //Coloca a Pacman
-                pacman->setPos(xpos, ypos);
-                }
-            */
             xpos = xpos + 50;
-
         }
 
         if (c == "1") {
@@ -283,7 +271,7 @@ void GameWindow::keyPressEvent(QKeyEvent *event)
     if (event->key() == Qt::Key_K) { //La letra K crea nuevos niveles
         nivel = nivel + 1;
         labelNivel->setText("Nivel: "+ QString::number(nivel));
-        if (nivel > 3){
+        if (nivel > 4){
             GameFinished *gamefinished;
             gamefinished = new GameFinished();
             gamefinished -> setPuntaje(this->puntaje);
@@ -293,7 +281,6 @@ void GameWindow::keyPressEvent(QKeyEvent *event)
         CreateLevels(nivel);
     }
     if (event->key() == Qt::Key_W) {
-        //pacman->setPos(+0,+50)
         cout << pacmanX << pacmanY << endl;
         cout << pacmanX << pacmanY - 1 << endl;
         cout << mapa[pacmanX][pacmanY - 1] << endl;
@@ -301,6 +288,8 @@ void GameWindow::keyPressEvent(QKeyEvent *event)
             pacmanY -= 1;
             playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() - 50);
             cout << "Se estripa w" << endl;
+
+            comerPuntos();
         } else {
             cout << "Hay obstaculo" << endl;
         }
@@ -314,6 +303,8 @@ void GameWindow::keyPressEvent(QKeyEvent *event)
             pacmanY += 1;
             playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() + 50);
             cout << "Se estripa S" << endl;
+
+            comerPuntos();
         } else {
             cout << "Hay obsctaculo" << endl;
         }
@@ -327,6 +318,8 @@ void GameWindow::keyPressEvent(QKeyEvent *event)
             pacmanX -= 1;
             playerpacman->setPos(playerpacman->pos().x() - 50, playerpacman->pos().y());
             cout << "Se estripa A" << endl;
+
+            comerPuntos();
         } else {
             cout << "Hay obstaculo" << endl;
         }
@@ -340,8 +333,24 @@ void GameWindow::keyPressEvent(QKeyEvent *event)
             //pacman->setPos(+50,+0);
             playerpacman->setPos(playerpacman->pos().x() + 50, playerpacman->pos().y());
             cout << "Se estripa D" << endl;
+
+            comerPuntos();
         } else {
             cout << "Hay obstaculo" << endl;
+        }
+    }
+}
+
+void GameWindow::comerPuntos(){
+    for(int i = 0; i < puntoslista->lenLista();i++) {
+        if (playerpacman->pos() == puntoslista->findPuntos(i)->pos()) {
+            cout << "son iguales";
+            if (puntoslista->findPuntos(i)->eliminado == false){
+                puntoslista->findPuntos(i)->hide();
+                puntaje = puntaje + 10;
+
+                labelPuntaje->setText("Puntaje: "+ QString::number(puntaje,10));
+            }
         }
     }
 }

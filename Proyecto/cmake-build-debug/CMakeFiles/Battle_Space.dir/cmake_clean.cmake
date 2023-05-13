@@ -16,14 +16,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/Battle_Space.dir/Enemigo3.cpp.o.d"
   "CMakeFiles/Battle_Space.dir/Enemigo4.cpp.o"
   "CMakeFiles/Battle_Space.dir/Enemigo4.cpp.o.d"
-  "CMakeFiles/Battle_Space.dir/Entidad.cpp.o"
-  "CMakeFiles/Battle_Space.dir/Entidad.cpp.o.d"
   "CMakeFiles/Battle_Space.dir/GameFinished.cpp.o"
   "CMakeFiles/Battle_Space.dir/GameFinished.cpp.o.d"
   "CMakeFiles/Battle_Space.dir/GameWindow.cpp.o"
   "CMakeFiles/Battle_Space.dir/GameWindow.cpp.o.d"
-  "CMakeFiles/Battle_Space.dir/ListaFantasmas.cpp.o"
-  "CMakeFiles/Battle_Space.dir/ListaFantasmas.cpp.o.d"
   "CMakeFiles/Battle_Space.dir/Listas/ListaSimple.cpp.o"
   "CMakeFiles/Battle_Space.dir/Listas/ListaSimple.cpp.o.d"
   "CMakeFiles/Battle_Space.dir/Listas/Node.cpp.o"
@@ -40,6 +36,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Battle_Space.dir/SimpleList.cpp.o.d"
   "CMakeFiles/Battle_Space.dir/main.cpp.o"
   "CMakeFiles/Battle_Space.dir/main.cpp.o.d"
+  "CMakeFiles/Battle_Space.dir/puntosLista.cpp.o"
+  "CMakeFiles/Battle_Space.dir/puntosLista.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

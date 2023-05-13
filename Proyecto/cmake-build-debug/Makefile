@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /var/lib/snapd/snap/clion/235/bin/cmake/linux/x64/bin/cmake
+CMAKE_COMMAND = /home/monicaegm/Downloads/clion-2022.3.3/bin/cmake/linux/x64/bin/cmake
 
 # The command to remove a file.
-RM = /var/lib/snapd/snap/clion/235/bin/cmake/linux/x64/bin/cmake -E rm -f
+RM = /home/monicaegm/Downloads/clion-2022.3.3/bin/cmake/linux/x64/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto"
+CMAKE_SOURCE_DIR = /home/monicaegm/CE2103-ProyectoII/Proyecto
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug"
+CMAKE_BINARY_DIR = /home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proye
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/var/lib/snapd/snap/clion/235/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/monicaegm/Downloads/clion-2022.3.3/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/var/lib/snapd/snap/clion/235/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/monicaegm/Downloads/clion-2022.3.3/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/CMakeFiles" "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/CMakeFiles /home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -286,30 +286,6 @@ Enemigo4.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Enemigo4.cpp.s
 .PHONY : Enemigo4.cpp.s
 
-Entidad.o: Entidad.cpp.o
-.PHONY : Entidad.o
-
-# target to build an object file
-Entidad.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Entidad.cpp.o
-.PHONY : Entidad.cpp.o
-
-Entidad.i: Entidad.cpp.i
-.PHONY : Entidad.i
-
-# target to preprocess a source file
-Entidad.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Entidad.cpp.i
-.PHONY : Entidad.cpp.i
-
-Entidad.s: Entidad.cpp.s
-.PHONY : Entidad.s
-
-# target to generate assembly for a file
-Entidad.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Entidad.cpp.s
-.PHONY : Entidad.cpp.s
-
 GameFinished.o: GameFinished.cpp.o
 .PHONY : GameFinished.o
 
@@ -357,30 +333,6 @@ GameWindow.s: GameWindow.cpp.s
 GameWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/GameWindow.cpp.s
 .PHONY : GameWindow.cpp.s
-
-ListaFantasmas.o: ListaFantasmas.cpp.o
-.PHONY : ListaFantasmas.o
-
-# target to build an object file
-ListaFantasmas.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/ListaFantasmas.cpp.o
-.PHONY : ListaFantasmas.cpp.o
-
-ListaFantasmas.i: ListaFantasmas.cpp.i
-.PHONY : ListaFantasmas.i
-
-# target to preprocess a source file
-ListaFantasmas.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/ListaFantasmas.cpp.i
-.PHONY : ListaFantasmas.cpp.i
-
-ListaFantasmas.s: ListaFantasmas.cpp.s
-.PHONY : ListaFantasmas.s
-
-# target to generate assembly for a file
-ListaFantasmas.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/ListaFantasmas.cpp.s
-.PHONY : ListaFantasmas.cpp.s
 
 Listas/ListaSimple.o: Listas/ListaSimple.cpp.o
 .PHONY : Listas/ListaSimple.o
@@ -574,6 +526,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+puntosLista.o: puntosLista.cpp.o
+.PHONY : puntosLista.o
+
+# target to build an object file
+puntosLista.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/puntosLista.cpp.o
+.PHONY : puntosLista.cpp.o
+
+puntosLista.i: puntosLista.cpp.i
+.PHONY : puntosLista.i
+
+# target to preprocess a source file
+puntosLista.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/puntosLista.cpp.i
+.PHONY : puntosLista.cpp.i
+
+puntosLista.s: puntosLista.cpp.s
+.PHONY : puntosLista.s
+
+# target to generate assembly for a file
+puntosLista.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/puntosLista.cpp.s
+.PHONY : puntosLista.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -602,18 +578,12 @@ help:
 	@echo "... Enemigo4.o"
 	@echo "... Enemigo4.i"
 	@echo "... Enemigo4.s"
-	@echo "... Entidad.o"
-	@echo "... Entidad.i"
-	@echo "... Entidad.s"
 	@echo "... GameFinished.o"
 	@echo "... GameFinished.i"
 	@echo "... GameFinished.s"
 	@echo "... GameWindow.o"
 	@echo "... GameWindow.i"
 	@echo "... GameWindow.s"
-	@echo "... ListaFantasmas.o"
-	@echo "... ListaFantasmas.i"
-	@echo "... ListaFantasmas.s"
 	@echo "... Listas/ListaSimple.o"
 	@echo "... Listas/ListaSimple.i"
 	@echo "... Listas/ListaSimple.s"
@@ -638,6 +608,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... puntosLista.o"
+	@echo "... puntosLista.i"
+	@echo "... puntosLista.s"
 .PHONY : help
 
 

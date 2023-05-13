@@ -11,8 +11,7 @@
 #include <iostream>
 #include <QLabel>
 #include <QTimer>
-#include "Entidad.h"
-#include "ListaFantasmas.h"
+#include "puntosLista.h"
 #include "Enemigo1.h"
 #include "PlayerPacman.h"
 #include "SimpleList.h"
@@ -30,6 +29,7 @@ private:
     int nivel = 1;
     int puntaje = 0;
     int vidas = 3;
+    int iden = 0;
 
     int pacmanX;
     int pacmanY;
@@ -49,7 +49,7 @@ private:
     QTimer* movementFourthEnemy;
 
     //Entidad *pacman = new Entidad(5);
-    ListaFantasmas* Fantasmas = new ListaFantasmas();
+    puntosLista* Fantasmas = new puntosLista();
 
     PlayerPacman *playerpacman;
     Enemigo1 *enemigo1;
@@ -57,6 +57,7 @@ private:
     Enemigo3 *enemigo3;
     Enemigo4 *enemigo4;
     SimpleList<SimpleList<SimpleList<int>>> matriz;
+    puntosLista *puntoslista;
 
     int mapa[12][18] = {
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
@@ -81,6 +82,7 @@ private:
     void CreateMap();
     void CreateLevels(int lvl);
     void keyPressEvent(QKeyEvent *event);
+    void comerPuntos();
 
     void MoveFirstEnemy();
     int direc1X;
@@ -101,6 +103,7 @@ private:
     int direc4X;
     int direc4Y;
     bool moving4;
+
 };
 
 

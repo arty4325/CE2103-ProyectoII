@@ -11,4 +11,12 @@ Puntos::Puntos(QGraphicsItem *parent)
     QString direc = QDir::currentPath();
     QPixmap imagen(direc.mid(0, direc.length() - 18) + "/Images/puntos.png");
     setPixmap(imagen.scaled(50, 50));
+    next = nullptr;
+    eliminado = false;
+}
+int Puntos::setId(int ide){
+    this->id = ide;
+}
+int Puntos::getId(){
+    return id;
 }

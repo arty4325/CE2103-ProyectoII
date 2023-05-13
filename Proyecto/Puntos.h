@@ -9,6 +9,13 @@
 class Puntos : public QGraphicsPixmapItem{
 public:
     Puntos(QGraphicsItem *parent= nullptr);
+    int getId();
+    int setId(int id);
+
+    Puntos* next;
+    char type;
+    int id = 0;
+    bool eliminado;
 };
 
 
