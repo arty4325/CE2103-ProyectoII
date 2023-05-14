@@ -55,6 +55,7 @@ private:
     QTimer* movementThirdEnemy;
     QTimer* movementFourthEnemy;
     QTimer* movementPacmanMobile;
+    QTimer* exeMovementPacmanMobile;
 
     //Entidad *pacman = new Entidad(5);
     ListaFantasmas* Fantasmas = new ListaFantasmas();
@@ -113,6 +114,7 @@ private:
 
     void startSocketServer();
 
+    void MoveMobile();
 };
 
 

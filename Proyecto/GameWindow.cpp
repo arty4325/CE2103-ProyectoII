@@ -218,6 +218,11 @@ GameWindow::GameWindow(QWidget * parent){
     movementPacmanMobile -> setInterval(500);
     movementPacmanMobile -> start();
 
+    exeMovementPacmanMobile = new QTimer(this);
+    connect(exeMovementPacmanMobile, &QTimer::timeout, this, &GameWindow::MoveMobile);
+    exeMovementPacmanMobile -> setInterval(500);
+    exeMovementPacmanMobile -> start();
+
 
 
 
@@ -366,6 +371,41 @@ void GameWindow::keyPressEvent(QKeyEvent *event)
         }
     }
 }
+
+void GameWindow::MoveMobile(){
+    if(datosSerial.getSize() == 3) {
+        cout << "MOVIMIENTO" << endl;
+        // Movimiento hacia arriba
+        if (datosSerial.getPosVal(2) < -3) {
+            if (mapa[pacmanY - 1][pacmanX] == 0) {
+                pacmanY -= 1;
+                playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() - 50);
+                //cout << "Se estripa w" << endl;
+            }
+        } else if (datosSerial.getPosVal(2) > 3) {
+            if (mapa[pacmanY + 1][pacmanX] == 0) {
+                pacmanY += 1;
+                playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() + 50);
+                //cout << "Se estripa S" << endl;
+            }
+        } else if (datosSerial.getPosVal(1) < -3) {
+            if (mapa[pacmanY][pacmanX - 1] == 0) {
+                pacmanX -= 1;
+                playerpacman->setPos(playerpacman->pos().x() - 50, playerpacman->pos().y());
+                //cout << "Se estripa A" << endl;
+            }
+        } else if (datosSerial.getPosVal(1) > 3) {
+            if (mapa[pacmanY][pacmanX + 1] == 0) {
+                pacmanX += 1;
+                //pacman->setPos(+50,+0);
+                playerpacman->setPos(playerpacman->pos().x() + 50, playerpacman->pos().y());
+                //cout << "Se estripa D" << endl;
+            }
+        }
+    }
+}
+
+
 void GameWindow::CreateLevels(int lvl){
     switch(lvl){
         case 1:{
@@ -605,7 +645,7 @@ void GameWindow::MoveFourthEnemy() {
 
 
 void GameWindow::SocketServer() {
-    //datosSerial.printList();
+    datosSerial.printList();
     while(datosSerial.getSize() != 0){
         datosSerial.deleteHead();
     }
