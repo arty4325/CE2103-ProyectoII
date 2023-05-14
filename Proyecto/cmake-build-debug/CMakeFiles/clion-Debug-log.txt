@@ -1,11 +1,4 @@
 /var/lib/snapd/snap/clion/235/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto" -B "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug"
-CMake Error at CMakeLists.txt:22 (add_executable):
-  add_executable cannot create target "Battle_Space" because another target
-  with the same name already exists.  The existing target is an executable
-  created in source directory "/home/oscaraad/TEC/2023SEMI/Datos
-  II/CE2103-ProyectoII/Proyecto".  See documentation for policy CMP0002 for
-  more details.
-
-
--- Configuring incomplete, errors occurred!
-See also "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug

@@ -563,10 +563,10 @@ void Level4::setValues(int p, int v, int n){
     Enemy1Y = 10;
 
     Enemy2X = 8;
-    Enemy2Y = 1;
+    Enemy2Y = 10;
 
     Enemy3X = 9;
-    Enemy3Y = 1;
+    Enemy3Y = 10;
 
     Enemy4X = 10;
     Enemy4Y = 10;

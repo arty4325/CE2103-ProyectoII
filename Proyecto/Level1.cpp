@@ -143,6 +143,7 @@ Level1::Level1(QWidget * parent){
     pacmanX = 8;
     pacmanY = 6;
 
+
     Enemy1X = 7;
     Enemy1Y = 10;
 
