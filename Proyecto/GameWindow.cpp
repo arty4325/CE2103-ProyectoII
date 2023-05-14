@@ -19,6 +19,7 @@
 #include "Enemigo1.h"
 #include "Puntos.h"
 #include "GameFinished.h"
+#include "GameOver.h"
 #include <QTimer>
 
 using namespace std;
@@ -290,6 +291,7 @@ void GameWindow::keyPressEvent(QKeyEvent *event)
             cout << "Se estripa w" << endl;
 
             comerPuntos();
+            revisarEnemigos();
         } else {
             cout << "Hay obstaculo" << endl;
         }
@@ -305,6 +307,7 @@ void GameWindow::keyPressEvent(QKeyEvent *event)
             cout << "Se estripa S" << endl;
 
             comerPuntos();
+            revisarEnemigos();
         } else {
             cout << "Hay obsctaculo" << endl;
         }
@@ -320,6 +323,7 @@ void GameWindow::keyPressEvent(QKeyEvent *event)
             cout << "Se estripa A" << endl;
 
             comerPuntos();
+            revisarEnemigos();
         } else {
             cout << "Hay obstaculo" << endl;
         }
@@ -330,11 +334,11 @@ void GameWindow::keyPressEvent(QKeyEvent *event)
         cout << mapa[pacmanX + 1][pacmanY] << endl;
         if(mapa[pacmanY][pacmanX + 1] == 0) {
             pacmanX += 1;
-            //pacman->setPos(+50,+0);
             playerpacman->setPos(playerpacman->pos().x() + 50, playerpacman->pos().y());
             cout << "Se estripa D" << endl;
 
             comerPuntos();
+            revisarEnemigos();
         } else {
             cout << "Hay obstaculo" << endl;
         }
@@ -350,10 +354,36 @@ void GameWindow::comerPuntos(){
                 puntaje = puntaje + 10;
 
                 labelPuntaje->setText("Puntaje: "+ QString::number(puntaje,10));
+                puntoslista->findPuntos(i)->eliminado = true;
             }
         }
     }
 }
+void GameWindow::revisarEnemigos(){
+    if (playerpacman->pos() == enemigo1->pos()){
+        vidas = vidas - 1;
+        labelVidas->setText("Vidas: "+ QString::number(vidas,10));
+    }
+    if (playerpacman->pos() == enemigo2->pos()){
+        vidas = vidas - 1;
+        labelVidas->setText("Vidas: "+ QString::number(vidas,10));
+    }
+    if (playerpacman->pos() == enemigo3->pos()){
+        vidas = vidas - 1;
+        labelVidas->setText("Vidas: "+ QString::number(vidas,10));
+    }
+    if (playerpacman->pos() == enemigo4->pos()){
+        vidas = vidas - 1;
+        labelVidas->setText("Vidas: "+ QString::number(vidas,10));
+    }
+    if (vidas == 0){
+        GameOver *go;
+        go = new GameOver();
+        this->close();
+        go->show();
+    }
+}
+
 void GameWindow::CreateLevels(int lvl){
     switch(lvl){
         case 1:{

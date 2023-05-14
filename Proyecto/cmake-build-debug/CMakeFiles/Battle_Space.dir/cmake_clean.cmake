@@ -18,6 +18,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Battle_Space.dir/Enemigo4.cpp.o.d"
   "CMakeFiles/Battle_Space.dir/GameFinished.cpp.o"
   "CMakeFiles/Battle_Space.dir/GameFinished.cpp.o.d"
+  "CMakeFiles/Battle_Space.dir/GameOver.cpp.o"
+  "CMakeFiles/Battle_Space.dir/GameOver.cpp.o.d"
   "CMakeFiles/Battle_Space.dir/GameWindow.cpp.o"
   "CMakeFiles/Battle_Space.dir/GameWindow.cpp.o.d"
   "CMakeFiles/Battle_Space.dir/Listas/ListaSimple.cpp.o"

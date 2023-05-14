@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/monicaegm/CE2103-ProyectoII/Proyecto/Enemigo3.cpp" "CMakeFiles/Battle_Space.dir/Enemigo3.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/Enemigo3.cpp.o.d"
   "/home/monicaegm/CE2103-ProyectoII/Proyecto/Enemigo4.cpp" "CMakeFiles/Battle_Space.dir/Enemigo4.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/Enemigo4.cpp.o.d"
   "/home/monicaegm/CE2103-ProyectoII/Proyecto/GameFinished.cpp" "CMakeFiles/Battle_Space.dir/GameFinished.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/GameFinished.cpp.o.d"
+  "/home/monicaegm/CE2103-ProyectoII/Proyecto/GameOver.cpp" "CMakeFiles/Battle_Space.dir/GameOver.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/GameOver.cpp.o.d"
   "/home/monicaegm/CE2103-ProyectoII/Proyecto/GameWindow.cpp" "CMakeFiles/Battle_Space.dir/GameWindow.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/GameWindow.cpp.o.d"
   "/home/monicaegm/CE2103-ProyectoII/Proyecto/Listas/ListaSimple.cpp" "CMakeFiles/Battle_Space.dir/Listas/ListaSimple.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/Listas/ListaSimple.cpp.o.d"
   "/home/monicaegm/CE2103-ProyectoII/Proyecto/Listas/Node.cpp" "CMakeFiles/Battle_Space.dir/Listas/Node.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/Listas/Node.cpp.o.d"

@@ -127,6 +127,12 @@
 			null
 		],
 		[
+			"/home/monicaegm/CE2103-ProyectoII/Proyecto/GameOver.h",
+			"MU",
+			"EWIEGA46WW/moc_GameOver.cpp",
+			null
+		],
+		[
 			"/home/monicaegm/CE2103-ProyectoII/Proyecto/GameWindow.h",
 			"MU",
 			"EWIEGA46WW/moc_GameWindow.cpp",
@@ -247,6 +253,7 @@
 			"MU",
 			null
 		],
+		[ "/home/monicaegm/CE2103-ProyectoII/Proyecto/GameOver.cpp", "MU", null ],
 		[
 			"/home/monicaegm/CE2103-ProyectoII/Proyecto/GameWindow.cpp",
 			"MU",

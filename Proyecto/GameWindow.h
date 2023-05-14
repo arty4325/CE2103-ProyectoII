@@ -104,6 +104,7 @@ private:
     int direc4Y;
     bool moving4;
 
+    void revisarEnemigos();
 };
 
 

@@ -146,6 +146,12 @@
 		<Unit filename="/home/monicaegm/CE2103-ProyectoII/Proyecto/GameFinished.h">
 			<Option target="Battle_Space"/>
 		</Unit>
+		<Unit filename="/home/monicaegm/CE2103-ProyectoII/Proyecto/GameOver.cpp">
+			<Option target="Battle_Space"/>
+		</Unit>
+		<Unit filename="/home/monicaegm/CE2103-ProyectoII/Proyecto/GameOver.h">
+			<Option target="Battle_Space"/>
+		</Unit>
 		<Unit filename="/home/monicaegm/CE2103-ProyectoII/Proyecto/GameWindow.cpp">
 			<Option target="Battle_Space"/>
 		</Unit>

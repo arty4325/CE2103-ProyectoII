@@ -18,7 +18,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-add_executable(Battle_Space main.cpp main.h GameWindow.cpp GameWindow.h Cell.cpp puntosLista.cpp puntosLista.h Listas/ListaSimple.cpp Listas/Node.cpp SimpleList.cpp SimpleList.h NodeList.cpp NodeList.h Enemigo1.cpp Enemigo1.h MenuDificultades.cpp MenuDificultades.h PlayerPacman.cpp PlayerPacman.h Puntos.cpp Puntos.h GameFinished.cpp GameFinished.h Enemigo2.cpp Enemigo2.h Enemigo3.cpp Enemigo3.h Enemigo4.cpp Enemigo4.h Puntos.cpp)
+add_executable(Battle_Space main.cpp main.h GameWindow.cpp GameWindow.h Cell.cpp puntosLista.cpp puntosLista.h Listas/ListaSimple.cpp Listas/Node.cpp SimpleList.cpp SimpleList.h NodeList.cpp NodeList.h Enemigo1.cpp Enemigo1.h MenuDificultades.cpp MenuDificultades.h PlayerPacman.cpp PlayerPacman.h Puntos.cpp Puntos.h GameFinished.cpp GameFinished.h Enemigo2.cpp Enemigo2.h Enemigo3.cpp Enemigo3.h Enemigo4.cpp Enemigo4.h Puntos.cpp GameOver.cpp GameOver.h)
 
 
 target_link_libraries(Battle_Space Qt5::Core Qt5::Gui Qt5::Widgets)
