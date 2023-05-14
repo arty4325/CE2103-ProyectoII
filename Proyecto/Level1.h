@@ -21,6 +21,8 @@
 #include "Enemigo2.h"
 #include "Enemigo3.h"
 #include "Enemigo4.h"
+#include "PastillaPoder.h"
+
 
 
 class Level1: public QGraphicsView{
@@ -68,6 +70,7 @@ private:
     Enemigo2 *enemigo2;
     Enemigo3 *enemigo3;
     Enemigo4 *enemigo4;
+    PastillaPoder *poder;
     SimpleList<SimpleList<SimpleList<int>>> matriz;
     puntosLista *puntoslista;
     SimpleList<float> datosSerial;
@@ -90,6 +93,8 @@ private:
     QLabel *labelVidas;
     QLabel *labelNivel;
     QLabel *labelPuntaje;
+
+    bool isTherePower;
 
     void CreateMap();
     void CreateLevels(int lvl);
@@ -120,6 +125,8 @@ private:
     void startSocketServer();
 
     void MoveMobile();
+
+    void PlacePowerRandomPos();
 };
 
 

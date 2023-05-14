@@ -36,6 +36,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Battle_Space.dir/MenuDificultades.cpp.o.d"
   "CMakeFiles/Battle_Space.dir/NodeList.cpp.o"
   "CMakeFiles/Battle_Space.dir/NodeList.cpp.o.d"
+  "CMakeFiles/Battle_Space.dir/PastillaPoder.cpp.o"
+  "CMakeFiles/Battle_Space.dir/PastillaPoder.cpp.o.d"
   "CMakeFiles/Battle_Space.dir/PlayerPacman.cpp.o"
   "CMakeFiles/Battle_Space.dir/PlayerPacman.cpp.o.d"
   "CMakeFiles/Battle_Space.dir/Puntos.cpp.o"

@@ -188,6 +188,10 @@ Level1::Level1(QWidget * parent){
     enemigo4 -> setPos(500, 500);
     scene -> addItem(enemigo4);
 
+    poder = new PastillaPoder();
+    poder -> setPos(-50, -50);
+    scene -> addItem(poder);
+
     movementFirstEnemy = new QTimer(this);
     connect(movementFirstEnemy, &QTimer::timeout, this, &Level1::MoveFirstEnemy);
     movementFirstEnemy ->setInterval(500);
@@ -388,6 +392,9 @@ void Level1::comerPuntos(){
             if (puntoslista->findPuntos(i)->eliminado == false){
                 puntoslista->findPuntos(i)->hide();
                 puntaje = puntaje + 10;
+                if (puntaje%200 == 0){
+                    PlacePowerRandomPos();
+                }
 
                 labelPuntaje->setText("Puntaje: "+ QString::number(puntaje,10));
                 puntoslista->findPuntos(i)->eliminado = true;
@@ -794,3 +801,17 @@ void Level1::SocketServer() {
         return;
     }
 }
+
+
+void Level1::PlacePowerRandomPos(){
+    isTherePower = true;
+    int colum = QRandomGenerator::global() -> bounded(0, 12);
+    int fila = QRandomGenerator::global() -> bounded(0, 18);
+    if(mapa[colum][fila] == 0){
+        poder -> setPos((fila)*50, (colum)*50);
+    } else {
+        return PlacePowerRandomPos();
+    }
+}
+
+

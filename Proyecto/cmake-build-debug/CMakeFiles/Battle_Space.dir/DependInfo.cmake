@@ -24,6 +24,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/Listas/Node.cpp" "CMakeFiles/Battle_Space.dir/Listas/Node.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/Listas/Node.cpp.o.d"
   "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/MenuDificultades.cpp" "CMakeFiles/Battle_Space.dir/MenuDificultades.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/MenuDificultades.cpp.o.d"
   "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/NodeList.cpp" "CMakeFiles/Battle_Space.dir/NodeList.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/NodeList.cpp.o.d"
+  "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/PastillaPoder.cpp" "CMakeFiles/Battle_Space.dir/PastillaPoder.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/PastillaPoder.cpp.o.d"
   "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/PlayerPacman.cpp" "CMakeFiles/Battle_Space.dir/PlayerPacman.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/PlayerPacman.cpp.o.d"
   "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/Puntos.cpp" "CMakeFiles/Battle_Space.dir/Puntos.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/Puntos.cpp.o.d"
   "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SimpleList.cpp" "CMakeFiles/Battle_Space.dir/SimpleList.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/SimpleList.cpp.o.d"

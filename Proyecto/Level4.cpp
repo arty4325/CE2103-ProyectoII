@@ -260,7 +260,9 @@ void Level4::comerPuntos(){
             if (puntoslista->findPuntos(i)->eliminado == false){
                 puntoslista->findPuntos(i)->hide();
                 puntaje = puntaje + 10;
-
+                if (puntaje%200 == 0){
+                    PlacePowerRandomPos();
+                }
                 labelPuntaje->setText("Puntaje: "+ QString::number(puntaje,10));
                 puntoslista->findPuntos(i)->eliminado = true;
                 noquedanpuntos = noquedanpuntos +1;
@@ -611,6 +613,10 @@ void Level4::setValues(int p, int v, int n){
     enemigo4 -> setPos(500, 500);
     scene() -> addItem(enemigo4);
 
+    poder = new PastillaPoder();
+    poder -> setPos(-50, -50);
+    scene() -> addItem(poder);
+
     movementFirstEnemy = new QTimer(this);
     connect(movementFirstEnemy, &QTimer::timeout, this, &Level4::MoveFirstEnemy);
     movementFirstEnemy ->setInterval(500);
@@ -786,5 +792,17 @@ void Level4::SocketServer() {
     if (::close(new_socket) == -1) {
         std::cerr << "Error al cerrar el socket: " << std::strerror(errno) << std::endl;
         return;
+    }
+}
+
+
+void Level4::PlacePowerRandomPos(){
+    isTherePower = true;
+    int colum = QRandomGenerator::global() -> bounded(0, 12);
+    int fila = QRandomGenerator::global() -> bounded(0, 18);
+    if(mapa[colum][fila] == 0){
+        poder -> setPos((fila)*50, (colum)*50);
+    } else {
+        return PlacePowerRandomPos();
     }
 }

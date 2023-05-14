@@ -526,6 +526,30 @@ NodeList.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/NodeList.cpp.s
 .PHONY : NodeList.cpp.s
 
+PastillaPoder.o: PastillaPoder.cpp.o
+.PHONY : PastillaPoder.o
+
+# target to build an object file
+PastillaPoder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/PastillaPoder.cpp.o
+.PHONY : PastillaPoder.cpp.o
+
+PastillaPoder.i: PastillaPoder.cpp.i
+.PHONY : PastillaPoder.i
+
+# target to preprocess a source file
+PastillaPoder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/PastillaPoder.cpp.i
+.PHONY : PastillaPoder.cpp.i
+
+PastillaPoder.s: PastillaPoder.cpp.s
+.PHONY : PastillaPoder.s
+
+# target to generate assembly for a file
+PastillaPoder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/PastillaPoder.cpp.s
+.PHONY : PastillaPoder.cpp.s
+
 PlayerPacman.o: PlayerPacman.cpp.o
 .PHONY : PlayerPacman.o
 
@@ -824,6 +848,9 @@ help:
 	@echo "... NodeList.o"
 	@echo "... NodeList.i"
 	@echo "... NodeList.s"
+	@echo "... PastillaPoder.o"
+	@echo "... PastillaPoder.i"
+	@echo "... PastillaPoder.s"
 	@echo "... PlayerPacman.o"
 	@echo "... PlayerPacman.i"
 	@echo "... PlayerPacman.s"

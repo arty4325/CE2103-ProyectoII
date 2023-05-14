@@ -204,6 +204,12 @@
 			null
 		],
 		[
+			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/PastillaPoder.h",
+			"MU",
+			"EWIEGA46WW/moc_PastillaPoder.cpp",
+			null
+		],
+		[
 			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/PlayerPacman.h",
 			"MU",
 			"EWIEGA46WW/moc_PlayerPacman.cpp",
@@ -386,6 +392,11 @@
 		],
 		[
 			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/NodeList.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/PastillaPoder.cpp",
 			"MU",
 			null
 		],

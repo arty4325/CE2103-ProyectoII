@@ -200,6 +200,12 @@
 		<Unit filename="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/NodeList.h">
 			<Option target="Battle_Space"/>
 		</Unit>
+		<Unit filename="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/PastillaPoder.cpp">
+			<Option target="Battle_Space"/>
+		</Unit>
+		<Unit filename="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/PastillaPoder.h">
+			<Option target="Battle_Space"/>
+		</Unit>
 		<Unit filename="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/PlayerPacman.cpp">
 			<Option target="Battle_Space"/>
 		</Unit>
