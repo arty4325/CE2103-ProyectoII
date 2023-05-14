@@ -25,6 +25,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/PlayerPacman.cpp" "CMakeFiles/Battle_Space.dir/PlayerPacman.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/PlayerPacman.cpp.o.d"
   "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/Puntos.cpp" "CMakeFiles/Battle_Space.dir/Puntos.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/Puntos.cpp.o.d"
   "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SimpleList.cpp" "CMakeFiles/Battle_Space.dir/SimpleList.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/SimpleList.cpp.o.d"
+  "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/Socket.cpp" "CMakeFiles/Battle_Space.dir/Socket.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/Socket.cpp.o.d"
   "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/main.cpp" "CMakeFiles/Battle_Space.dir/main.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/main.cpp.o.d"
   )
 

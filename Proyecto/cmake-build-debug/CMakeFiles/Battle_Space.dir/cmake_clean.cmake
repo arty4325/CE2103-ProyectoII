@@ -38,6 +38,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Battle_Space.dir/Puntos.cpp.o.d"
   "CMakeFiles/Battle_Space.dir/SimpleList.cpp.o"
   "CMakeFiles/Battle_Space.dir/SimpleList.cpp.o.d"
+  "CMakeFiles/Battle_Space.dir/Socket.cpp.o"
+  "CMakeFiles/Battle_Space.dir/Socket.cpp.o.d"
   "CMakeFiles/Battle_Space.dir/main.cpp.o"
   "CMakeFiles/Battle_Space.dir/main.cpp.o.d"
 )

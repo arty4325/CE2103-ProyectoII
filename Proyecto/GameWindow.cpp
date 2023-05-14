@@ -21,6 +21,11 @@
 #include "Puntos.h"
 #include "GameFinished.h"
 #include <QTimer>
+#include <iostream>
+#include <cstring>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <unistd.h>
 
 using namespace std;
 
@@ -126,7 +131,7 @@ GameWindow::GameWindow(QWidget * parent){
     matriz.getPosVal(10).getPosVal(11).insertHead(1);
     matriz.getPosVal(10).getPosVal(12).insertHead(1);
 
-    cout << mapa[7][9] << endl;
+    //cout << mapa[7][9] << endl;
 
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -207,6 +212,8 @@ GameWindow::GameWindow(QWidget * parent){
     movementFourthEnemy -> start();
 
 
+
+
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(900, 600);
@@ -231,6 +238,8 @@ GameWindow::GameWindow(QWidget * parent){
 
     show();
 }
+
+
 void GameWindow::CreateMap() {
     int ypos = 0;
     int xpos = 7;
@@ -294,54 +303,54 @@ void GameWindow::keyPressEvent(QKeyEvent *event)
     }
     if (event->key() == Qt::Key_W) {
         //pacman->setPos(+0,+50)
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX << pacmanY - 1 << endl;
-        cout << mapa[pacmanX][pacmanY - 1] << endl;
+        //cout << pacmanX << pacmanY << endl;
+        //cout << pacmanX << pacmanY - 1 << endl;
+        //cout << mapa[pacmanX][pacmanY - 1] << endl;
         if(mapa[pacmanY - 1][pacmanX] == 0) {
             pacmanY -= 1;
             playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() - 50);
-            cout << "Se estripa w" << endl;
+            //cout << "Se estripa w" << endl;
         } else {
-            cout << "Hay obstaculo" << endl;
+            //cout << "Hay obstaculo" << endl;
         }
     }
     if (event->key() == Qt::Key_S) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX << pacmanY + 1<< endl;
-        cout << mapa[pacmanY + 1][pacmanX] << endl;
+        //cout << pacmanX << pacmanY << endl;
+        //cout << pacmanX << pacmanY + 1<< endl;
+        //cout << mapa[pacmanY + 1][pacmanX] << endl;
         //pacman->setPos(+0,-50);
         if(mapa[pacmanY + 1][pacmanX] == 0) {
             pacmanY += 1;
             playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() + 50);
-            cout << "Se estripa S" << endl;
+            //cout << "Se estripa S" << endl;
         } else {
-            cout << "Hay obsctaculo" << endl;
+            //cout << "Hay obsctaculo" << endl;
         }
     }
     if (event->key() == Qt::Key_A) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX - 1 << pacmanY << endl;
-        cout << mapa[pacmanY][pacmanX - 1] << endl;
+        //cout << pacmanX << pacmanY << endl;
+        //cout << pacmanX - 1 << pacmanY << endl;
+        //cout << mapa[pacmanY][pacmanX - 1] << endl;
         //pacman->setPos(-50,+0);
         if(mapa[pacmanY][pacmanX - 1] == 0) {
             pacmanX -= 1;
             playerpacman->setPos(playerpacman->pos().x() - 50, playerpacman->pos().y());
-            cout << "Se estripa A" << endl;
+            //cout << "Se estripa A" << endl;
         } else {
-            cout << "Hay obstaculo" << endl;
+            //cout << "Hay obstaculo" << endl;
         }
     }
     if (event->key() == Qt::Key_D) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX + 1 << pacmanY << endl;
-        cout << mapa[pacmanX + 1][pacmanY] << endl;
+        //cout << pacmanX << pacmanY << endl;
+        //cout << pacmanX + 1 << pacmanY << endl;
+        //cout << mapa[pacmanX + 1][pacmanY] << endl;
         if(mapa[pacmanY][pacmanX + 1] == 0) {
             pacmanX += 1;
             //pacman->setPos(+50,+0);
             playerpacman->setPos(playerpacman->pos().x() + 50, playerpacman->pos().y());
-            cout << "Se estripa D" << endl;
+            //cout << "Se estripa D" << endl;
         } else {
-            cout << "Hay obstaculo" << endl;
+            //cout << "Hay obstaculo" << endl;
         }
     }
 }
@@ -413,7 +422,7 @@ void GameWindow::MoveFirstEnemy() {
     }
     else {
         if(mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] == 0) {
-            cout << mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] << Enemy1Y + direc1Y << Enemy1X + direc1X << endl;
+            //cout << mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] << Enemy1Y + direc1Y << Enemy1X + direc1X << endl;
             Enemy1Y += direc1Y;
             Enemy1X += direc1X;
             enemigo1->setPos(enemigo1->pos().x() + direc1X*50, enemigo1->pos().y() + direc1Y*50);
@@ -466,7 +475,7 @@ void GameWindow::MoveSecondEnemy() {
     }
     else {
         if(mapa[Enemy2Y + direc2Y][Enemy2X + direc2X] == 0) {
-            cout << mapa[Enemy2Y + direc2Y][Enemy2X + direc2X] << Enemy2Y + direc2Y << Enemy2X + direc2X << endl;
+            //cout << mapa[Enemy2Y + direc2Y][Enemy2X + direc2X] << Enemy2Y + direc2Y << Enemy2X + direc2X << endl;
             Enemy2Y += direc2Y;
             Enemy2X += direc2X;
             enemigo2->setPos(enemigo2->pos().x() + direc2X*50, enemigo2->pos().y() + direc2Y*50);
@@ -519,7 +528,7 @@ void GameWindow::MoveThirdEnemy() {
     }
     else {
         if(mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] == 0) {
-            cout << mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] << Enemy3Y + direc3Y << Enemy3X + direc3X << endl;
+            //cout << mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] << Enemy3Y + direc3Y << Enemy3X + direc3X << endl;
             Enemy3Y += direc3Y;
             Enemy3X += direc3X;
             enemigo3->setPos(enemigo3->pos().x() + direc3X*50, enemigo3->pos().y() + direc3Y*50);
@@ -572,7 +581,7 @@ void GameWindow::MoveFourthEnemy() {
     }
     else {
         if(mapa[Enemy4Y + direc4Y][Enemy4X + direc4X] == 0) {
-            cout << mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] << Enemy3Y + direc3Y << Enemy3X + direc3X << endl;
+            //cout << mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] << Enemy3Y + direc3Y << Enemy3X + direc3X << endl;
             Enemy4Y += direc4Y;
             Enemy4X += direc4X;
             enemigo4->setPos(enemigo4->pos().x() + direc4X*50, enemigo4->pos().y() + direc4Y*50);

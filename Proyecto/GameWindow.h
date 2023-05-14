@@ -101,6 +101,8 @@ private:
     int direc4X;
     int direc4Y;
     bool moving4;
+
+    void SocketServer();
 };
 
 
