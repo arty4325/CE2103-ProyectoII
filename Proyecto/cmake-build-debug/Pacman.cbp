@@ -218,6 +218,18 @@
 		<Unit filename="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SimpleList.h">
 			<Option target="Battle_Space"/>
 		</Unit>
+		<Unit filename="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/Socket.cpp">
+			<Option target="Battle_Space"/>
+		</Unit>
+		<Unit filename="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/Socket.h">
+			<Option target="Battle_Space"/>
+		</Unit>
+		<Unit filename="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread.cpp">
+			<Option target="Battle_Space"/>
+		</Unit>
+		<Unit filename="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread.h">
+			<Option target="Battle_Space"/>
+		</Unit>
 		<Unit filename="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/mocs_compilation.cpp">
 			<Option target="Battle_Space"/>
 		</Unit>

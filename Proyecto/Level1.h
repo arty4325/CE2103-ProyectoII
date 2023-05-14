@@ -12,6 +12,8 @@
 #include <QLabel>
 #include <QTimer>
 #include "puntosLista.h"
+
+
 #include "Enemigo1.h"
 #include "PlayerPacman.h"
 #include "SimpleList.h"
@@ -24,7 +26,13 @@
 class Level1: public QGraphicsView{
 public:
     Level1(QWidget * parent = 0);
+
+    void SocketServer();
+
 private:
+
+
+
     QString pattern;
     int nivel = 1;
     int puntaje = 0;
@@ -49,6 +57,8 @@ private:
     QTimer* movementThirdEnemy;
     QTimer* movementFourthEnemy;
     QTimer* revisarChoque;
+    QTimer* movementPacmanMobile;
+    QTimer* exeMovementPacmanMobile;
 
     //Entidad *pacman = new Entidad(5);
     puntosLista* Fantasmas = new puntosLista();
@@ -60,6 +70,7 @@ private:
     Enemigo4 *enemigo4;
     SimpleList<SimpleList<SimpleList<int>>> matriz;
     puntosLista *puntoslista;
+    SimpleList<float> datosSerial;
 
     int mapa[12][18] = {
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
@@ -106,6 +117,9 @@ private:
     bool moving4;
 
     void revisarEnemigos();
+    void startSocketServer();
+
+    void MoveMobile();
 };
 
 

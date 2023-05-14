@@ -598,6 +598,54 @@ SimpleList.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/SimpleList.cpp.s
 .PHONY : SimpleList.cpp.s
 
+Socket.o: Socket.cpp.o
+.PHONY : Socket.o
+
+# target to build an object file
+Socket.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Socket.cpp.o
+.PHONY : Socket.cpp.o
+
+Socket.i: Socket.cpp.i
+.PHONY : Socket.i
+
+# target to preprocess a source file
+Socket.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Socket.cpp.i
+.PHONY : Socket.cpp.i
+
+Socket.s: Socket.cpp.s
+.PHONY : Socket.s
+
+# target to generate assembly for a file
+Socket.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Socket.cpp.s
+.PHONY : Socket.cpp.s
+
+SocketThread.o: SocketThread.cpp.o
+.PHONY : SocketThread.o
+
+# target to build an object file
+SocketThread.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/SocketThread.cpp.o
+.PHONY : SocketThread.cpp.o
+
+SocketThread.i: SocketThread.cpp.i
+.PHONY : SocketThread.i
+
+# target to preprocess a source file
+SocketThread.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/SocketThread.cpp.i
+.PHONY : SocketThread.cpp.i
+
+SocketThread.s: SocketThread.cpp.s
+.PHONY : SocketThread.s
+
+# target to generate assembly for a file
+SocketThread.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/SocketThread.cpp.s
+.PHONY : SocketThread.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -713,6 +761,12 @@ help:
 	@echo "... SimpleList.o"
 	@echo "... SimpleList.i"
 	@echo "... SimpleList.s"
+	@echo "... Socket.o"
+	@echo "... Socket.i"
+	@echo "... Socket.s"
+	@echo "... SocketThread.o"
+	@echo "... SocketThread.i"
+	@echo "... SocketThread.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -9,6 +9,14 @@
 #include <QLabel>
 #include <string>
 #include <iostream>
+#include "Socket.h"
+#include "SocketThread.h"
+#include <QTimer>
+#include <iostream>
+#include <cstring>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <unistd.h>
 #include "Cell.h"
 #include "Level1.h"
 #include "Enemigo1.h"
@@ -121,7 +129,7 @@ Level1::Level1(QWidget * parent){
     matriz.getPosVal(10).getPosVal(11).insertHead(1);
     matriz.getPosVal(10).getPosVal(12).insertHead(1);
 
-    cout << mapa[7][9] << endl;
+    //cout << mapa[7][9] << endl;
 
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -203,6 +211,19 @@ Level1::Level1(QWidget * parent){
     connect(revisarChoque, &QTimer::timeout, this, &Level1::revisarEnemigos);
     revisarChoque -> setInterval(500);
     revisarChoque -> start();
+    
+    movementPacmanMobile = new QTimer(this);
+    connect(movementPacmanMobile, &QTimer::timeout, this, &Level1::startSocketServer);
+    movementPacmanMobile -> setInterval(500);
+    movementPacmanMobile -> start();
+
+    exeMovementPacmanMobile = new QTimer(this);
+    connect(exeMovementPacmanMobile, &QTimer::timeout, this, &Level1::MoveMobile);
+    exeMovementPacmanMobile -> setInterval(500);
+    exeMovementPacmanMobile -> start();
+
+
+
 
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -229,6 +250,14 @@ Level1::Level1(QWidget * parent){
 
     show();
 }
+
+
+void Level1::startSocketServer(){
+    SocketThread* socketThread = new SocketThread(this);
+    connect(socketThread, &SocketThread::finished, socketThread, &SocketThread::deleteLater);
+    socketThread -> start();
+}
+
 void Level1::CreateMap() {
     int ypos = 0;
     int xpos = 7;
@@ -288,9 +317,6 @@ void Level1::keyPressEvent(QKeyEvent *event)
         CreateLevels(nivel);
     }
     if (event->key() == Qt::Key_W) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX << pacmanY - 1 << endl;
-        cout << mapa[pacmanX][pacmanY - 1] << endl;
         if(mapa[pacmanY - 1][pacmanX] == 0) {
             pacmanY -= 1;
             playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() - 50);
@@ -299,13 +325,13 @@ void Level1::keyPressEvent(QKeyEvent *event)
             comerPuntos();
             revisarEnemigos();
         } else {
-            cout << "Hay obstaculo" << endl;
+            //cout << "Hay obstaculo" << endl;
         }
     }
     if (event->key() == Qt::Key_S) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX << pacmanY + 1<< endl;
-        cout << mapa[pacmanY + 1][pacmanX] << endl;
+        //cout << pacmanX << pacmanY << endl;
+        //cout << pacmanX << pacmanY + 1<< endl;
+        //cout << mapa[pacmanY + 1][pacmanX] << endl;
         //pacman->setPos(+0,-50);
         if(mapa[pacmanY + 1][pacmanX] == 0) {
             pacmanY += 1;
@@ -315,13 +341,13 @@ void Level1::keyPressEvent(QKeyEvent *event)
             comerPuntos();
             revisarEnemigos();
         } else {
-            cout << "Hay obsctaculo" << endl;
+            //cout << "Hay obsctaculo" << endl;
         }
     }
     if (event->key() == Qt::Key_A) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX - 1 << pacmanY << endl;
-        cout << mapa[pacmanY][pacmanX - 1] << endl;
+        //cout << pacmanX << pacmanY << endl;
+        //cout << pacmanX - 1 << pacmanY << endl;
+        //cout << mapa[pacmanY][pacmanX - 1] << endl;
         //pacman->setPos(-50,+0);
         if(mapa[pacmanY][pacmanX - 1] == 0) {
             pacmanX -= 1;
@@ -331,13 +357,13 @@ void Level1::keyPressEvent(QKeyEvent *event)
             comerPuntos();
             revisarEnemigos();
         } else {
-            cout << "Hay obstaculo" << endl;
+            //cout << "Hay obstaculo" << endl;
         }
     }
     if (event->key() == Qt::Key_D) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX + 1 << pacmanY << endl;
-        cout << mapa[pacmanX + 1][pacmanY] << endl;
+        //cout << pacmanX << pacmanY << endl;
+        //cout << pacmanX + 1 << pacmanY << endl;
+        //cout << mapa[pacmanX + 1][pacmanY] << endl;
         if(mapa[pacmanY][pacmanX + 1] == 0) {
             pacmanX += 1;
             playerpacman->setPos(playerpacman->pos().x() + 50, playerpacman->pos().y());
@@ -346,7 +372,7 @@ void Level1::keyPressEvent(QKeyEvent *event)
             comerPuntos();
             revisarEnemigos();
         } else {
-            cout << "Hay obstaculo" << endl;
+            //cout << "Hay obstaculo" << endl;
         }
     }
 }
@@ -395,6 +421,40 @@ void Level1::revisarEnemigos(){
         go->show();
     }
 }
+
+void Level1::MoveMobile(){
+    if(datosSerial.getSize() == 3) {
+        cout << "MOVIMIENTO" << endl;
+        // Movimiento hacia arriba
+        if (datosSerial.getPosVal(2) < -3) {
+            if (mapa[pacmanY - 1][pacmanX] == 0) {
+                pacmanY -= 1;
+                playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() - 50);
+                //cout << "Se estripa w" << endl;
+            }
+        } else if (datosSerial.getPosVal(2) > 3) {
+            if (mapa[pacmanY + 1][pacmanX] == 0) {
+                pacmanY += 1;
+                playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() + 50);
+                //cout << "Se estripa S" << endl;
+            }
+        } else if (datosSerial.getPosVal(1) < -3) {
+            if (mapa[pacmanY][pacmanX - 1] == 0) {
+                pacmanX -= 1;
+                playerpacman->setPos(playerpacman->pos().x() - 50, playerpacman->pos().y());
+                //cout << "Se estripa A" << endl;
+            }
+        } else if (datosSerial.getPosVal(1) > 3) {
+            if (mapa[pacmanY][pacmanX + 1] == 0) {
+                pacmanX += 1;
+                //pacman->setPos(+50,+0);
+                playerpacman->setPos(playerpacman->pos().x() + 50, playerpacman->pos().y());
+                //cout << "Se estripa D" << endl;
+            }
+        }
+    }
+}
+
 
 void Level1::CreateLevels(int lvl){
     switch(lvl){
@@ -464,7 +524,7 @@ void Level1::MoveFirstEnemy() {
     }
     else {
         if(mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] == 0) {
-            cout << mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] << Enemy1Y + direc1Y << Enemy1X + direc1X << endl;
+            //cout << mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] << Enemy1Y + direc1Y << Enemy1X + direc1X << endl;
             Enemy1Y += direc1Y;
             Enemy1X += direc1X;
             enemigo1->setPos(enemigo1->pos().x() + direc1X*50, enemigo1->pos().y() + direc1Y*50);
@@ -517,7 +577,7 @@ void Level1::MoveSecondEnemy() {
     }
     else {
         if(mapa[Enemy2Y + direc2Y][Enemy2X + direc2X] == 0) {
-            cout << mapa[Enemy2Y + direc2Y][Enemy2X + direc2X] << Enemy2Y + direc2Y << Enemy2X + direc2X << endl;
+            //cout << mapa[Enemy2Y + direc2Y][Enemy2X + direc2X] << Enemy2Y + direc2Y << Enemy2X + direc2X << endl;
             Enemy2Y += direc2Y;
             Enemy2X += direc2X;
             enemigo2->setPos(enemigo2->pos().x() + direc2X*50, enemigo2->pos().y() + direc2Y*50);
@@ -570,7 +630,7 @@ void Level1::MoveThirdEnemy() {
     }
     else {
         if(mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] == 0) {
-            cout << mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] << Enemy3Y + direc3Y << Enemy3X + direc3X << endl;
+            //cout << mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] << Enemy3Y + direc3Y << Enemy3X + direc3X << endl;
             Enemy3Y += direc3Y;
             Enemy3X += direc3X;
             enemigo3->setPos(enemigo3->pos().x() + direc3X*50, enemigo3->pos().y() + direc3Y*50);
@@ -623,12 +683,102 @@ void Level1::MoveFourthEnemy() {
     }
     else {
         if(mapa[Enemy4Y + direc4Y][Enemy4X + direc4X] == 0) {
-            cout << mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] << Enemy3Y + direc3Y << Enemy3X + direc3X << endl;
+            //cout << mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] << Enemy3Y + direc3Y << Enemy3X + direc3X << endl;
             Enemy4Y += direc4Y;
             Enemy4X += direc4X;
             enemigo4->setPos(enemigo4->pos().x() + direc4X*50, enemigo4->pos().y() + direc4Y*50);
         } else {
             moving4 = false;
         }
+    }
+}
+
+
+void Level1::SocketServer() {
+    datosSerial.printList();
+    while(datosSerial.getSize() != 0){
+        datosSerial.deleteHead();
+    }
+    int server_fd, new_socket;
+    struct sockaddr_in address;
+    int opt = 1;
+    int addrlen = sizeof(address);
+
+    // Crear socket
+    if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0) {
+        std::cerr << "Error al crear socket" << std::endl;
+        return;
+    }
+
+    // Opción de socket para reutilizar la dirección
+    if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt))) {
+        std::cerr << "Error en setsockopt" << std::endl;
+        return;
+    }
+
+    // Configurar dirección del socket
+    address.sin_family = AF_INET;
+    address.sin_addr.s_addr = INADDR_ANY;
+    address.sin_port = htons(5001);
+
+    if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEPORT, &opt, sizeof(opt))) {
+        std::cerr << "Error en setsockopt" << std::endl;
+        return;
+    }
+
+
+    // Enlazar socket a la dirección y puerto especificados
+    if (bind(server_fd, (struct sockaddr *) &address, sizeof(address)) < 0) {
+        std::cerr << "Error en bind" << std::endl;
+        return;
+    }
+
+    // Escuchar conexiones entrantes
+    if (listen(server_fd, 3) < 0) {
+        std::cerr << "Error en listen" << std::endl;
+        return;
+    }
+
+    std::cout << "Servidor en espera de conexiones..." << std::endl;
+
+
+    // Aceptar nueva conexión
+    if ((new_socket = accept(server_fd, (struct sockaddr *) &address, (socklen_t *) &addrlen)) < 0) {
+        std::cerr << "Error en accept" << std::endl;
+        return;
+    }
+
+    std::cout << "Nueva conexión aceptada" << std::endl;
+
+    // Procesar mensajes entrantes
+    char buffer[1024] = {0};
+    int valread = read(new_socket, buffer, 1024);
+    if (valread <= 0) {
+        std::cout << "Cliente desconectado" << std::endl;
+        ::close(new_socket);
+        return;
+    }
+    std::cout << "Mensaje recibido: " << buffer << std::endl;
+    QStringList subStrings = QString(buffer).split(" ,");
+    for(const QString& subString : subStrings){
+        bool ok = false;
+        int value = subString.trimmed().toFloat(&ok);
+        if (ok) {
+            datosSerial.insertHead(value);
+        }
+    }
+
+    char respuesta[] = "Mensaje recibido.\n";
+    send(new_socket, respuesta, sizeof(respuesta), 0);
+    std::cout << "Respuesta: " << respuesta << std::endl;
+
+
+    if (::close(server_fd) == -1) {
+        std::cerr << "Error al cerrar el socket: " << std::strerror(errno) << std::endl;
+        return;
+    }
+    if (::close(new_socket) == -1) {
+        std::cerr << "Error al cerrar el socket: " << std::strerror(errno) << std::endl;
+        return;
     }
 }
