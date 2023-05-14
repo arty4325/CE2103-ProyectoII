@@ -11,6 +11,7 @@
 #include <iostream>
 #include <QLabel>
 #include <QTimer>
+
 #include "Entidad.h"
 #include "ListaFantasmas.h"
 #include "Enemigo1.h"
@@ -25,7 +26,13 @@
 class GameWindow: public QGraphicsView{
 public:
     GameWindow(QWidget * parent = 0);
+
+    void SocketServer();
+
 private:
+
+
+
     QString pattern;
     int nivel = 1;
     int puntaje = 0;
@@ -47,6 +54,7 @@ private:
     QTimer* movementSecondEnemy;
     QTimer* movementThirdEnemy;
     QTimer* movementFourthEnemy;
+    QTimer* movementPacmanMobile;
 
     //Entidad *pacman = new Entidad(5);
     ListaFantasmas* Fantasmas = new ListaFantasmas();
@@ -102,7 +110,8 @@ private:
     int direc4Y;
     bool moving4;
 
-    void SocketServer();
+    void startSocketServer();
+
 };
 
 

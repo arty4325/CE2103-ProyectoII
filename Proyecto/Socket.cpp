@@ -9,6 +9,7 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
+
 Socket::Socket(){
     while(true) {SocketServer();}
 }
