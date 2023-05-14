@@ -19,12 +19,15 @@
 #include "Enemigo2.h"
 #include "Enemigo3.h"
 #include "Enemigo4.h"
+#include "SimpleList.h"
 
 
 class Level4: public QGraphicsView{
 public:
     Level4(QWidget * parent = 0);
     void setValues(int p, int v, int n);
+
+    void SocketServer();
 
 private:
     QString pattern;
@@ -51,6 +54,8 @@ private:
     QTimer* movementThirdEnemy;
     QTimer* movementFourthEnemy;
     QTimer* revisarChoque;
+    QTimer* movementPacmanMobile;
+    QTimer* exeMovementPacmanMobile;
 
     puntosLista* Fantasmas = new puntosLista();
 
@@ -61,6 +66,7 @@ private:
     Enemigo4 *enemigo4;
     //SimpleList<SimpleList<SimpleList<int>>> matriz;
     puntosLista *puntoslista;
+    SimpleList<float> datosSerial;
 
     int mapa[12][18] =
             {
@@ -109,6 +115,9 @@ private:
     bool moving4;
 
     void revisarEnemigos();
+    void startSocketServer();
+
+    void MoveMobile();
 };
 
 

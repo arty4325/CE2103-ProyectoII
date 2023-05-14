@@ -298,6 +298,9 @@ void Level1::CreateMap() {
 void Level1::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_K) { //La letra K crea nuevos niveles
+        movementPacmanMobile->stop();
+        exeMovementPacmanMobile->stop();
+
         nivel = nivel + 1;
 
         Level2 *level2;

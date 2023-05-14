@@ -230,6 +230,24 @@
 		<Unit filename="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread.h">
 			<Option target="Battle_Space"/>
 		</Unit>
+		<Unit filename="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread2.cpp">
+			<Option target="Battle_Space"/>
+		</Unit>
+		<Unit filename="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread2.h">
+			<Option target="Battle_Space"/>
+		</Unit>
+		<Unit filename="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread3.cpp">
+			<Option target="Battle_Space"/>
+		</Unit>
+		<Unit filename="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread3.h">
+			<Option target="Battle_Space"/>
+		</Unit>
+		<Unit filename="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread4.cpp">
+			<Option target="Battle_Space"/>
+		</Unit>
+		<Unit filename="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread4.h">
+			<Option target="Battle_Space"/>
+		</Unit>
 		<Unit filename="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/Battle_Space_autogen/mocs_compilation.cpp">
 			<Option target="Battle_Space"/>
 		</Unit>

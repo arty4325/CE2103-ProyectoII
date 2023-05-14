@@ -29,6 +29,9 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SimpleList.cpp" "CMakeFiles/Battle_Space.dir/SimpleList.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/SimpleList.cpp.o.d"
   "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/Socket.cpp" "CMakeFiles/Battle_Space.dir/Socket.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/Socket.cpp.o.d"
   "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread.cpp" "CMakeFiles/Battle_Space.dir/SocketThread.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/SocketThread.cpp.o.d"
+  "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread2.cpp" "CMakeFiles/Battle_Space.dir/SocketThread2.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/SocketThread2.cpp.o.d"
+  "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread3.cpp" "CMakeFiles/Battle_Space.dir/SocketThread3.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/SocketThread3.cpp.o.d"
+  "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread4.cpp" "CMakeFiles/Battle_Space.dir/SocketThread4.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/SocketThread4.cpp.o.d"
   "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/main.cpp" "CMakeFiles/Battle_Space.dir/main.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/main.cpp.o.d"
   "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/puntosLista.cpp" "CMakeFiles/Battle_Space.dir/puntosLista.cpp.o" "gcc" "CMakeFiles/Battle_Space.dir/puntosLista.cpp.o.d"
   )

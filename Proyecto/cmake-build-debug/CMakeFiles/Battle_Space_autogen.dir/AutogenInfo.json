@@ -234,6 +234,24 @@
 			null
 		],
 		[
+			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread2.h",
+			"MU",
+			"EWIEGA46WW/moc_SocketThread2.cpp",
+			null
+		],
+		[
+			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread3.h",
+			"MU",
+			"EWIEGA46WW/moc_SocketThread3.cpp",
+			null
+		],
+		[
+			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread4.h",
+			"MU",
+			"EWIEGA46WW/moc_SocketThread4.cpp",
+			null
+		],
+		[
 			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/main.h",
 			"MU",
 			"EWIEGA46WW/moc_main.cpp",
@@ -393,6 +411,21 @@
 		],
 		[
 			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread2.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread3.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread4.cpp",
 			"MU",
 			null
 		],

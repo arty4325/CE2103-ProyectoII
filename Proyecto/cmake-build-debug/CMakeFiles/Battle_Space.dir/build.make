@@ -391,6 +391,48 @@ CMakeFiles/Battle_Space.dir/SocketThread.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Battle_Space.dir/SocketThread.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread.cpp" -o CMakeFiles/Battle_Space.dir/SocketThread.cpp.s
 
+CMakeFiles/Battle_Space.dir/SocketThread3.cpp.o: CMakeFiles/Battle_Space.dir/flags.make
+CMakeFiles/Battle_Space.dir/SocketThread3.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/SocketThread3.cpp
+CMakeFiles/Battle_Space.dir/SocketThread3.cpp.o: CMakeFiles/Battle_Space.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Battle_Space.dir/SocketThread3.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Battle_Space.dir/SocketThread3.cpp.o -MF CMakeFiles/Battle_Space.dir/SocketThread3.cpp.o.d -o CMakeFiles/Battle_Space.dir/SocketThread3.cpp.o -c "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread3.cpp"
+
+CMakeFiles/Battle_Space.dir/SocketThread3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Battle_Space.dir/SocketThread3.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread3.cpp" > CMakeFiles/Battle_Space.dir/SocketThread3.cpp.i
+
+CMakeFiles/Battle_Space.dir/SocketThread3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Battle_Space.dir/SocketThread3.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread3.cpp" -o CMakeFiles/Battle_Space.dir/SocketThread3.cpp.s
+
+CMakeFiles/Battle_Space.dir/SocketThread4.cpp.o: CMakeFiles/Battle_Space.dir/flags.make
+CMakeFiles/Battle_Space.dir/SocketThread4.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/SocketThread4.cpp
+CMakeFiles/Battle_Space.dir/SocketThread4.cpp.o: CMakeFiles/Battle_Space.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/Battle_Space.dir/SocketThread4.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Battle_Space.dir/SocketThread4.cpp.o -MF CMakeFiles/Battle_Space.dir/SocketThread4.cpp.o.d -o CMakeFiles/Battle_Space.dir/SocketThread4.cpp.o -c "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread4.cpp"
+
+CMakeFiles/Battle_Space.dir/SocketThread4.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Battle_Space.dir/SocketThread4.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread4.cpp" > CMakeFiles/Battle_Space.dir/SocketThread4.cpp.i
+
+CMakeFiles/Battle_Space.dir/SocketThread4.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Battle_Space.dir/SocketThread4.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread4.cpp" -o CMakeFiles/Battle_Space.dir/SocketThread4.cpp.s
+
+CMakeFiles/Battle_Space.dir/SocketThread2.cpp.o: CMakeFiles/Battle_Space.dir/flags.make
+CMakeFiles/Battle_Space.dir/SocketThread2.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/SocketThread2.cpp
+CMakeFiles/Battle_Space.dir/SocketThread2.cpp.o: CMakeFiles/Battle_Space.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/Battle_Space.dir/SocketThread2.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Battle_Space.dir/SocketThread2.cpp.o -MF CMakeFiles/Battle_Space.dir/SocketThread2.cpp.o.d -o CMakeFiles/Battle_Space.dir/SocketThread2.cpp.o -c "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread2.cpp"
+
+CMakeFiles/Battle_Space.dir/SocketThread2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Battle_Space.dir/SocketThread2.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread2.cpp" > CMakeFiles/Battle_Space.dir/SocketThread2.cpp.i
+
+CMakeFiles/Battle_Space.dir/SocketThread2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Battle_Space.dir/SocketThread2.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/SocketThread2.cpp" -o CMakeFiles/Battle_Space.dir/SocketThread2.cpp.s
+
 # Object files for target Battle_Space
 Battle_Space_OBJECTS = \
 "CMakeFiles/Battle_Space.dir/Battle_Space_autogen/mocs_compilation.cpp.o" \
@@ -415,7 +457,10 @@ Battle_Space_OBJECTS = \
 "CMakeFiles/Battle_Space.dir/Level3.cpp.o" \
 "CMakeFiles/Battle_Space.dir/Level4.cpp.o" \
 "CMakeFiles/Battle_Space.dir/Socket.cpp.o" \
-"CMakeFiles/Battle_Space.dir/SocketThread.cpp.o"
+"CMakeFiles/Battle_Space.dir/SocketThread.cpp.o" \
+"CMakeFiles/Battle_Space.dir/SocketThread3.cpp.o" \
+"CMakeFiles/Battle_Space.dir/SocketThread4.cpp.o" \
+"CMakeFiles/Battle_Space.dir/SocketThread2.cpp.o"
 
 # External object files for target Battle_Space
 Battle_Space_EXTERNAL_OBJECTS =
@@ -443,12 +488,15 @@ Battle_Space: CMakeFiles/Battle_Space.dir/Level3.cpp.o
 Battle_Space: CMakeFiles/Battle_Space.dir/Level4.cpp.o
 Battle_Space: CMakeFiles/Battle_Space.dir/Socket.cpp.o
 Battle_Space: CMakeFiles/Battle_Space.dir/SocketThread.cpp.o
+Battle_Space: CMakeFiles/Battle_Space.dir/SocketThread3.cpp.o
+Battle_Space: CMakeFiles/Battle_Space.dir/SocketThread4.cpp.o
+Battle_Space: CMakeFiles/Battle_Space.dir/SocketThread2.cpp.o
 Battle_Space: CMakeFiles/Battle_Space.dir/build.make
 Battle_Space: /usr/lib/libQt5Widgets.so.5.15.8
 Battle_Space: /usr/lib/libQt5Gui.so.5.15.8
 Battle_Space: /usr/lib/libQt5Core.so.5.15.8
 Battle_Space: CMakeFiles/Battle_Space.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX executable Battle_Space"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX executable Battle_Space"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Battle_Space.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
