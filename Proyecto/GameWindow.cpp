@@ -605,6 +605,10 @@ void GameWindow::MoveFourthEnemy() {
 
 
 void GameWindow::SocketServer() {
+    //datosSerial.printList();
+    while(datosSerial.getSize() != 0){
+        datosSerial.deleteHead();
+    }
     int server_fd, new_socket;
     struct sockaddr_in address;
     int opt = 1;
@@ -665,10 +669,19 @@ void GameWindow::SocketServer() {
         return;
     }
     std::cout << "Mensaje recibido: " << buffer << std::endl;
+    QStringList subStrings = QString(buffer).split(" ,");
+    for(const QString& subString : subStrings){
+        bool ok = false;
+        int value = subString.trimmed().toFloat(&ok);
+        if (ok) {
+            datosSerial.insertHead(value);
+        }
+    }
 
     char respuesta[] = "Mensaje recibido.\n";
     send(new_socket, respuesta, sizeof(respuesta), 0);
     std::cout << "Respuesta: " << respuesta << std::endl;
+
 
     if (::close(server_fd) == -1) {
         std::cerr << "Error al cerrar el socket: " << std::strerror(errno) << std::endl;

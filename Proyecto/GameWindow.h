@@ -65,6 +65,7 @@ private:
     Enemigo3 *enemigo3;
     Enemigo4 *enemigo4;
     SimpleList<SimpleList<SimpleList<int>>> matriz;
+    SimpleList<float> datosSerial;
 
     int mapa[12][18] = {
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
