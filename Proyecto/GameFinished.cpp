@@ -12,7 +12,10 @@
 #include <QDir>
 #include "GameFinished.h"
 using namespace std;
-
+/**
+ * @brief Constructor para la pantalla cuando se termina el juego
+ * @param parent QWidget puntero
+ */
 GameFinished::GameFinished(QWidget *parent) {
     QGraphicsScene *scene = new QGraphicsScene();
     scene -> setSceneRect(0, 0, 900, 600);
@@ -43,7 +46,10 @@ GameFinished::GameFinished(QWidget *parent) {
 
     show();
 }
-
+/**
+ * @brief obtiene el puntaje para mostrarlo en pantalla
+ * @param puntaje int puntaje del juego
+ */
 void GameFinished::setPuntaje(int puntaje){
     labelp = new QLabel(this);
     labelp -> setText("Puntaje: "+QString::number(puntaje));

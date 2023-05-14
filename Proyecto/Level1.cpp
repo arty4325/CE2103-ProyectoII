@@ -18,110 +18,17 @@
 #include "Level2.h"
 
 using namespace std;
-
+/**
+ * @brief Constructor para la pantalla del primer nivel
+ * @param parent QWidget puntero
+ */
 Level1::Level1(QWidget * parent){
     QGraphicsScene *scene = new QGraphicsScene(); // Se crea la escena
     scene -> setSceneRect(0, 0, 900, 600);
 
     puntoslista = new puntosLista();
 
-    for(int i = 0; i < 12; i++){
-        SimpleList<SimpleList<int>> fila2;
-        for(int j = 0; j < 18; j++){
-            SimpleList<int> informacion;
-            fila2.insertHead(informacion);
-        }
-        matriz.insertHead(fila2);
-    }
-
-
-    matriz.getPosVal(0).getPosVal(0).insertHead(1);
-
-    // Se agrega el contorno del mapa como obstaculo
-    for(int w = 0; w < 18; w++){
-        matriz.getPosVal(0).getPosVal(w).insertHead(1);
-    }
-    for(int k = 1; k < 12; k++){
-        matriz.getPosVal(k).getPosVal(16).insertHead(1);
-    }
-    for(int z = 0; z < 17; z++){
-        matriz.getPosVal(11).getPosVal(z).insertHead(1);
-    }
-    for(int c = 1; c < 11; c++){
-        matriz.getPosVal(c).getPosVal(0).insertHead(1);
-    }
-
-
-    //Se agregan las paredes de la columna 1
-    matriz.getPosVal(1).getPosVal(3).insertHead(1);
-    matriz.getPosVal(1).getPosVal(15).insertHead(1);
-
-    // Se agregan laas paredes de la columna 2
-    matriz.getPosVal(2).getPosVal(6).insertHead(1);
-    matriz.getPosVal(2).getPosVal(7).insertHead(1);
-    matriz.getPosVal(2).getPosVal(8).insertHead(1);
-    matriz.getPosVal(2).getPosVal(9).insertHead(1);
-    matriz.getPosVal(2).getPosVal(10).insertHead(1);
-    matriz.getPosVal(2).getPosVal(11).insertHead(1);
-
-    //Se agregan las paredes de la columna 3
-    matriz.getPosVal(3).getPosVal(1).insertHead(1);
-    matriz.getPosVal(3).getPosVal(16).insertHead(1);
-
-    //Se agregan las paredes de la columna 4
-    matriz.getPosVal(4).getPosVal(4).insertHead(1);
-    matriz.getPosVal(4).getPosVal(5).insertHead(1);
-    matriz.getPosVal(4).getPosVal(6).insertHead(1);
-    matriz.getPosVal(4).getPosVal(7).insertHead(1);
-
-    matriz.getPosVal(4).getPosVal(10).insertHead(1);
-    matriz.getPosVal(4).getPosVal(11).insertHead(1);
-    matriz.getPosVal(4).getPosVal(12).insertHead(1);
-    matriz.getPosVal(4).getPosVal(13).insertHead(1);
-
-    //Se agregan las paredes de la columna 5
-    matriz.getPosVal(5).getPosVal(4).insertHead(1);
-    matriz.getPosVal(5).getPosVal(5).insertHead(1);
-    matriz.getPosVal(5).getPosVal(6).insertHead(1);
-
-    matriz.getPosVal(5).getPosVal(11).insertHead(1);
-    matriz.getPosVal(5).getPosVal(12).insertHead(1);
-    matriz.getPosVal(5).getPosVal(13).insertHead(1);
-
-    //Se agregaan las paredes de la columna 7
-    matriz.getPosVal(7).getPosVal(5).insertHead(1);
-    matriz.getPosVal(7).getPosVal(6).insertHead(1);
-    matriz.getPosVal(7).getPosVal(7).insertHead(1);
-    matriz.getPosVal(7).getPosVal(8).insertHead(1);
-    matriz.getPosVal(7).getPosVal(9).insertHead(1);
-    matriz.getPosVal(7).getPosVal(10).insertHead(1);
-    matriz.getPosVal(7).getPosVal(11).insertHead(1);
-    matriz.getPosVal(7).getPosVal(12).insertHead(1);
-
-    //Se agregan las paredes de la columna 8
-    matriz.getPosVal(8).getPosVal(1).insertHead(1);
-    matriz.getPosVal(8).getPosVal(8).insertHead(1);
-    matriz.getPosVal(8).getPosVal(9).insertHead(1);
-    matriz.getPosVal(8).getPosVal(16).insertHead(1);
-
-    //se agregan las paredes de la columna 9
-    matriz.getPosVal(9).getPosVal(1).insertHead(1);
-    matriz.getPosVal(9).getPosVal(2).insertHead(1);
-    matriz.getPosVal(9).getPosVal(3).insertHead(1);
-    matriz.getPosVal(9).getPosVal(8).insertHead(1);
-    matriz.getPosVal(9).getPosVal(9).insertHead(1);
-    matriz.getPosVal(9).getPosVal(14).insertHead(1);
-    matriz.getPosVal(9).getPosVal(15).insertHead(1);
-    matriz.getPosVal(9).getPosVal(16).insertHead(1);
-
-
-    //Se agregan las paredes de la columna 10
-    matriz.getPosVal(10).getPosVal(5).insertHead(1);
-    matriz.getPosVal(10).getPosVal(6).insertHead(1);
-    matriz.getPosVal(10).getPosVal(11).insertHead(1);
-    matriz.getPosVal(10).getPosVal(12).insertHead(1);
-
-    cout << mapa[7][9] << endl;
+     cout << mapa[7][9] << endl;
 
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -229,6 +136,9 @@ Level1::Level1(QWidget * parent){
 
     show();
 }
+/**
+ * @brief Crea el mapa colocando las celdas y los puntos
+ */
 void Level1::CreateMap() {
     int ypos = 0;
     int xpos = 7;
@@ -265,6 +175,10 @@ void Level1::CreateMap() {
         }
     }
 }
+/**
+ * @brief Funcion que se encarga de la interaccion con teclas
+ * @param event QKeyEvent evento de una tecla
+ */
 void Level1::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_K) { //La letra K crea nuevos niveles
@@ -350,7 +264,9 @@ void Level1::keyPressEvent(QKeyEvent *event)
         }
     }
 }
-
+/**
+ * @brief Revisa si el jugador se encuentra en las mismas coordenadas que un punto
+ */
 void Level1::comerPuntos(){
     for(int i = 0; i < puntoslista->lenLista();i++) {
         if (playerpacman->pos() == puntoslista->findPuntos(i)->pos()) {
@@ -370,6 +286,9 @@ void Level1::comerPuntos(){
         CreateLevels(nivel);
     }
 }
+/**
+ * @brief Revisa si un enemigo se encuentra en las mismas coordenadas que el jugador
+ */
 void Level1::revisarEnemigos(){
     if (playerpacman->pos() == enemigo1->pos()){
         vidas = vidas - 1;
@@ -395,7 +314,10 @@ void Level1::revisarEnemigos(){
         go->show();
     }
 }
-
+/**
+ * @brief Define un patron para mostrar las celdas
+ * @param lvl int nivel en que esta
+ */
 void Level1::CreateLevels(int lvl){
     switch(lvl){
         case 1:{
@@ -420,7 +342,9 @@ void Level1::CreateLevels(int lvl){
         }
     }
 }
-
+/**
+ * @brief Funcion que revisa si el enemigo1 puede moverse en determinada direccion validando si hay obstaculos
+ */
 void Level1::MoveFirstEnemy() {
     if (moving1 == false){
         int num = QRandomGenerator::global() -> bounded(0, 4); // escoge numero random del 0 al 3
@@ -473,7 +397,9 @@ void Level1::MoveFirstEnemy() {
         }
     }
 }
-
+/**
+ * @brief Funcion que revisa si el enemigo2 puede moverse en determinada direccion validando si hay obstaculos
+ */
 void Level1::MoveSecondEnemy() {
     if(moving2 == false){
         int num = QRandomGenerator::global() -> bounded(0, 4); // escoge numero random del 0 al 3
@@ -526,7 +452,9 @@ void Level1::MoveSecondEnemy() {
         }
     }
 }
-
+/**
+ * @brief Funcion que revisa si el enemigo3 puede moverse en determinada direccion validando si hay obstaculos
+ */
 void Level1::MoveThirdEnemy() {
     if(moving3 == false){
         int num = QRandomGenerator::global() -> bounded(0, 4); // escoge numero random del 0 al 3
@@ -579,7 +507,9 @@ void Level1::MoveThirdEnemy() {
         }
     }
 }
-
+/**
+ * @brief Funcion que revisa si el enemigo4 puede moverse en determinada direccion validando si hay obstaculos
+ */
 void Level1::MoveFourthEnemy() {
     if(moving4 == false){
         int num = QRandomGenerator::global() -> bounded(0, 4); // escoge numero random del 0 al 3

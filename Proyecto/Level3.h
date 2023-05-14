@@ -13,7 +13,6 @@
 #include "puntosLista.h"
 #include "Enemigo1.h"
 #include "PlayerPacman.h"
-
 #include "Enemigo2.h"
 #include "Enemigo3.h"
 #include "Enemigo4.h"
@@ -57,7 +56,6 @@ private:
     Enemigo2 *enemigo2;
     Enemigo3 *enemigo3;
     Enemigo4 *enemigo4;
-    //SimpleList<SimpleList<SimpleList<int>>> matriz;
     puntosLista *puntoslista;
 
     int mapa[12][18] =

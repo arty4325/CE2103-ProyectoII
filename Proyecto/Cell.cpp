@@ -5,7 +5,11 @@
 #include <iostream>
 
 using namespace std;
-
+/**
+ *@brief constructor para los objetos de las celdas del mapa
+ * @param type char tipo de celda
+ * @param parent QGraphicsItem puntero
+ */
 Cell::Cell(char type,QGraphicsItem *parent)
         : QGraphicsPixmapItem(parent){
     this->type = type;
