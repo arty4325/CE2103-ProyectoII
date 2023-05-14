@@ -431,18 +431,24 @@ void Level1::MoveMobile(){
                 pacmanY -= 1;
                 playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() - 50);
                 //cout << "Se estripa w" << endl;
+                comerPuntos();
+                revisarEnemigos();
             }
         } else if (datosSerial.getPosVal(2) > 3) {
             if (mapa[pacmanY + 1][pacmanX] == 0) {
                 pacmanY += 1;
                 playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() + 50);
                 //cout << "Se estripa S" << endl;
+                comerPuntos();
+                revisarEnemigos();
             }
         } else if (datosSerial.getPosVal(1) < -3) {
             if (mapa[pacmanY][pacmanX - 1] == 0) {
                 pacmanX -= 1;
                 playerpacman->setPos(playerpacman->pos().x() - 50, playerpacman->pos().y());
                 //cout << "Se estripa A" << endl;
+                comerPuntos();
+                revisarEnemigos();
             }
         } else if (datosSerial.getPosVal(1) > 3) {
             if (mapa[pacmanY][pacmanX + 1] == 0) {
@@ -450,6 +456,8 @@ void Level1::MoveMobile(){
                 //pacman->setPos(+50,+0);
                 playerpacman->setPos(playerpacman->pos().x() + 50, playerpacman->pos().y());
                 //cout << "Se estripa D" << endl;
+                comerPuntos();
+                revisarEnemigos();
             }
         }
     }
