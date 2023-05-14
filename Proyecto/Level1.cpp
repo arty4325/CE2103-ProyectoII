@@ -1,7 +1,6 @@
 //
 // Created by monicaegm on 4/27/23.
 //
-#include <QTimer>
 #include <QGraphicsRectItem>
 #include <QRandomGenerator>
 #include <QWidget>
@@ -9,6 +8,14 @@
 #include <QLabel>
 #include <string>
 #include <iostream>
+#include "Socket.h"
+#include "SocketThread.h"
+#include <QTimer>
+#include <iostream>
+#include <cstring>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <unistd.h>
 #include "Cell.h"
 #include "Level1.h"
 #include "Enemigo1.h"
