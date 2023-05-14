@@ -1,0 +1,91 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.tiquillo.tutoria"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:4:5-67
+11-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:5:5-79
+12-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:5:22-76
+13
+14    <application
+14-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:7:5-32:19
+15        android:allowBackup="true"
+15-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:8:9-35
+16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+16-->[androidx.core:core:1.7.0] /home/oscaraad/.gradle/caches/transforms-3/5586099dc2be2a001572cf14c2426ba8/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+17        android:dataExtractionRules="@xml/data_extraction_rules"
+17-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:9:9-65
+18        android:debuggable="true"
+19        android:fullBackupContent="@xml/backup_rules"
+19-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:10:9-54
+20        android:icon="@mipmap/ic_launcher"
+20-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:11:9-43
+21        android:label="@string/app_name"
+21-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:12:9-41
+22        android:roundIcon="@mipmap/ic_launcher_round"
+22-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:13:9-54
+23        android:supportsRtl="true"
+23-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:14:9-35
+24        android:theme="@style/Theme.Tutoria" >
+24-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:15:9-45
+25        <activity
+25-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:17:9-31:20
+26            android:name="com.tiquillo.tutoria.MainActivity"
+26-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:18:13-41
+27            android:exported="true"
+27-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:19:13-36
+28            android:theme="@style/AppTheme" >
+28-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:20:13-44
+29            <intent-filter>
+29-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:22:13-26:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:23:17-69
+30-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:23:25-66
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:25:17-77
+32-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:25:27-74
+33            </intent-filter>
+34
+35            <meta-data
+35-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:28:13-30:36
+36                android:name="android.app.lib_name"
+36-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:29:17-52
+37                android:value="" />
+37-->/home/oscaraad/TEC/2023SEMI/Datos II/FinalAndroidApp/Tutoria-Android-LinuxVM/Tutoria/app/src/main/AndroidManifest.xml:30:17-33
+38        </activity>
+39
+40        <provider
+40-->[androidx.emoji2:emoji2:1.0.0] /home/oscaraad/.gradle/caches/transforms-3/4b580972190c9e236a669c6a1f1f8a9e/transformed/emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+41            android:name="androidx.startup.InitializationProvider"
+41-->[androidx.emoji2:emoji2:1.0.0] /home/oscaraad/.gradle/caches/transforms-3/4b580972190c9e236a669c6a1f1f8a9e/transformed/emoji2-1.0.0/AndroidManifest.xml:27:13-67
+42            android:authorities="com.tiquillo.tutoria.androidx-startup"
+42-->[androidx.emoji2:emoji2:1.0.0] /home/oscaraad/.gradle/caches/transforms-3/4b580972190c9e236a669c6a1f1f8a9e/transformed/emoji2-1.0.0/AndroidManifest.xml:28:13-68
+43            android:exported="false" >
+43-->[androidx.emoji2:emoji2:1.0.0] /home/oscaraad/.gradle/caches/transforms-3/4b580972190c9e236a669c6a1f1f8a9e/transformed/emoji2-1.0.0/AndroidManifest.xml:29:13-37
+44            <meta-data
+44-->[androidx.emoji2:emoji2:1.0.0] /home/oscaraad/.gradle/caches/transforms-3/4b580972190c9e236a669c6a1f1f8a9e/transformed/emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+45                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+45-->[androidx.emoji2:emoji2:1.0.0] /home/oscaraad/.gradle/caches/transforms-3/4b580972190c9e236a669c6a1f1f8a9e/transformed/emoji2-1.0.0/AndroidManifest.xml:32:17-75
+46                android:value="androidx.startup" />
+46-->[androidx.emoji2:emoji2:1.0.0] /home/oscaraad/.gradle/caches/transforms-3/4b580972190c9e236a669c6a1f1f8a9e/transformed/emoji2-1.0.0/AndroidManifest.xml:33:17-49
+47            <meta-data
+47-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/oscaraad/.gradle/caches/transforms-3/dd1064e81b3445eb173cd45521bfd469/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+48                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+48-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/oscaraad/.gradle/caches/transforms-3/dd1064e81b3445eb173cd45521bfd469/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+49                android:value="androidx.startup" />
+49-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/oscaraad/.gradle/caches/transforms-3/dd1064e81b3445eb173cd45521bfd469/transformed/lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+50        </provider>
+51    </application>
+52
+53</manifest>
