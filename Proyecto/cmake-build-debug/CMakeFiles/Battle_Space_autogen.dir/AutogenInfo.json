@@ -133,9 +133,27 @@
 			null
 		],
 		[
-			"/home/monicaegm/CE2103-ProyectoII/Proyecto/GameWindow.h",
+			"/home/monicaegm/CE2103-ProyectoII/Proyecto/Level1.h",
 			"MU",
-			"EWIEGA46WW/moc_GameWindow.cpp",
+			"EWIEGA46WW/moc_Level1.cpp",
+			null
+		],
+		[
+			"/home/monicaegm/CE2103-ProyectoII/Proyecto/Level2.h",
+			"MU",
+			"EWIEGA46WW/moc_Level2.cpp",
+			null
+		],
+		[
+			"/home/monicaegm/CE2103-ProyectoII/Proyecto/Level3.h",
+			"MU",
+			"EWIEGA46WW/moc_Level3.cpp",
+			null
+		],
+		[
+			"/home/monicaegm/CE2103-ProyectoII/Proyecto/Level4.h",
+			"MU",
+			"EWIEGA46WW/moc_Level4.cpp",
 			null
 		],
 		[
@@ -254,11 +272,10 @@
 			null
 		],
 		[ "/home/monicaegm/CE2103-ProyectoII/Proyecto/GameOver.cpp", "MU", null ],
-		[
-			"/home/monicaegm/CE2103-ProyectoII/Proyecto/GameWindow.cpp",
-			"MU",
-			null
-		],
+		[ "/home/monicaegm/CE2103-ProyectoII/Proyecto/Level1.cpp", "MU", null ],
+		[ "/home/monicaegm/CE2103-ProyectoII/Proyecto/Level2.cpp", "MU", null ],
+		[ "/home/monicaegm/CE2103-ProyectoII/Proyecto/Level3.cpp", "MU", null ],
+		[ "/home/monicaegm/CE2103-ProyectoII/Proyecto/Level4.cpp", "MU", null ],
 		[
 			"/home/monicaegm/CE2103-ProyectoII/Proyecto/Listas/ListaSimple.cpp",
 			"MU",

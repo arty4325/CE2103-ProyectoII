@@ -334,29 +334,101 @@ GameOver.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/GameOver.cpp.s
 .PHONY : GameOver.cpp.s
 
-GameWindow.o: GameWindow.cpp.o
-.PHONY : GameWindow.o
+Level1.o: Level1.cpp.o
+.PHONY : Level1.o
 
 # target to build an object file
-GameWindow.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/GameWindow.cpp.o
-.PHONY : GameWindow.cpp.o
+Level1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Level1.cpp.o
+.PHONY : Level1.cpp.o
 
-GameWindow.i: GameWindow.cpp.i
-.PHONY : GameWindow.i
+Level1.i: Level1.cpp.i
+.PHONY : Level1.i
 
 # target to preprocess a source file
-GameWindow.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/GameWindow.cpp.i
-.PHONY : GameWindow.cpp.i
+Level1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Level1.cpp.i
+.PHONY : Level1.cpp.i
 
-GameWindow.s: GameWindow.cpp.s
-.PHONY : GameWindow.s
+Level1.s: Level1.cpp.s
+.PHONY : Level1.s
 
 # target to generate assembly for a file
-GameWindow.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/GameWindow.cpp.s
-.PHONY : GameWindow.cpp.s
+Level1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Level1.cpp.s
+.PHONY : Level1.cpp.s
+
+Level2.o: Level2.cpp.o
+.PHONY : Level2.o
+
+# target to build an object file
+Level2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Level2.cpp.o
+.PHONY : Level2.cpp.o
+
+Level2.i: Level2.cpp.i
+.PHONY : Level2.i
+
+# target to preprocess a source file
+Level2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Level2.cpp.i
+.PHONY : Level2.cpp.i
+
+Level2.s: Level2.cpp.s
+.PHONY : Level2.s
+
+# target to generate assembly for a file
+Level2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Level2.cpp.s
+.PHONY : Level2.cpp.s
+
+Level3.o: Level3.cpp.o
+.PHONY : Level3.o
+
+# target to build an object file
+Level3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Level3.cpp.o
+.PHONY : Level3.cpp.o
+
+Level3.i: Level3.cpp.i
+.PHONY : Level3.i
+
+# target to preprocess a source file
+Level3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Level3.cpp.i
+.PHONY : Level3.cpp.i
+
+Level3.s: Level3.cpp.s
+.PHONY : Level3.s
+
+# target to generate assembly for a file
+Level3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Level3.cpp.s
+.PHONY : Level3.cpp.s
+
+Level4.o: Level4.cpp.o
+.PHONY : Level4.o
+
+# target to build an object file
+Level4.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Level4.cpp.o
+.PHONY : Level4.cpp.o
+
+Level4.i: Level4.cpp.i
+.PHONY : Level4.i
+
+# target to preprocess a source file
+Level4.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Level4.cpp.i
+.PHONY : Level4.cpp.i
+
+Level4.s: Level4.cpp.s
+.PHONY : Level4.s
+
+# target to generate assembly for a file
+Level4.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Battle_Space.dir/build.make CMakeFiles/Battle_Space.dir/Level4.cpp.s
+.PHONY : Level4.cpp.s
 
 Listas/ListaSimple.o: Listas/ListaSimple.cpp.o
 .PHONY : Listas/ListaSimple.o
@@ -608,9 +680,18 @@ help:
 	@echo "... GameOver.o"
 	@echo "... GameOver.i"
 	@echo "... GameOver.s"
-	@echo "... GameWindow.o"
-	@echo "... GameWindow.i"
-	@echo "... GameWindow.s"
+	@echo "... Level1.o"
+	@echo "... Level1.i"
+	@echo "... Level1.s"
+	@echo "... Level2.o"
+	@echo "... Level2.i"
+	@echo "... Level2.s"
+	@echo "... Level3.o"
+	@echo "... Level3.i"
+	@echo "... Level3.s"
+	@echo "... Level4.o"
+	@echo "... Level4.i"
+	@echo "... Level4.s"
 	@echo "... Listas/ListaSimple.o"
 	@echo "... Listas/ListaSimple.i"
 	@echo "... Listas/ListaSimple.s"

@@ -55,3 +55,12 @@ void puntosLista::mostrar(){
         current = current ->next;
     }
 }
+void puntosLista::eliminarLista() {
+    Puntos* current = head;
+    while (current != nullptr) {
+        Puntos* temp = current;
+        current = current->next;
+        delete temp;
+    }
+    head = nullptr;
+}

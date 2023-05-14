@@ -152,10 +152,28 @@
 		<Unit filename="/home/monicaegm/CE2103-ProyectoII/Proyecto/GameOver.h">
 			<Option target="Battle_Space"/>
 		</Unit>
-		<Unit filename="/home/monicaegm/CE2103-ProyectoII/Proyecto/GameWindow.cpp">
+		<Unit filename="/home/monicaegm/CE2103-ProyectoII/Proyecto/Level1.cpp">
 			<Option target="Battle_Space"/>
 		</Unit>
-		<Unit filename="/home/monicaegm/CE2103-ProyectoII/Proyecto/GameWindow.h">
+		<Unit filename="/home/monicaegm/CE2103-ProyectoII/Proyecto/Level1.h">
+			<Option target="Battle_Space"/>
+		</Unit>
+		<Unit filename="/home/monicaegm/CE2103-ProyectoII/Proyecto/Level2.cpp">
+			<Option target="Battle_Space"/>
+		</Unit>
+		<Unit filename="/home/monicaegm/CE2103-ProyectoII/Proyecto/Level2.h">
+			<Option target="Battle_Space"/>
+		</Unit>
+		<Unit filename="/home/monicaegm/CE2103-ProyectoII/Proyecto/Level3.cpp">
+			<Option target="Battle_Space"/>
+		</Unit>
+		<Unit filename="/home/monicaegm/CE2103-ProyectoII/Proyecto/Level3.h">
+			<Option target="Battle_Space"/>
+		</Unit>
+		<Unit filename="/home/monicaegm/CE2103-ProyectoII/Proyecto/Level4.cpp">
+			<Option target="Battle_Space"/>
+		</Unit>
+		<Unit filename="/home/monicaegm/CE2103-ProyectoII/Proyecto/Level4.h">
 			<Option target="Battle_Space"/>
 		</Unit>
 		<Unit filename="/home/monicaegm/CE2103-ProyectoII/Proyecto/Listas/ListaSimple.cpp">

@@ -15,6 +15,8 @@ public:
     void mostrar();
 
     Puntos* head;
+
+    void eliminarLista();
 };
 
 

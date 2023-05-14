@@ -8,7 +8,7 @@
 #include <QTimer>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include "GameWindow.h"
+#include "Level1.h"
 #include "MenuDificultades.h"
 
 MenuDificultades * menuGeneral;

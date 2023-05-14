@@ -11,16 +11,16 @@
 #include <QRectF>
 #include <iostream>
 #include "MenuDificultades.h"
-#include "GameWindow.h"
+#include "Level1.h"
 
 using namespace std;
 
 
 
 void MenuDificultades::medium() {
-    GameWindow *medium;
+    Level1 *medium;
     cout << "Funciona el otro boton de la interfaz" << endl;
-    medium = new GameWindow();
+    medium = new Level1();
     medium -> show();
     this -> close();
 }
