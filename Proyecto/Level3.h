@@ -48,6 +48,9 @@ private:
     int Enemy4X;
     int Enemy4Y;
 
+    int powerX;
+    int powerY;
+
     QTimer* movementFirstEnemy;
     QTimer* movementSecondEnemy;
     QTimer* movementThirdEnemy;

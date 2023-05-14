@@ -815,6 +815,8 @@ void Level2::PlacePowerRandomPos(){
     int colum = QRandomGenerator::global() -> bounded(0, 12);
     int fila = QRandomGenerator::global() -> bounded(0, 18);
     if(mapa[colum][fila] == 0){
+        powerX = fila;
+        powerY = colum;
         poder -> setPos((fila)*50, (colum)*50);
     } else {
         return PlacePowerRandomPos();
