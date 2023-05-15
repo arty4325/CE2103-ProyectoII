@@ -130,6 +130,8 @@ private:
     void MoveMobile();
 
     void PlacePowerRandomPos();
+
+    void PathfindingA(int beginX, int beginY, int endX, int endY);
 };
 
 
