@@ -830,6 +830,8 @@ void Level1::PathfindingA(int beginX, int beginY, int endX, int endY){
     SimpleList<SimpleList<int>> openList;
     SimpleList<SimpleList<int>> closedList;
 
+    bool isRunning = true;
+
     // Primero se tiene que calcular el valor de H para cada casilla
     for(int i = 0; i < 12; i++){
         SimpleList<int> columna;
@@ -843,12 +845,15 @@ void Level1::PathfindingA(int beginX, int beginY, int endX, int endY){
         hCasillas.insertEnd(columna);
     }
 
+    // Se verifico que esto esta bien implementado
+    /*
     for(int i = 0; i < 12; i++){
         for(int k = 0; k < 18; k++){
             cout << hCasillas.getPosVal(i).getPosVal(k) << endl;
         }
         cout << "FIN DE LA FILA" << endl;
     }
+    */
 
     // Una ves calculado el valor de H nada mas se van a llenar las otras listas
     // De numeros arbitrarios
@@ -864,13 +869,58 @@ void Level1::PathfindingA(int beginX, int beginY, int endX, int endY){
     for(int i = 0; i < 12; i++){
         SimpleList<int> columna;
         for(int k = 0; k < 18; k++){
-            columna.insertEnd(0);
+            columna.insertEnd(1000000);
         }
         completeCasillas.insertEnd(columna);
     }
 
-    // Una ves hecho esto, se va a poner el punto de inicio en closedList
+    // Una ves hecho esto, se va a poner el punto de inicio en openList
     SimpleList<int> puntoInicio;
+    puntoInicio.insertEnd(beginX);
+    puntoInicio.insertEnd(beginY);
+
+    openList.insertEnd(puntoInicio);
+
+    completeCasillas.getPosVal(beginY).modPos(beginX, 0);
+
+    // A partir de esto se puede comenzar la ejecucion
+    // Se tiene que implementar que se revisen las casillas adyacentes
+    while(isRunning){
+        // Lo primero que quiero hacer es obtener el valor mas pequeño del openList
+        int tempLess = 10000000;
+
+        int selecOpenX;
+        int selecOpenY;
+
+        for(int i = 0; i < openList.getSize(); i++){
+            int tempLessX = openList.getPosVal(i).getPosVal(0);
+            int tempLessY = openList.getPosVal(i).getPosVal(1);
+            if(completeCasillas.getPosVal(tempLessY).getPosVal(tempLessX) < tempLess){
+                tempLess = completeCasillas.getPosVal(tempLessY).getPosVal(tempLessX);
+                selecOpenX = tempLessX;
+                selecOpenY = tempLessY;
+            }
+        }
+
+        // Esto funciono bien
+        //cout << selecOpenX << " seleccion " << selecOpenY << endl;
+
+
+        // Una ves realizado esto es necesaario buscar en las casillas adyacentes disponibles
+        // Como las figuras solamente tienen permitido moverse arriba abajo izquierda derecha
+        // No se evaluaran diagonales en el proceso
+
+        // Hay que verificar dos cosas
+        // 1. que no haya pared
+        // 2. que no este seleccionada previamente
+        // Despues de hacer eso los que estan disponibles se meten en open list
+        // Ademas de eso la casilla seleccionada se debe de meter en closedList
+
+        
+
+
+        isRunning = false;
+    }
 
 
 
