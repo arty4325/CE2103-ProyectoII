@@ -33,8 +33,8 @@ Level4::Level4(QWidget * parent){
     scene -> setSceneRect(0, 0, 900, 600);
 
     puntoslista = new puntosLista();
+    isPowerActivated = false;
 
-    cout << mapa[7][9] << endl;
 
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -102,9 +102,7 @@ void Level4::keyPressEvent(QKeyEvent *event)
         CreateLevels(nivel);
     }
     if (event->key() == Qt::Key_W) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX << pacmanY - 1 << endl;
-        cout << mapa[pacmanX][pacmanY - 1] << endl;
+        comerPoderes();
         if(mapa[pacmanY - 1][pacmanX] == 0) {
             pacmanY -= 1;
             playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() - 50);
@@ -117,9 +115,7 @@ void Level4::keyPressEvent(QKeyEvent *event)
         }
     }
     if (event->key() == Qt::Key_S) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX << pacmanY + 1<< endl;
-        cout << mapa[pacmanY + 1][pacmanX] << endl;
+        comerPoderes();
         //pacman->setPos(+0,-50);
         if(mapa[pacmanY + 1][pacmanX] == 0) {
             pacmanY += 1;
@@ -133,10 +129,7 @@ void Level4::keyPressEvent(QKeyEvent *event)
         }
     }
     if (event->key() == Qt::Key_A) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX - 1 << pacmanY << endl;
-        cout << mapa[pacmanY][pacmanX - 1] << endl;
-        //pacman->setPos(-50,+0);
+        comerPoderes();
         if(mapa[pacmanY][pacmanX - 1] == 0) {
             pacmanX -= 1;
             playerpacman->setPos(playerpacman->pos().x() - 50, playerpacman->pos().y());
@@ -149,9 +142,7 @@ void Level4::keyPressEvent(QKeyEvent *event)
         }
     }
     if (event->key() == Qt::Key_D) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX + 1 << pacmanY << endl;
-        cout << mapa[pacmanX + 1][pacmanY] << endl;
+        comerPoderes();
         if(mapa[pacmanY][pacmanX + 1] == 0) {
             pacmanX += 1;
             playerpacman->setPos(playerpacman->pos().x() + 50, playerpacman->pos().y());
@@ -192,28 +183,143 @@ void Level4::comerPuntos(){
  * @brief Revisa si un enemigo se encuentra en las mismas coordenadas que el jugador
  */
 void Level4::revisarEnemigos(){
-    if (playerpacman->pos() == enemigo1->pos()){
-        vidas = vidas - 1;
-        labelVidas->setText("Vidas: "+ QString::number(vidas,10));
-    }
-    if (playerpacman->pos() == enemigo2->pos()){
-        vidas = vidas - 1;
-        labelVidas->setText("Vidas: "+ QString::number(vidas,10));
-    }
-    if (playerpacman->pos() == enemigo3->pos()){
-        vidas = vidas - 1;
-        labelVidas->setText("Vidas: "+ QString::number(vidas,10));
-    }
-    if (playerpacman->pos() == enemigo4->pos()){
-        vidas = vidas - 1;
-        labelVidas->setText("Vidas: "+ QString::number(vidas,10));
-    }
-    if (vidas == 0){ //se pierden todas las vidas
-        GameOver *go;
-        go = new GameOver();
-        this->close();
-        revisarChoque -> stop();
-        go->show();
+    if(isPowerActivated == false) {
+        if (playerpacman->pos() == enemigo1->pos()) {
+            vidas = vidas - 1;
+            labelVidas->setText("Vidas: " + QString::number(vidas, 10));
+            bool haveMoveIt;
+            haveMoveIt = false;
+            while (haveMoveIt == false) {
+                int tryY = QRandomGenerator::global()->bounded(0, 12);
+                int tryX = QRandomGenerator::global()->bounded(0, 18);
+                if (mapa[tryY][tryX] == 0) {
+                    playerpacman->setPos(tryX * 50, tryY * 50);
+                    pacmanX = tryX;
+                    pacmanY = tryY;
+                    haveMoveIt = true;
+                }
+            }
+        }
+        if (playerpacman->pos() == enemigo2->pos()) {
+            vidas = vidas - 1;
+            labelVidas->setText("Vidas: " + QString::number(vidas, 10));
+            bool haveMoveIt;
+            haveMoveIt = false;
+            while (haveMoveIt == false) {
+                int tryY = QRandomGenerator::global()->bounded(0, 12);
+                int tryX = QRandomGenerator::global()->bounded(0, 18);
+                if (mapa[tryY][tryX] == 0) {
+                    playerpacman->setPos(tryX * 50, tryY * 50);
+                    pacmanX = tryX;
+                    pacmanY = tryY;
+                    haveMoveIt = true;
+                }
+            }
+        }
+        if (playerpacman->pos() == enemigo3->pos()) {
+            vidas = vidas - 1;
+            labelVidas->setText("Vidas: " + QString::number(vidas, 10));
+            bool haveMoveIt;
+            haveMoveIt = false;
+            while (haveMoveIt == false) {
+                int tryY = QRandomGenerator::global()->bounded(0, 12);
+                int tryX = QRandomGenerator::global()->bounded(0, 18);
+                if (mapa[tryY][tryX] == 0) {
+                    playerpacman->setPos(tryX * 50, tryY * 50);
+                    pacmanX = tryX;
+                    pacmanY = tryY;
+                    haveMoveIt = true;
+                }
+            }
+        }
+        if (playerpacman->pos() == enemigo4->pos()) {
+            vidas = vidas - 1;
+            labelVidas->setText("Vidas: " + QString::number(vidas, 10));
+            bool haveMoveIt;
+            haveMoveIt = false;
+            while (haveMoveIt == false) {
+                int tryY = QRandomGenerator::global()->bounded(0, 12);
+                int tryX = QRandomGenerator::global()->bounded(0, 18);
+                if (mapa[tryY][tryX] == 0) {
+                    playerpacman->setPos(tryX * 50, tryY * 50);
+                    pacmanX = tryX;
+                    pacmanY = tryY;
+                    haveMoveIt = true;
+                }
+            }
+        }
+        if (vidas == 0) { //se pierden todas las vidas
+            GameOver *go;
+            go = new GameOver();
+            this->close();
+            revisarChoque->stop();
+            go->show();
+        }
+    } else if (isPowerActivated){
+        if (playerpacman->pos() == enemigo1->pos()) {
+            puntaje += 50;
+            //Hay que desaparecer el enemigo y aparecerlo en un lugar random
+            bool hasPositionedIt;
+            hasPositionedIt = false;
+            while(hasPositionedIt == false){
+                int tryPosX = QRandomGenerator::global() -> bounded(0, 18);
+                int tryPosY = QRandomGenerator::global() -> bounded(0, 12);
+                if(mapa[tryPosY][tryPosX] == 0){
+                    Enemy1X = tryPosX;
+                    Enemy1Y = tryPosY;
+                    enemigo1 -> setPos(tryPosX*50, tryPosY*50);
+                    hasPositionedIt = true;
+                }
+            }
+        }
+        if (playerpacman->pos() == enemigo2->pos()) {
+            puntaje += 50;
+            //Hay que desaparecer el enemigo y aparecerlo en un lugar random
+            bool hasPositionedIt;
+            hasPositionedIt = false;
+            while(hasPositionedIt == false){
+                int tryPosX = QRandomGenerator::global() -> bounded(0, 18);
+                int tryPosY = QRandomGenerator::global() -> bounded(0, 12);
+                if(mapa[tryPosY][tryPosX] == 0){
+                    Enemy2X = tryPosX;
+                    Enemy2Y = tryPosY;
+                    enemigo2 -> setPos(tryPosX*50, tryPosY*50);
+                    hasPositionedIt = true;
+                }
+            }
+        }
+        if (playerpacman->pos() == enemigo3->pos()) {
+            puntaje += 50;
+            //Hay que desaparecer el enemigo y aparecerlo en un lugar random
+            bool hasPositionedIt;
+            hasPositionedIt = false;
+            while(hasPositionedIt == false){
+                int tryPosX = QRandomGenerator::global() -> bounded(0, 18);
+                int tryPosY = QRandomGenerator::global() -> bounded(0, 12);
+                if(mapa[tryPosY][tryPosX] == 0){
+                    Enemy3X = tryPosX;
+                    Enemy3Y = tryPosY;
+                    enemigo3 -> setPos(tryPosX*50, tryPosY*50);
+                    hasPositionedIt = true;
+                }
+            }
+        }
+        if (playerpacman->pos() == enemigo4->pos()) {
+            puntaje += 50;
+            //Hay que desaparecer el enemigo y aparecerlo en un lugar random
+            bool hasPositionedIt;
+            hasPositionedIt = false;
+            while(hasPositionedIt == false){
+                int tryPosX = QRandomGenerator::global() -> bounded(0, 18);
+                int tryPosY = QRandomGenerator::global() -> bounded(0, 12);
+                if(mapa[tryPosY][tryPosX] == 0){
+                    Enemy4X = tryPosX;
+                    Enemy4Y = tryPosY;
+                    enemigo4 -> setPos(tryPosX*50, tryPosY*50);
+                    hasPositionedIt = true;
+                }
+            }
+        }
     }
 }
 /**
@@ -248,54 +354,71 @@ void Level4::CreateLevels(int lvl){
  * @brief Funcion que revisa si el enemigo1 puede moverse en determinada direccion validando si hay obstaculos
  */
 void Level4::MoveFirstEnemy() {
-    if (moving1 == false){
-        int num = QRandomGenerator::global() -> bounded(0, 4); // escoge numero random del 0 al 3
-        if(num == 0){
-            // Me quiero mover hacia arriba
-            // Tengo que revisar si puedo
-            if(mapa[Enemy1Y -  1][Enemy1X] == 0){
-                moving1 = true;
-                direc1X = 0;
-                direc1Y = -1;
-            } else {
-                return MoveFirstEnemy();
-            }
-        } else if(num == 1){
-            if(mapa[Enemy1Y][Enemy1X + 1] == 0){
-                moving1 = true;
-                direc1X = 1;
-                direc1Y = 0;
-            } else {
-                return MoveFirstEnemy();
-            }
+    if (isSearchingPower == false) {
+        if (moving1 == false) {
+            int num = QRandomGenerator::global()->bounded(0, 4); // escoge numero random del 0 al 3
+            if (num == 0) {
+                // Me quiero mover hacia arriba
+                // Tengo que revisar si puedo
+                if (mapa[Enemy1Y - 1][Enemy1X] == 0) {
+                    moving1 = true;
+                    direc1X = 0;
+                    direc1Y = -1;
+                } else {
+                    return MoveFirstEnemy();
+                }
+            } else if (num == 1) {
+                if (mapa[Enemy1Y][Enemy1X + 1] == 0) {
+                    moving1 = true;
+                    direc1X = 1;
+                    direc1Y = 0;
+                } else {
+                    return MoveFirstEnemy();
+                }
 
-        } else if(num == 2){
-            if(mapa[Enemy1Y + 1][Enemy1X] == 0){
-                moving1 = true;
-                direc1X = 0;
-                direc1Y =  1;
-            } else {
-                return MoveFirstEnemy();
-            }
+            } else if (num == 2) {
+                if (mapa[Enemy1Y + 1][Enemy1X] == 0) {
+                    moving1 = true;
+                    direc1X = 0;
+                    direc1Y = 1;
+                } else {
+                    return MoveFirstEnemy();
+                }
 
-        } else if(num == 3){
-            if(mapa[Enemy1Y][Enemy1X - 1] == 0){
-                moving1 = true;
-                direc1X = -1;
-                direc1Y = 0;
+            } else if (num == 3) {
+                if (mapa[Enemy1Y][Enemy1X - 1] == 0) {
+                    moving1 = true;
+                    direc1X = -1;
+                    direc1Y = 0;
+                } else {
+                    return MoveFirstEnemy();
+                }
+            }
+        } else {
+            if (mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] == 0) {
+                //cout << mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] << Enemy1Y + direc1Y << Enemy1X + direc1X << endl;
+                Enemy1Y += direc1Y;
+                Enemy1X += direc1X;
+                enemigo1->setPos(enemigo1->pos().x() + direc1X * 50, enemigo1->pos().y() + direc1Y * 50);
             } else {
-                return MoveFirstEnemy();
+                moving1 = false;
             }
         }
-    }
-    else {
-        if(mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] == 0) {
-            cout << mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] << Enemy1Y + direc1Y << Enemy1X + direc1X << endl;
-            Enemy1Y += direc1Y;
-            Enemy1X += direc1X;
-            enemigo1->setPos(enemigo1->pos().x() + direc1X*50, enemigo1->pos().y() + direc1Y*50);
-        } else {
-            moving1 = false;
+    } else if (isSearchingPower) {
+        for(int i = 0; i < route1.getSize(); i++){
+            enemigo1 -> setPos(route1.getPosVal(i).getPosVal(0)*50, route1.getPosVal(i).getPosVal(1)*50);
+            Enemy1X = route1.getPosVal(i).getPosVal(0);
+            Enemy1Y = route1.getPosVal(i).getPosVal(1);
+        }
+        if(route1.getSize() != 0){
+            enemigo1 -> setPos(route1.getPosVal(0).getPosVal(0)*50, route1.getPosVal(0).getPosVal(1)*50);
+            Enemy1X = route1.getPosVal(0).getPosVal(0);
+            Enemy1Y = route1.getPosVal(0).getPosVal(1);
+            route1.deletePos(0);
+        }
+        if(route1.getSize() == 0) {
+            comerPoderes();
+            isSearchingPower = false;
         }
     }
 }
@@ -358,54 +481,71 @@ void Level4::MoveSecondEnemy() {
  * @brief Funcion que revisa si el enemigo3 puede moverse en determinada direccion validando si hay obstaculos
  */
 void Level4::MoveThirdEnemy() {
-    if(moving3 == false){
-        int num = QRandomGenerator::global() -> bounded(0, 4); // escoge numero random del 0 al 3
-        if(num == 0){
-            // Me quiero mover hacia arriba
-            // Tengo que revisar si puedo
-            if(mapa[Enemy3Y -  1][Enemy3X] == 0){
-                moving3 = true;
-                direc3X = 0;
-                direc3Y = -1;
-            } else {
-                return MoveSecondEnemy();
-            }
-        } else if(num == 1){
-            if(mapa[Enemy3Y][Enemy3X + 1] == 0){
-                moving3 = true;
-                direc3X = 1;
-                direc3Y = 0;
-            } else {
-                return MoveThirdEnemy();
-            }
+    if (isSearchingPower == false) {
+        if (moving3 == false) {
+            int num = QRandomGenerator::global()->bounded(0, 4); // escoge numero random del 0 al 3
+            if (num == 0) {
+                // Me quiero mover hacia arriba
+                // Tengo que revisar si puedo
+                if (mapa[Enemy3Y - 1][Enemy3X] == 0) {
+                    moving3 = true;
+                    direc3X = 0;
+                    direc3Y = -1;
+                } else {
+                    return MoveSecondEnemy();
+                }
+            } else if (num == 1) {
+                if (mapa[Enemy3Y][Enemy3X + 1] == 0) {
+                    moving3 = true;
+                    direc3X = 1;
+                    direc3Y = 0;
+                } else {
+                    return MoveThirdEnemy();
+                }
 
-        } else if(num == 2){
-            if(mapa[Enemy3Y + 1][Enemy3X] == 0){
-                moving3 = true;
-                direc3X = 0;
-                direc3Y =  1;
-            } else {
-                return MoveThirdEnemy();
-            }
+            } else if (num == 2) {
+                if (mapa[Enemy3Y + 1][Enemy3X] == 0) {
+                    moving3 = true;
+                    direc3X = 0;
+                    direc3Y = 1;
+                } else {
+                    return MoveThirdEnemy();
+                }
 
-        } else if(num == 3){
-            if(mapa[Enemy3Y][Enemy3X - 1] == 0){
-                moving3 = true;
-                direc3X = -1;
-                direc3Y = 0;
+            } else if (num == 3) {
+                if (mapa[Enemy3Y][Enemy3X - 1] == 0) {
+                    moving3 = true;
+                    direc3X = -1;
+                    direc3Y = 0;
+                } else {
+                    return MoveThirdEnemy();
+                }
+            }
+        } else {
+            if (mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] == 0) {
+                cout << mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] << Enemy3Y + direc3Y << Enemy3X + direc3X << endl;
+                Enemy3Y += direc3Y;
+                Enemy3X += direc3X;
+                enemigo3->setPos(enemigo3->pos().x() + direc3X * 50, enemigo3->pos().y() + direc3Y * 50);
             } else {
-                return MoveThirdEnemy();
+                moving3 = false;
             }
         }
-    }
-    else {
-        if(mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] == 0) {
-            cout << mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] << Enemy3Y + direc3Y << Enemy3X + direc3X << endl;
-            Enemy3Y += direc3Y;
-            Enemy3X += direc3X;
-            enemigo3->setPos(enemigo3->pos().x() + direc3X*50, enemigo3->pos().y() + direc3Y*50);
-        } else {
-            moving3 = false;
+    } else if (isSearchingPower){
+        for(int i = 0; i < route2.getSize(); i++){
+            enemigo3 -> setPos(route2.getPosVal(i).getPosVal(0)*50, route2.getPosVal(i).getPosVal(1)*50);
+            Enemy3X = route2.getPosVal(i).getPosVal(0);
+            Enemy3Y = route2.getPosVal(i).getPosVal(1);
+        }
+        if(route2.getSize() != 0){
+            enemigo3 -> setPos(route2.getPosVal(0).getPosVal(0)*50, route2.getPosVal(0).getPosVal(1)*50);
+            Enemy3X = route2.getPosVal(0).getPosVal(0);
+            Enemy3Y = route2.getPosVal(0).getPosVal(1);
+            route2.deletePos(0);
+        }
+        if(route2.getSize() == 0) {
+            comerPoderes();
+            isSearchingPower = false;
         }
     }
 }
@@ -597,6 +737,7 @@ void Level4::MoveMobile(){
         cout << "MOVIMIENTO" << endl;
         // Movimiento hacia arriba
         if (datosSerial.getPosVal(2) < -3) {
+            comerPoderes();
             if (mapa[pacmanY - 1][pacmanX] == 0) {
                 pacmanY -= 1;
                 playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() - 50);
@@ -605,6 +746,7 @@ void Level4::MoveMobile(){
                 revisarEnemigos();
             }
         } else if (datosSerial.getPosVal(2) > 3) {
+            comerPoderes();
             if (mapa[pacmanY + 1][pacmanX] == 0) {
                 pacmanY += 1;
                 playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() + 50);
@@ -613,6 +755,7 @@ void Level4::MoveMobile(){
                 revisarEnemigos();
             }
         } else if (datosSerial.getPosVal(1) < -3) {
+            comerPoderes();
             if (mapa[pacmanY][pacmanX - 1] == 0) {
                 pacmanX -= 1;
                 playerpacman->setPos(playerpacman->pos().x() - 50, playerpacman->pos().y());
@@ -621,6 +764,7 @@ void Level4::MoveMobile(){
                 revisarEnemigos();
             }
         } else if (datosSerial.getPosVal(1) > 3) {
+            comerPoderes();
             if (mapa[pacmanY][pacmanX + 1] == 0) {
                 pacmanX += 1;
                 //pacman->setPos(+50,+0);
@@ -737,7 +881,396 @@ void Level4::PlacePowerRandomPos(){
         powerX = fila;
         powerY = colum;
         poder -> setPos((fila)*50, (colum)*50);
+        route1 = PathfindingA(Enemy1X, Enemy1Y, powerX, powerY);
+        route2 = PathfindingA(Enemy3X, Enemy3Y, powerX, powerY);
+        isSearchingPower = true;
     } else {
         return PlacePowerRandomPos();
     }
+}
+
+void Level4::comerPoderes(){
+    if(isTherePower){
+        if(Enemy1X == powerX && Enemy1Y == powerY){
+            poder -> setPos(-50, -50);
+            powerX = -1;
+            powerY = -1;
+            // El enemigo se comio el poder
+        }
+        if(pacmanX == powerX && pacmanY == powerY){
+            poder -> setPos(-50, -50);
+            powerX = -1;
+            powerY = -1;
+            cout << "El pacman llego al poder" << endl;
+            // Ahora por 5 segundos se tiene que ejecutar lo de que el compita persiga a los enemigos
+            QTimer::singleShot(5000, this, &Level4::pararEjecucion);
+            //revisarChoque -> stop();
+            // Ya con esto por 5 segundos se para lo de quitar vidas
+            isPowerActivated = true;
+        }
+
+        if(Enemy3X == powerX && Enemy3Y == powerY){
+            poder -> setPos(-50, -50);
+            powerX = -1;
+            powerY = -1;
+            // El enemigo se comio el poder
+        }
+    }
+}
+
+void Level4::pararEjecucion(){
+    //revisarChoque -> setInterval(500);
+    //revisarChoque -> start();
+    isPowerActivated = false;
+}
+
+SimpleList<SimpleList<int>> Level4::PathfindingA(int beginX, int beginY, int endX, int endY){
+    //SimpleList<int> numeracionCasillas;
+    cout << "\n" << endl;
+    cout << beginX << " " << beginY << endl;
+    cout << endX << " " << endY << endl;
+
+
+    SimpleList<SimpleList<int>> path;
+    SimpleList<SimpleList<int>> hCasillas;
+    SimpleList<SimpleList<int>> fCasillas;
+    SimpleList<SimpleList<int>> completeCasillas;
+    SimpleList<SimpleList<int>> openList;
+    SimpleList<SimpleList<int>> closedList;
+
+    bool isRunning = true;
+
+    SimpleList<int> begginCoordinates;
+    begginCoordinates.insertEnd(beginX);
+    begginCoordinates.insertEnd(beginY);
+    path.insertEnd(begginCoordinates);
+
+    // Primero se tiene que calcular el valor de H para cada casilla
+    for(int i = 0; i < 12; i++){
+        SimpleList<int> columna;
+        for(int k = 0; k < 18; k++){
+            int H = abs(endX - k) + abs(endY - i);
+            //cout << i << " " << k << endl;
+            //cout << H << endl;
+            columna.insertEnd(H);
+        }
+        //cout << "Se incerta fila" << endl;
+        hCasillas.insertEnd(columna);
+    }
+
+    // Se verifico que esto esta bien implementado
+    /*
+    for(int i = 0; i < 12; i++){
+        for(int k = 0; k < 18; k++){
+            cout << hCasillas.getPosVal(i).getPosVal(k) << endl;
+        }
+        cout << "FIN DE LA FILA" << endl;
+    }
+    */
+
+    // Una ves calculado el valor de H nada mas se van a llenar las otras listas
+    // De numeros arbitrarios
+
+    for(int i = 0; i < 12; i++){
+        SimpleList<int> columna;
+        for(int k = 0; k < 18; k++){
+            columna.insertEnd(0);
+        }
+        fCasillas.insertEnd(columna);
+    }
+
+    for(int i = 0; i < 12; i++){
+        SimpleList<int> columna;
+        for(int k = 0; k < 18; k++){
+            columna.insertEnd(1000000);
+        }
+        completeCasillas.insertEnd(columna);
+    }
+    // Una ves hecho esto, se va a poner el punto de inicio en openList
+    SimpleList<int> puntoInicio;
+    puntoInicio.insertEnd(beginX);
+    puntoInicio.insertEnd(beginY);
+
+    openList.insertEnd(puntoInicio);
+
+    completeCasillas.getPosVal(beginY).modPos(beginX, 0);
+
+    // A partir de esto se puede comenzar la ejecucion
+    // Se tiene que implementar que se revisen las casillas adyacentes
+    while(isRunning){
+        // Lo primero que quiero hacer es obtener el valor mas pequeño del openList
+        int tempLess = 10000000;
+        int selecOpenX;
+        int selecOpenY;
+
+        for(int i = 0; i < openList.getSize(); i++){
+            int tempLessX = openList.getPosVal(i).getPosVal(0);
+            int tempLessY = openList.getPosVal(i).getPosVal(1);
+            if(completeCasillas.getPosVal(tempLessY).getPosVal(tempLessX) < tempLess){
+                tempLess = completeCasillas.getPosVal(tempLessY).getPosVal(tempLessX);
+                selecOpenX = tempLessX;
+                selecOpenY = tempLessY;
+            }
+        }
+
+        // Esto funciono bien
+        //cout << selecOpenX << " seleccion " << selecOpenY << endl;
+
+
+        // Una ves realizado esto es necesaario buscar en las casillas adyacentes disponibles
+        // Como las figuras solamente tienen permitido moverse arriba abajo izquierda derecha
+        // No se evaluaran diagonales en el proceso
+
+        // Hay que verificar dos cosas
+        // 1. que no haya pared
+        // 2. que no este seleccionada previamente
+        // Despues de hacer eso los que estan disponibles se meten en open list
+        // Ademas de eso la casilla seleccionada se debe de meter en closedList
+
+        // Revisando arriba
+        if (mapa[selecOpenY - 1][selecOpenX] == 0){
+            bool checkClosed = false;
+            for(int i = 0; i < closedList.getSize(); i++){
+                int tempCheckClosedX = closedList.getPosVal(i).getPosVal(0);
+                int tempCheckClosedY = closedList.getPosVal(i).getPosVal(1);
+                if(tempCheckClosedX == selecOpenX && tempCheckClosedY == (selecOpenY-1)){
+                    checkClosed = true;
+                }
+            }
+            if(checkClosed == false){
+                //Llegados a este punto es que no estaba dentro de las que habian sido seleccionadas antes
+                // Primero esto se mete en open list
+                SimpleList<int> nuevaEvaluacion;
+                nuevaEvaluacion.insertEnd(selecOpenX);
+                nuevaEvaluacion.insertEnd(selecOpenY - 1);
+                openList.insertEnd(nuevaEvaluacion);
+                // Ahora se tiene que modificar el valor de FCasillas
+                int valCal = fCasillas.getPosVal(selecOpenY).getPosVal(selecOpenX) + 10;
+                fCasillas.getPosVal(selecOpenY - 1).modPos(selecOpenX, valCal);
+                // Una ves modificado el valor de fCasillas
+                // Se modifica el valor de completeCasillas
+                int hTempValue = hCasillas.getPosVal(selecOpenY - 1).getPosVal(selecOpenX);
+                completeCasillas.getPosVal(selecOpenY - 1).modPos(selecOpenX, valCal + hTempValue);
+            }
+
+
+
+        }
+        // Caso de derecha
+        if (mapa[selecOpenY][selecOpenX + 1] == 0){
+            bool checkClosed = false;
+            for(int i = 0; i < closedList.getSize(); i++){
+                int tempCheckClosedX = closedList.getPosVal(i).getPosVal(0);
+                int tempCheckClosedY = closedList.getPosVal(i).getPosVal(1);
+                if(tempCheckClosedX == (selecOpenX + 1) && tempCheckClosedY == selecOpenY){
+                    checkClosed = true;
+                }
+            }
+            if(checkClosed == false){
+                //Llegados a este punto es que no estaba dentro de las que habian sido seleccionadas antes
+                // Primero esto se mete en open list
+                SimpleList<int> nuevaEvaluacion;
+                nuevaEvaluacion.insertEnd(selecOpenX+1);
+                nuevaEvaluacion.insertEnd(selecOpenY);
+                openList.insertEnd(nuevaEvaluacion);
+                // Ahora se tiene que modificar el valor de FCasillas
+                int valCal = fCasillas.getPosVal(selecOpenY).getPosVal(selecOpenX) + 10;
+                fCasillas.getPosVal(selecOpenY).modPos(selecOpenX + 1, valCal);
+                // Una ves modificado el valor de fCasillas
+                // Se modifica el valor de completeCasillas
+                int hTempValue = hCasillas.getPosVal(selecOpenY).getPosVal(selecOpenX + 1);
+                completeCasillas.getPosVal(selecOpenY).modPos(selecOpenX + 1, valCal + hTempValue);
+            }
+
+
+
+        }
+
+        //Se implementa izquierda
+        if (mapa[selecOpenY][selecOpenX - 1] == 0){
+            bool checkClosed = false;
+            for(int i = 0; i < closedList.getSize(); i++){
+                int tempCheckClosedX = closedList.getPosVal(i).getPosVal(0);
+                int tempCheckClosedY = closedList.getPosVal(i).getPosVal(1);
+                if(tempCheckClosedX == (selecOpenX - 1) && tempCheckClosedY == selecOpenY){
+                    checkClosed = true;
+                }
+            }
+            if(checkClosed == false){
+                //Llegados a este punto es que no estaba dentro de las que habian sido seleccionadas antes
+                // Primero esto se mete en open list
+                SimpleList<int> nuevaEvaluacion;
+                nuevaEvaluacion.insertEnd(selecOpenX-1);
+                nuevaEvaluacion.insertEnd(selecOpenY);
+                openList.insertEnd(nuevaEvaluacion);
+                // Ahora se tiene que modificar el valor de FCasillas
+                int valCal = fCasillas.getPosVal(selecOpenY).getPosVal(selecOpenX) + 10;
+                fCasillas.getPosVal(selecOpenY).modPos(selecOpenX - 1, valCal);
+                // Una ves modificado el valor de fCasillas
+                // Se modifica el valor de completeCasillas
+                int hTempValue = hCasillas.getPosVal(selecOpenY).getPosVal(selecOpenX - 1);
+                completeCasillas.getPosVal(selecOpenY).modPos(selecOpenX - 1, valCal + hTempValue);
+            }
+
+
+
+        }
+        // Revisando abajo
+        if (mapa[selecOpenY + 1][selecOpenX] == 0){
+            bool checkClosed = false;
+            for(int i = 0; i < closedList.getSize(); i++){
+                int tempCheckClosedX = closedList.getPosVal(i).getPosVal(0);
+                int tempCheckClosedY = closedList.getPosVal(i).getPosVal(1);
+                if(tempCheckClosedX == selecOpenX && tempCheckClosedY == (selecOpenY+1)){
+                    checkClosed = true;
+                }
+            }
+            if(checkClosed == false){
+                //Llegados a este punto es que no estaba dentro de las que habian sido seleccionadas antes
+                // Primero esto se mete en open list
+                SimpleList<int> nuevaEvaluacion;
+                nuevaEvaluacion.insertEnd(selecOpenX);
+                nuevaEvaluacion.insertEnd(selecOpenY + 1);
+                openList.insertEnd(nuevaEvaluacion);
+                // Ahora se tiene que modificar el valor de FCasillas
+                int valCal = fCasillas.getPosVal(selecOpenY).getPosVal(selecOpenX) + 10;
+                fCasillas.getPosVal(selecOpenY + 1).modPos(selecOpenX, valCal);
+                // Una ves modificado el valor de fCasillas
+                // Se modifica el valor de completeCasillas
+                int hTempValue = hCasillas.getPosVal(selecOpenY + 1).getPosVal(selecOpenX);
+                completeCasillas.getPosVal(selecOpenY + 1).modPos(selecOpenX, valCal + hTempValue);
+            }
+
+
+
+        }
+
+
+
+        // Se tiene que quitar el valor de SelecOpenY y SelecOpenX de la open y mandarlo a la closed
+        for(int i = 0; i < openList.getSize(); i++){
+            int tempCheckOpenX = openList.getPosVal(i).getPosVal(0);
+            int tempCheckOpenY = openList.getPosVal(i).getPosVal(1);
+            if(tempCheckOpenX == selecOpenX && tempCheckOpenY == selecOpenY){
+                openList.deletePos(i);
+            }
+            SimpleList<int> closedVec;
+            closedVec.insertEnd(tempCheckOpenX);
+            closedVec.insertEnd(tempCheckOpenY);
+            closedList.insertEnd(closedVec);
+        }
+
+        for(int i = 0; i < openList.getSize(); i++){
+            cout << "Open List vec " << endl;
+            openList.getPosVal(i).printList();
+        }
+        for(int i = 0; i < closedList.getSize(); i++){
+            cout << "Closed List vec " << endl;
+            closedList.getPosVal(i).printList();
+        }
+        for(int i = 0; i < fCasillas.getSize(); i++){
+            fCasillas.getPosVal(i).printList();
+        }
+        for(int i = 0; i < completeCasillas.getSize(); i++){
+            completeCasillas.getPosVal(i).printList();
+        }
+
+
+        //isRunning = false;
+        for(int i = 0; i < closedList.getSize(); i++){
+
+            int tempCheckEndX = closedList.getPosVal(i).getPosVal(0);
+            int tempCheckEndY = closedList.getPosVal(i).getPosVal(1);
+            if(hCasillas.getPosVal(tempCheckEndY).getPosVal(tempCheckEndX) == 1){
+                // Aqui deberia de hacer un metodo que consiga el camino
+                SimpleList<SimpleList<int>> temp;
+                temp = FindPath(
+                        completeCasillas,
+                        hCasillas,
+                        beginX,
+                        beginY,
+                        endX,
+                        endY
+                );
+
+                cout << "LISTA FINAL" << endl;
+                cout << beginX << " Comienzo de la esto " << beginY << endl;
+                cout << endX << " Fin de la esto " << endY << endl;
+                for(int i = 0; i < temp.getSize(); i++){
+                    temp.getPosVal(i).printList();
+                }
+
+
+                isRunning = false;
+                return temp;
+            }
+        }
+    }
+};
+
+
+SimpleList<SimpleList<int>> Level4::FindPath(SimpleList<SimpleList<int>> completeCasillas, SimpleList<SimpleList<int>> hCasillas, int beginX, int beginY, int endX, int endY){
+    SimpleList<SimpleList<int>> finalPath;
+    SimpleList<SimpleList<int>> paths;
+    bool continueSearching;
+    int tempX;
+    int tempY;
+    tempX = endX;
+    tempY = endY;
+
+    while(continueSearching){
+        int smallestValue;
+        int tempSelectionX;
+        int tempSelectionY;
+        smallestValue = 10000;
+
+        //Arriba
+        if(completeCasillas.getPosVal(tempY - 1).getPosVal(tempX) < smallestValue){
+            // mimomimo
+            smallestValue = completeCasillas.getPosVal(tempY - 1).getPosVal(tempX);
+            tempSelectionX = tempX;
+            tempSelectionY = tempY - 1;
+        }
+        //Abajo
+        if(completeCasillas.getPosVal(tempY + 1).getPosVal(tempX) < smallestValue){
+            // mimomimo
+            smallestValue = completeCasillas.getPosVal(tempY + 1).getPosVal(tempX);
+            tempSelectionX = tempX;
+            tempSelectionY = tempY + 1;
+        }
+
+        // Izquierda
+        if(completeCasillas.getPosVal(tempY).getPosVal(tempX - 1) < smallestValue){
+            // mimomimo
+            smallestValue = completeCasillas.getPosVal(tempY).getPosVal(tempX - 1);
+            tempSelectionX = tempX - 1;
+            tempSelectionY = tempY;
+        }
+
+        // Derecha
+        if(completeCasillas.getPosVal(tempY).getPosVal(tempX + 1) < smallestValue){
+            // mimomimo
+            smallestValue = completeCasillas.getPosVal(tempY).getPosVal(tempX + 1);
+            tempSelectionX = tempX + 1;
+            tempSelectionY = tempY;
+        }
+
+        SimpleList<int> pathVec;
+        pathVec.insertEnd(tempSelectionX);
+        pathVec.insertEnd(tempSelectionY);
+        finalPath.insertHead(pathVec);
+
+        tempY = tempSelectionY;
+        tempX = tempSelectionX;
+
+        if(tempY == beginY && tempX == beginX){
+            SimpleList<int> endVec;
+            endVec.insertEnd(endX);
+            endVec.insertEnd(endY);
+            finalPath.insertEnd(endVec);
+            continueSearching = false;
+            return finalPath;
+        }
+    }
+
 }

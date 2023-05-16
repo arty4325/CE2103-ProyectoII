@@ -40,7 +40,6 @@ Level2::Level2(QWidget * parent){
     isPowerActivated = false;
 
 
-    cout << mapa[7][9] << endl;
 
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
