@@ -62,6 +62,11 @@ private:
 
     puntosLista* Fantasmas = new puntosLista();
 
+    bool isPowerActivated;
+    bool isSearchingPower;
+    SimpleList<SimpleList<int>> route1;
+    SimpleList<SimpleList<int>> route2;
+
     PlayerPacman *playerpacman;
     Enemigo1 *enemigo1;
     Enemigo2 *enemigo2;
@@ -126,6 +131,17 @@ private:
     void MoveMobile();
 
     void PlacePowerRandomPos();
+
+    void comerPoderes();
+
+    void pararEjecucion();
+
+    SimpleList<SimpleList<int>> PathfindingA(int beginX, int beginY, int endX, int endY);
+
+    SimpleList<SimpleList<int>>
+    FindPath(SimpleList<SimpleList<int>> completeCasillas, SimpleList<SimpleList<int>> hCasillas, int beginX,
+             int beginY,
+             int endX, int endY);
 };
 
 

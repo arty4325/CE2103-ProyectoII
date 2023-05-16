@@ -36,10 +36,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
-
-
-
-
+    TextView puntaje;
+    TextView vidas;
+    TextView nivel;
+    static String puntajed = "PUNTAJE";
+    static String vidasd = "VIDAS";
+    static String niveld = "NIVEL";
+    SensorManager sensorManager;
+    Sensor gyroscopeSensor;
+    float x,y,z;
 
     private Socket socket;
     private BufferedReader input;
@@ -67,6 +72,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        puntaje = findViewById(R.id.txtpuntaje);
+        vidas = findViewById(R.id.txtvidas);
+        nivel = findViewById(R.id.txtnivel);
 
         SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
@@ -200,9 +209,23 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
                 runOnUiThread(() -> textView3.setText("Esperando respuesta\nSi no responde en poco tiempo,\nes posible que no haya conexión"));
 
+
+
                 String response = input.readLine();
-                Log.d("RESPUESTA", response);
-                runOnUiThread(() -> textView3.setText("RESPUESTA: " + response));
+                if (response != null){
+                    String[] values = response.split(",");
+                    puntajed = values[0];
+                    vidasd = values[1];
+                    niveld = values[2];
+                    System.out.println("Gyro: x=" + puntajed + ", y=" + vidasd + ", z=" + niveld);
+                    Log.d("RESPUESTA", response);
+                    runOnUiThread(() -> {
+                        puntaje.setText("PUNTAJE:" + puntajed);
+                        vidas.setText("VIDAS:" + vidasd);
+                        nivel.setText("NIVEL:" + niveld);
+                    });
+                }
+
 
                 socket.close();
             } catch (IOException e) {

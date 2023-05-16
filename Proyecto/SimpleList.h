@@ -26,6 +26,8 @@ public:
     void deletePos(int position);
 
     void modPos(int position, T newValue);
+
+    void insertEnd(T value);
 };
 
 

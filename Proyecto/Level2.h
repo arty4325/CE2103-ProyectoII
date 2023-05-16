@@ -51,6 +51,13 @@ private:
     int powerX;
     int powerY;
 
+    bool isPowerActivated;
+    bool isSearchingPower;
+
+    SimpleList<SimpleList<int>> route1;
+    SimpleList<std::pair<int, int>> route2;
+
+
     QTimer* movementFirstEnemy;
     QTimer* movementSecondEnemy;
     QTimer* movementThirdEnemy;
@@ -142,8 +149,24 @@ private:
     void PlacePowerRandomPos();
 
     bool backtracking(int ene2x, int ene2y, int pox, int poy, int matriz[12][18], int matrizsolucion[11][17]);
+    void comerPoderes();
+
+    void pararEjecucion();
+
+    SimpleList<SimpleList<int>>
+    FindPath(SimpleList<SimpleList<int>> completeCasillas, SimpleList<SimpleList<int>> hCasillas, int beginX,
+             int beginY,
+             int endX, int endY);
+
+    SimpleList<SimpleList<int>> PathfindingA(int beginX, int beginY, int endX, int endY);
+    bool backtracking(int ene2x, int ene2y, int pox, int poy);
 
     void nuevaMatrizMovement();
+
+
+    bool isValidPosition(int mapa[12][18], int x, int y);
+    bool backtrack(int mapa[12][18], int startX, int startY, int targetX, int targetY, SimpleList<std::pair<int, int>>& ruta);
+    SimpleList<std::pair<int, int>> encontrarRuta(int mapa[12][18], int startX, int startY, int targetX, int targetY);
 };
 
 #endif //PACMAN_LEVEL2_H

@@ -47,8 +47,14 @@ private:
     int Enemy4X;
     int Enemy4Y;
 
+    SimpleList<SimpleList<int>> route1;
+    SimpleList<SimpleList<int>> route2;
+
     int powerX;
     int powerY;
+
+    bool isSearchingPower;
+    bool isPowerActivated;
 
     QTimer* movementFirstEnemy;
     QTimer* movementSecondEnemy;
@@ -125,6 +131,17 @@ private:
     void MoveMobile();
 
     void PlacePowerRandomPos();
+
+    void comerPoderes();
+
+    void pararEjecucion();
+
+    SimpleList<SimpleList<int>>
+    FindPath(SimpleList<SimpleList<int>> completeCasillas, SimpleList<SimpleList<int>> hCasillas, int beginX,
+             int beginY,
+             int endX, int endY);
+
+    SimpleList<SimpleList<int>> PathfindingA(int beginX, int beginY, int endX, int endY);
 };
 
 
