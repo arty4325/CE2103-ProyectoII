@@ -128,9 +128,6 @@ Level1::Level1(QWidget * parent){
     exeMovementPacmanMobile -> setInterval(500);
     exeMovementPacmanMobile -> start();
 
-
-
-
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(900, 600);
@@ -339,7 +336,9 @@ void Level1::revisarEnemigos(){
         go->show();
     }
 }
-
+/**
+ * @brief Movimiento del jugador con el celular
+ */
 void Level1::MoveMobile(){
     if(datosSerial.getSize() == 3) {
         cout << "MOVIMIENTO" << endl;
@@ -380,8 +379,6 @@ void Level1::MoveMobile(){
         }
     }
 }
-
-
 /**
  * @brief Define un patron para mostrar las celdas
  * @param lvl int nivel en que esta
@@ -630,8 +627,9 @@ void Level1::MoveFourthEnemy() {
         }
     }
 }
-
-
+/**
+ * @brief Ejecucion del servidor para habilitar el puerto
+ */
 void Level1::SocketServer() {
     datosSerial.printList();
     while(datosSerial.getSize() != 0){

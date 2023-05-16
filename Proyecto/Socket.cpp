@@ -9,11 +9,15 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
-
+/**
+ * @brief constructor para el socket
+ */
 Socket::Socket(){
     while(true) {SocketServer();}
 }
-
+/**
+ * @brief habilita el servidor
+ */
 void Socket::SocketServer() {
     int server_fd, new_socket;
     struct sockaddr_in address;

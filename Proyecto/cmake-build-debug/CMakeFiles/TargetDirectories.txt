@@ -1,4 +1,0 @@
-/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/CMakeFiles/Battle_Space.dir
-/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/monicaegm/CE2103-ProyectoII/Proyecto/cmake-build-debug/CMakeFiles/Battle_Space_autogen.dir
