@@ -93,6 +93,10 @@ Level1::Level1(QWidget * parent){
     enemigo4 -> setPos(500, 500);
     scene -> addItem(enemigo4);
 
+    poder = new PastillaPoder();
+    poder -> setPos(-50, -50);
+    scene -> addItem(poder);
+
     movementFirstEnemy = new QTimer(this);
     connect(movementFirstEnemy, &QTimer::timeout, this, &Level1::MoveFirstEnemy);
     movementFirstEnemy ->setInterval(500);
@@ -207,6 +211,9 @@ void Level1::CreateMap() {
 void Level1::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_K) { //La letra K crea nuevos niveles
+        movementPacmanMobile->stop();
+        exeMovementPacmanMobile->stop();
+
         nivel = nivel + 1;
 
         Level2 *level2;
@@ -296,6 +303,9 @@ void Level1::comerPuntos(){
             if (puntoslista->findPuntos(i)->eliminado == false){
                 puntoslista->findPuntos(i)->hide();
                 puntaje = puntaje + 10;
+                if (puntaje%200 == 0){
+                    PlacePowerRandomPos();
+                }
 
                 labelPuntaje->setText("Puntaje: "+ QString::number(puntaje,10));
                 puntoslista->findPuntos(i)->eliminado = true;
@@ -631,7 +641,7 @@ void Level1::MoveFourthEnemy() {
  * @brief Ejecucion del servidor para habilitar el puerto
  */
 void Level1::SocketServer() {
-    datosSerial.printList();
+    //datosSerial.printList();
     while(datosSerial.getSize() != 0){
         datosSerial.deleteHead();
     }
@@ -675,7 +685,7 @@ void Level1::SocketServer() {
         return;
     }
 
-    std::cout << "Servidor en espera de conexiones..." << std::endl;
+    //std::cout << "Servidor en espera de conexiones..." << std::endl;
 
 
     // Aceptar nueva conexión
@@ -690,11 +700,11 @@ void Level1::SocketServer() {
     char buffer[1024] = {0};
     int valread = read(new_socket, buffer, 1024);
     if (valread <= 0) {
-        std::cout << "Cliente desconectado" << std::endl;
+        //std::cout << "Cliente desconectado" << std::endl;
         ::close(new_socket);
         return;
     }
-    std::cout << "Mensaje recibido: " << buffer << std::endl;
+    //std::cout << "Mensaje recibido: " << buffer << std::endl;
     QStringList subStrings = QString(buffer).split(" ,");
     for(const QString& subString : subStrings){
         bool ok = false;
@@ -706,7 +716,7 @@ void Level1::SocketServer() {
 
     char respuesta[] = "Mensaje recibido.\n";
     send(new_socket, respuesta, sizeof(respuesta), 0);
-    std::cout << "Respuesta: " << respuesta << std::endl;
+    //std::cout << "Respuesta: " << respuesta << std::endl;
 
 
     if (::close(server_fd) == -1) {
@@ -718,3 +728,173 @@ void Level1::SocketServer() {
         return;
     }
 }
+
+
+void Level1::PlacePowerRandomPos(){
+    isTherePower = true;
+    int colum = QRandomGenerator::global() -> bounded(0, 12);
+    int fila = QRandomGenerator::global() -> bounded(0, 18);
+    if(mapa[colum][fila] == 0){
+        powerX = fila;
+        powerY = colum;
+        poder -> setPos((fila)*50, (colum)*50);
+        PathfindingA(Enemy1X, Enemy1Y, powerX, powerY);
+    } else {
+        return PlacePowerRandomPos();
+    }
+}
+
+void Level1::PathfindingA(int beginX, int beginY, int endX, int endY){
+    //SimpleList<int> numeracionCasillas;
+    SimpleList<SimpleList<int>> whereICome;
+    SimpleList<SimpleList<int>> hCasillas;
+    SimpleList<SimpleList<int>> fCasillas;
+    SimpleList<SimpleList<int>> completeCasillas;
+    SimpleList<SimpleList<int>> openList;
+    SimpleList<SimpleList<int>> closedList;
+
+    SimpleList<int> initialVal;
+    initialVal.insertHead(beginX);
+    initialVal.insertHead(beginY);
+
+    closedList.insertHead(initialVal);
+
+    SimpleList<int> open1;
+    SimpleList<int> open2;
+    SimpleList<int> open3;
+    SimpleList<int> open4;
+    SimpleList<int> open5;
+    SimpleList<int> open6;
+    SimpleList<int> open7;
+    SimpleList<int> open8;
+
+
+    open1.insertHead(beginX + 1);
+    open1.insertHead(beginY);
+    open2.insertHead(beginX - 1);
+    open2.insertHead(beginY);
+    open3.insertHead(beginX);
+    open3.insertHead(beginY - 1);
+    open4.insertHead(beginX);
+    open4.insertHead(beginY + 1);
+
+    open5.insertHead(beginX - 1);
+    open5.insertHead(beginY - 1);
+    open6.insertHead(beginX + 1);
+    open6.insertHead(beginY - 1);
+    open7.insertHead(beginX + 1);
+    open7.insertHead(beginY + 1);
+    open8.insertHead(beginX - 1);
+    open8.insertHead(beginY + 1);
+
+    openList.insertHead(open1);
+    openList.insertHead(open2);
+    openList.insertHead(open3);
+    openList.insertHead(open4);
+    openList.insertHead(open5);
+    openList.insertHead(open6);
+    openList.insertHead(open7);
+    openList.insertHead(open8);
+
+
+
+
+    bool haveFound;
+    haveFound = false;
+
+
+
+    for(int i = 0; i < 12; i++){
+        SimpleList<int> col;
+        for(int w = 0; w < 18; w++){
+            col.insertHead(-1);
+        }
+        whereICome.insertHead(col);
+    }
+
+
+    for(int w = 0; w < 12; w++){
+        SimpleList<int> col;
+        for(int z = 0; z < 18; z++){
+            col.insertHead(0);
+        }
+        fCasillas.insertHead(col);
+    }
+
+
+    for(int i = 0; i < 12; i++){
+        SimpleList<int> col;
+        for(int k = 0; k < 18; k++){
+            col.insertHead(0);
+        }
+        completeCasillas.insertHead(col);
+    }
+
+
+    // Primero se tiene que calcular el valor de H para cada casilla
+    for(int i = 0; i < 12; i++){
+        SimpleList<int> columna;
+        for(int k = 0; i < 18; i++){
+            int H = abs(endX - beginX) + abs(endY - beginY);
+            columna.insertHead(H);
+        }
+        hCasillas.insertHead(columna);
+    }
+
+    while(haveFound == false){
+        // Se revisa si se selecciono alguna casilla adyacente
+        for(int i = 0; i < closedList.getSize(); i++){
+            int valX = closedList.getPosVal(i).getPosVal(0);
+            int valY = closedList.getPosVal(i).getPosVal(1);
+            if(hCasillas.getPosVal(valY).getPosVal(valX) == 1){
+                haveFound = true;
+            }
+        }
+
+
+        // Comienza la implementacion del algoritmo
+
+        //Primero se va a revisar dentro de los valores que estan en OpenList
+        // Cual tiene el valor mas pequeño
+        int tempSmall = 10000;
+        int selecTempX;
+        int selecTempY;
+        for(int i = 0; i < openList.getSize(); i++){
+            int tempValX = openList.getPosVal(i).getPosVal(0);
+            int tempValY = openList.getPosVal(i).getPosVal(1);
+            if(hCasillas.getPosVal(tempValY).getPosVal(tempValX) < tempSmall){
+                tempSmall = hCasillas.getPosVal(tempValY).getPosVal(tempValX);
+                selecTempX = tempValX;
+                selecTempY = tempValY;
+            }
+        }
+        cout << beginX << " begin " << beginY << endl;
+        cout << endX << " end " << endY << endl;
+        cout << selecTempX << " " << selecTempY << endl;
+        // De los que estan en el open list ya se tiene el val mas pequeno
+        // Cunado se tiene el mas pequeño, se quita de open list y se agrega a closed list
+        for(int i = 0; i < openList.getSize(); i++){
+            if(selecTempX == openList.getPosVal(i).getPosVal(0) && selecTempY == openList.getPosVal(i).getPosVal(0)){
+                openList.deletePos(i);
+                SimpleList<int> vec;
+                vec.insertHead(selecTempX);
+                vec.insertHead(selecTempY);
+                closedList.insertHead(vec);
+            }
+        }
+
+
+    haveFound = true;
+
+
+    }
+
+
+};
+
+
+
+
+
+
+

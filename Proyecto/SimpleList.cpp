@@ -142,3 +142,17 @@ void SimpleList<T>::deletePos(int position) {
     temp->next = nullptr;
     delete temp;
 }
+
+template <class T>
+void SimpleList<T>::modPos(int position, T newValue) {
+    NodeList<T>* current = this->head;
+    int currentPosition = 0;
+    while (current != nullptr && currentPosition != position) {
+        current = current->next;
+        currentPosition++;
+    }
+    if (current == nullptr) {
+        throw std::out_of_range("Posicion Invalida");
+    }
+    current->value = newValue;
+}

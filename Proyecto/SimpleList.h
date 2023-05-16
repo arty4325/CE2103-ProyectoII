@@ -24,6 +24,8 @@ public:
     int getSize() const;
 
     void deletePos(int position);
+
+    void modPos(int position, T newValue);
 };
 
 

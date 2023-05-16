@@ -16,12 +16,16 @@
 #include "Enemigo2.h"
 #include "Enemigo3.h"
 #include "Enemigo4.h"
+#include "SimpleList.h"
+#include "PastillaPoder.h"
 
 
 class Level3: public QGraphicsView{
 public:
     Level3(QWidget * parent = 0);
     void setValues(int p, int v, int n);
+
+    void SocketServer();
 
 private:
     QString pattern;
@@ -43,11 +47,16 @@ private:
     int Enemy4X;
     int Enemy4Y;
 
+    int powerX;
+    int powerY;
+
     QTimer* movementFirstEnemy;
     QTimer* movementSecondEnemy;
     QTimer* movementThirdEnemy;
     QTimer* movementFourthEnemy;
     QTimer* revisarChoque;
+    QTimer* movementPacmanMobile;
+    QTimer* exeMovementPacmanMobile;
 
     puntosLista* Fantasmas = new puntosLista();
 
@@ -56,7 +65,10 @@ private:
     Enemigo2 *enemigo2;
     Enemigo3 *enemigo3;
     Enemigo4 *enemigo4;
+    PastillaPoder *poder;
+    //SimpleList<SimpleList<SimpleList<int>>> matriz;
     puntosLista *puntoslista;
+    SimpleList<float> datosSerial;
 
     int mapa[12][18] =
             {
@@ -78,6 +90,9 @@ private:
     QLabel *labelVidas;
     QLabel *labelNivel;
     QLabel *labelPuntaje;
+
+    bool isTherePower;
+
 
     void CreateMap();
     void CreateLevels(int lvl);
@@ -105,6 +120,11 @@ private:
     bool moving4;
 
     void revisarEnemigos();
+    void startSocketServer();
+
+    void MoveMobile();
+
+    void PlacePowerRandomPos();
 };
 
 

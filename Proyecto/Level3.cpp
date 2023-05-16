@@ -19,6 +19,12 @@
 #include "GameOver.h"
 #include "Level3.h"
 #include "Level4.h"
+#include "SocketThread3.h"
+
+#include <cstring>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <unistd.h>
 
 using namespace std;
 /**
@@ -85,6 +91,9 @@ void Level3::CreateMap() {
 void Level3::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_K) { //La letra K crea nuevos niveles
+        movementPacmanMobile->stop();
+        exeMovementPacmanMobile->stop();
+
         nivel = nivel + 1;
 
         Level4 *level4;
@@ -177,7 +186,9 @@ void Level3::comerPuntos(){
             if (puntoslista->findPuntos(i)->eliminado == false){
                 puntoslista->findPuntos(i)->hide();
                 puntaje = puntaje + 10;
-
+                if (puntaje%200 == 0){
+                    PlacePowerRandomPos();
+                }
                 labelPuntaje->setText("Puntaje: "+ QString::number(puntaje,10));
                 puntoslista->findPuntos(i)->eliminado = true;
                 noquedanpuntos = noquedanpuntos +1;
@@ -547,6 +558,10 @@ void Level3::setValues(int p, int v, int n){
     enemigo4 -> setPos(500, 500);
     scene() -> addItem(enemigo4);
 
+    poder = new PastillaPoder();
+    poder -> setPos(-50, -50);
+    scene() -> addItem(poder);
+
     movementFirstEnemy = new QTimer(this);
     connect(movementFirstEnemy, &QTimer::timeout, this, &Level3::MoveFirstEnemy);
     movementFirstEnemy ->setInterval(500);
@@ -572,7 +587,167 @@ void Level3::setValues(int p, int v, int n){
     revisarChoque -> setInterval(500);
     revisarChoque -> start();
 
+    movementPacmanMobile = new QTimer(this);
+    connect(movementPacmanMobile, &QTimer::timeout, this, &Level3::startSocketServer);
+    movementPacmanMobile -> setInterval(500);
+    movementPacmanMobile -> start();
+
+    exeMovementPacmanMobile = new QTimer(this);
+    connect(exeMovementPacmanMobile, &QTimer::timeout, this, &Level3::MoveMobile);
+    exeMovementPacmanMobile -> setInterval(500);
+    exeMovementPacmanMobile -> start();
+
     setScene(scene());
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(900, 600);
+}
+
+void Level3::MoveMobile(){
+    if(datosSerial.getSize() == 3) {
+        cout << "MOVIMIENTO" << endl;
+        // Movimiento hacia arriba
+        if (datosSerial.getPosVal(2) < -3) {
+            if (mapa[pacmanY - 1][pacmanX] == 0) {
+                pacmanY -= 1;
+                playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() - 50);
+                //cout << "Se estripa w" << endl;
+                comerPuntos();
+                revisarEnemigos();
+            }
+        } else if (datosSerial.getPosVal(2) > 3) {
+            if (mapa[pacmanY + 1][pacmanX] == 0) {
+                pacmanY += 1;
+                playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() + 50);
+                //cout << "Se estripa S" << endl;
+                comerPuntos();
+                revisarEnemigos();
+            }
+        } else if (datosSerial.getPosVal(1) < -3) {
+            if (mapa[pacmanY][pacmanX - 1] == 0) {
+                pacmanX -= 1;
+                playerpacman->setPos(playerpacman->pos().x() - 50, playerpacman->pos().y());
+                //cout << "Se estripa A" << endl;
+                comerPuntos();
+                revisarEnemigos();
+            }
+        } else if (datosSerial.getPosVal(1) > 3) {
+            if (mapa[pacmanY][pacmanX + 1] == 0) {
+                pacmanX += 1;
+                //pacman->setPos(+50,+0);
+                playerpacman->setPos(playerpacman->pos().x() + 50, playerpacman->pos().y());
+                //cout << "Se estripa D" << endl;
+                comerPuntos();
+                revisarEnemigos();
+            }
+        }
+    }
+}
+
+
+void Level3::startSocketServer(){
+    SocketThread3* socketThread = new SocketThread3(this);
+    connect(socketThread, &SocketThread3::finished, socketThread, &SocketThread3::deleteLater);
+    socketThread -> start();
+}
+
+void Level3::SocketServer() {
+    datosSerial.printList();
+    while(datosSerial.getSize() != 0){
+        datosSerial.deleteHead();
+    }
+    int server_fd, new_socket;
+    struct sockaddr_in address;
+    int opt = 1;
+    int addrlen = sizeof(address);
+
+    // Crear socket
+    if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0) {
+        std::cerr << "Error al crear socket" << std::endl;
+        return;
+    }
+
+    // Opción de socket para reutilizar la dirección
+    if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt))) {
+        std::cerr << "Error en setsockopt" << std::endl;
+        return;
+    }
+
+    // Configurar dirección del socket
+    address.sin_family = AF_INET;
+    address.sin_addr.s_addr = INADDR_ANY;
+    address.sin_port = htons(5001);
+
+    if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEPORT, &opt, sizeof(opt))) {
+        std::cerr << "Error en setsockopt" << std::endl;
+        return;
+    }
+
+
+    // Enlazar socket a la dirección y puerto especificados
+    if (bind(server_fd, (struct sockaddr *) &address, sizeof(address)) < 0) {
+        std::cerr << "Error en bind" << std::endl;
+        return;
+    }
+
+    // Escuchar conexiones entrantes
+    if (listen(server_fd, 3) < 0) {
+        std::cerr << "Error en listen" << std::endl;
+        return;
+    }
+
+    std::cout << "Servidor en espera de conexiones..." << std::endl;
+
+
+    // Aceptar nueva conexión
+    if ((new_socket = accept(server_fd, (struct sockaddr *) &address, (socklen_t *) &addrlen)) < 0) {
+        std::cerr << "Error en accept" << std::endl;
+        return;
+    }
+
+    std::cout << "Nueva conexión aceptada" << std::endl;
+
+    // Procesar mensajes entrantes
+    char buffer[1024] = {0};
+    int valread = read(new_socket, buffer, 1024);
+    if (valread <= 0) {
+        std::cout << "Cliente desconectado" << std::endl;
+        ::close(new_socket);
+        return;
+    }
+    std::cout << "Mensaje recibido: " << buffer << std::endl;
+    QStringList subStrings = QString(buffer).split(" ,");
+    for(const QString& subString : subStrings){
+        bool ok = false;
+        int value = subString.trimmed().toFloat(&ok);
+        if (ok) {
+            datosSerial.insertHead(value);
+        }
+    }
+
+    char respuesta[] = "Mensaje recibido.\n";
+    send(new_socket, respuesta, sizeof(respuesta), 0);
+    std::cout << "Respuesta: " << respuesta << std::endl;
+
+
+    if (::close(server_fd) == -1) {
+        std::cerr << "Error al cerrar el socket: " << std::strerror(errno) << std::endl;
+        return;
+    }
+    if (::close(new_socket) == -1) {
+        std::cerr << "Error al cerrar el socket: " << std::strerror(errno) << std::endl;
+        return;
+    }
+}
+
+void Level3::PlacePowerRandomPos(){
+    isTherePower = true;
+    int colum = QRandomGenerator::global() -> bounded(0, 12);
+    int fila = QRandomGenerator::global() -> bounded(0, 18);
+    if(mapa[colum][fila] == 0){
+        powerX = fila;
+        powerY = colum;
+        poder -> setPos((fila)*50, (colum)*50);
+    } else {
+        return PlacePowerRandomPos();
+    }
 }
