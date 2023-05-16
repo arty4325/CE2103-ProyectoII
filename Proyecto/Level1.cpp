@@ -916,10 +916,163 @@ void Level1::PathfindingA(int beginX, int beginY, int endX, int endY){
         // Despues de hacer eso los que estan disponibles se meten en open list
         // Ademas de eso la casilla seleccionada se debe de meter en closedList
 
-        
+        // Revisando arriba
+        if (mapa[selecOpenY - 1][selecOpenX] == 0){
+            bool checkClosed = false;
+            for(int i = 0; i < closedList.getSize(); i++){
+                int tempCheckClosedX = closedList.getPosVal(i).getPosVal(0);
+                int tempCheckClosedY = closedList.getPosVal(i).getPosVal(1);
+                if(tempCheckClosedX == selecOpenX && tempCheckClosedY == (selecOpenY-1)){
+                    checkClosed = true;
+                }
+            }
+            if(checkClosed == false){
+                //Llegados a este punto es que no estaba dentro de las que habian sido seleccionadas antes
+                // Primero esto se mete en open list
+                SimpleList<int> nuevaEvaluacion;
+                nuevaEvaluacion.insertEnd(selecOpenX);
+                nuevaEvaluacion.insertEnd(selecOpenY - 1);
+                openList.insertEnd(nuevaEvaluacion);
+                // Ahora se tiene que modificar el valor de FCasillas
+                int valCal = fCasillas.getPosVal(selecOpenY).getPosVal(selecOpenX) + 10;
+                fCasillas.getPosVal(selecOpenY - 1).modPos(selecOpenX, valCal);
+                // Una ves modificado el valor de fCasillas
+                // Se modifica el valor de completeCasillas
+                int hTempValue = hCasillas.getPosVal(selecOpenY - 1).getPosVal(selecOpenX);
+                completeCasillas.getPosVal(selecOpenY - 1).modPos(selecOpenX, valCal + hTempValue);
+            }
 
 
-        isRunning = false;
+
+        }
+        // Caso de derecha
+        if (mapa[selecOpenY][selecOpenX + 1] == 0){
+            bool checkClosed = false;
+            for(int i = 0; i < closedList.getSize(); i++){
+                int tempCheckClosedX = closedList.getPosVal(i).getPosVal(0);
+                int tempCheckClosedY = closedList.getPosVal(i).getPosVal(1);
+                if(tempCheckClosedX == (selecOpenX + 1) && tempCheckClosedY == selecOpenY){
+                    checkClosed = true;
+                }
+            }
+            if(checkClosed == false){
+                //Llegados a este punto es que no estaba dentro de las que habian sido seleccionadas antes
+                // Primero esto se mete en open list
+                SimpleList<int> nuevaEvaluacion;
+                nuevaEvaluacion.insertEnd(selecOpenX+1);
+                nuevaEvaluacion.insertEnd(selecOpenY);
+                openList.insertEnd(nuevaEvaluacion);
+                // Ahora se tiene que modificar el valor de FCasillas
+                int valCal = fCasillas.getPosVal(selecOpenY).getPosVal(selecOpenX) + 10;
+                fCasillas.getPosVal(selecOpenY).modPos(selecOpenX + 1, valCal);
+                // Una ves modificado el valor de fCasillas
+                // Se modifica el valor de completeCasillas
+                int hTempValue = hCasillas.getPosVal(selecOpenY).getPosVal(selecOpenX + 1);
+                completeCasillas.getPosVal(selecOpenY).modPos(selecOpenX + 1, valCal + hTempValue);
+            }
+
+
+
+        }
+
+        //Se implementa izquierda
+        if (mapa[selecOpenY][selecOpenX - 1] == 0){
+            bool checkClosed = false;
+            for(int i = 0; i < closedList.getSize(); i++){
+                int tempCheckClosedX = closedList.getPosVal(i).getPosVal(0);
+                int tempCheckClosedY = closedList.getPosVal(i).getPosVal(1);
+                if(tempCheckClosedX == (selecOpenX - 1) && tempCheckClosedY == selecOpenY){
+                    checkClosed = true;
+                }
+            }
+            if(checkClosed == false){
+                //Llegados a este punto es que no estaba dentro de las que habian sido seleccionadas antes
+                // Primero esto se mete en open list
+                SimpleList<int> nuevaEvaluacion;
+                nuevaEvaluacion.insertEnd(selecOpenX-1);
+                nuevaEvaluacion.insertEnd(selecOpenY);
+                openList.insertEnd(nuevaEvaluacion);
+                // Ahora se tiene que modificar el valor de FCasillas
+                int valCal = fCasillas.getPosVal(selecOpenY).getPosVal(selecOpenX) + 10;
+                fCasillas.getPosVal(selecOpenY).modPos(selecOpenX - 1, valCal);
+                // Una ves modificado el valor de fCasillas
+                // Se modifica el valor de completeCasillas
+                int hTempValue = hCasillas.getPosVal(selecOpenY).getPosVal(selecOpenX - 1);
+                completeCasillas.getPosVal(selecOpenY).modPos(selecOpenX - 1, valCal + hTempValue);
+            }
+
+
+
+        }
+        // Revisando abajo
+        if (mapa[selecOpenY + 1][selecOpenX] == 0){
+            bool checkClosed = false;
+            for(int i = 0; i < closedList.getSize(); i++){
+                int tempCheckClosedX = closedList.getPosVal(i).getPosVal(0);
+                int tempCheckClosedY = closedList.getPosVal(i).getPosVal(1);
+                if(tempCheckClosedX == selecOpenX && tempCheckClosedY == (selecOpenY+1)){
+                    checkClosed = true;
+                }
+            }
+            if(checkClosed == false){
+                //Llegados a este punto es que no estaba dentro de las que habian sido seleccionadas antes
+                // Primero esto se mete en open list
+                SimpleList<int> nuevaEvaluacion;
+                nuevaEvaluacion.insertEnd(selecOpenX);
+                nuevaEvaluacion.insertEnd(selecOpenY + 1);
+                openList.insertEnd(nuevaEvaluacion);
+                // Ahora se tiene que modificar el valor de FCasillas
+                int valCal = fCasillas.getPosVal(selecOpenY).getPosVal(selecOpenX) + 10;
+                fCasillas.getPosVal(selecOpenY + 1).modPos(selecOpenX, valCal);
+                // Una ves modificado el valor de fCasillas
+                // Se modifica el valor de completeCasillas
+                int hTempValue = hCasillas.getPosVal(selecOpenY + 1).getPosVal(selecOpenX);
+                completeCasillas.getPosVal(selecOpenY + 1).modPos(selecOpenX, valCal + hTempValue);
+            }
+
+
+
+        }
+
+
+
+        // Se tiene que quitar el valor de SelecOpenY y SelecOpenX de la open y mandarlo a la closed
+        for(int i = 0; i < openList.getSize(); i++){
+            int tempCheckOpenX = openList.getPosVal(i).getPosVal(0);
+            int tempCheckOpenY = openList.getPosVal(i).getPosVal(1);
+            if(tempCheckOpenX == selecOpenX && tempCheckOpenY == selecOpenY){
+                openList.deletePos(i);
+            }
+            SimpleList<int> closedVec;
+            closedVec.insertEnd(tempCheckOpenX);
+            closedVec.insertEnd(tempCheckOpenY);
+            closedList.insertEnd(closedVec);
+        }
+
+        for(int i = 0; i < openList.getSize(); i++){
+            cout << "Open List vec " << endl;
+            openList.getPosVal(i).printList();
+        }
+        for(int i = 0; i < closedList.getSize(); i++){
+            cout << "Closed List vec " << endl;
+            closedList.getPosVal(i).printList();
+        }
+        for(int i = 0; i < fCasillas.getSize(); i++){
+            fCasillas.getPosVal(i).printList();
+        }
+        for(int i = 0; i < completeCasillas.getSize(); i++){
+            completeCasillas.getPosVal(i).printList();
+        }
+
+
+        //isRunning = false;
+        for(int i = 0; i < closedList.getSize(); i++){
+            int tempCheckEndX = closedList.getPosVal(i).getPosVal(0);
+            int tempCheckEndY = closedList.getPosVal(i).getPosVal(1);
+            if(hCasillas.getPosVal(tempCheckEndY).getPosVal(tempCheckEndX) == 1){
+                isRunning = false;
+            }
+        }
     }
 
 
