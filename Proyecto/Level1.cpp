@@ -835,21 +835,44 @@ void Level1::PathfindingA(int beginX, int beginY, int endX, int endY){
         SimpleList<int> columna;
         for(int k = 0; k < 18; k++){
             int H = abs(endX - k) + abs(endY - i);
-            cout << i << " " << k << endl;
-            cout << H << endl;
-            columna.insertHead(H);
+            //cout << i << " " << k << endl;
+            //cout << H << endl;
+            columna.insertEnd(H);
         }
-        cout << "Se incerta fila" << endl;
-        hCasillas.insertHead(columna);
+        //cout << "Se incerta fila" << endl;
+        hCasillas.insertEnd(columna);
     }
-
 
     for(int i = 0; i < 12; i++){
         for(int k = 0; k < 18; k++){
-            //cout << hCasillas.getPosVal(i).getPosVal(k) << endl;
+            cout << hCasillas.getPosVal(i).getPosVal(k) << endl;
         }
-        //cout << "Cambio de fila" << endl;
+        cout << "FIN DE LA FILA" << endl;
     }
+
+    // Una ves calculado el valor de H nada mas se van a llenar las otras listas
+    // De numeros arbitrarios
+
+    for(int i = 0; i < 12; i++){
+        SimpleList<int> columna;
+        for(int k = 0; k < 18; k++){
+            columna.insertEnd(0);
+        }
+        fCasillas.insertEnd(columna);
+    }
+
+    for(int i = 0; i < 12; i++){
+        SimpleList<int> columna;
+        for(int k = 0; k < 18; k++){
+            columna.insertEnd(0);
+        }
+        completeCasillas.insertEnd(columna);
+    }
+
+    // Una ves hecho esto, se va a poner el punto de inicio en closedList
+    SimpleList<int> puntoInicio;
+
+
 
 
 

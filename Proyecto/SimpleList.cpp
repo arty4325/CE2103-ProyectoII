@@ -156,3 +156,17 @@ void SimpleList<T>::modPos(int position, T newValue) {
     }
     current->value = newValue;
 }
+
+template <class T>
+void SimpleList<T>::insertEnd(T value) {
+    NodeList<T>* newNode = new NodeList<T>(value);
+    if (head == nullptr) {
+        head = newNode;
+    } else {
+        NodeList<T>* current = head;
+        while (current->next != nullptr) {
+            current = current->next;
+        }
+        current->next = newNode;
+    }
+}
