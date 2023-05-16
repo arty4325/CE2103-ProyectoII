@@ -314,8 +314,17 @@ void Level1::comerPuntos(){
         }
     }
     if (noquedanpuntos >= puntoslista->lenLista()){ //revisa si ya no quedan puntos para comer, pasa de nivel
+        movementPacmanMobile->stop();
+        exeMovementPacmanMobile->stop();
+
         nivel = nivel + 1;
-        CreateLevels(nivel);
+
+        Level2 *level2;
+        level2 = new Level2();
+        level2 -> setValues(puntaje, vidas, nivel);
+
+        level2 -> show();
+        this-> close();
     }
 }
 /**

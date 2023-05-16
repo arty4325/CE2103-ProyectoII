@@ -38,7 +38,7 @@ Level2::Level2(QWidget * parent){
 
     puntoslista = new puntosLista();
 
-    cout << mapa[7][9] << endl;
+    //cout << mapa[7][9] << endl;
 
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -119,7 +119,7 @@ void Level2::keyPressEvent(QKeyEvent *event)
         if(mapa[pacmanY - 1][pacmanX] == 0) {
             pacmanY -= 1;
             playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() - 50);
-            cout << "Se estripa w" << endl;
+            //cout << "Se estripa w" << endl;
 
             comerPuntos();
             revisarEnemigos();
@@ -131,7 +131,7 @@ void Level2::keyPressEvent(QKeyEvent *event)
         if(mapa[pacmanY + 1][pacmanX] == 0) {
             pacmanY += 1;
             playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() + 50);
-            cout << "Se estripa S" << endl;
+            //cout << "Se estripa S" << endl;
 
             comerPuntos();
             revisarEnemigos();
@@ -143,7 +143,7 @@ void Level2::keyPressEvent(QKeyEvent *event)
         if(mapa[pacmanY][pacmanX - 1] == 0) {
             pacmanX -= 1;
             playerpacman->setPos(playerpacman->pos().x() - 50, playerpacman->pos().y());
-            cout << "Se estripa A" << endl;
+            //cout << "Se estripa A" << endl;
 
             comerPuntos();
             revisarEnemigos();
@@ -155,7 +155,7 @@ void Level2::keyPressEvent(QKeyEvent *event)
         if(mapa[pacmanY][pacmanX + 1] == 0) {
             pacmanX += 1;
             playerpacman->setPos(playerpacman->pos().x() + 50, playerpacman->pos().y());
-            cout << "Se estripa D" << endl;
+            //cout << "Se estripa D" << endl;
 
             comerPuntos();
             revisarEnemigos();
@@ -170,7 +170,6 @@ void Level2::keyPressEvent(QKeyEvent *event)
 void Level2::comerPuntos(){
     for(int i = 0; i < puntoslista->lenLista();i++) {
         if (playerpacman->pos() == puntoslista->findPuntos(i)->pos()) {
-            cout << "son iguales";
             if (puntoslista->findPuntos(i)->eliminado == false){
                 puntoslista->findPuntos(i)->hide();
                 puntaje = puntaje + 10;
@@ -290,7 +289,7 @@ void Level2::MoveFirstEnemy() {
     }
     else {
         if(mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] == 0) {
-            cout << mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] << Enemy1Y + direc1Y << Enemy1X + direc1X << endl;
+            //cout << mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] << Enemy1Y + direc1Y << Enemy1X + direc1X << endl;
             Enemy1Y += direc1Y;
             Enemy1X += direc1X;
             enemigo1->setPos(enemigo1->pos().x() + direc1X*50, enemigo1->pos().y() + direc1Y*50);
@@ -345,7 +344,7 @@ void Level2::MoveSecondEnemy() {
     }
     else {
         if(mapa[Enemy2Y + direc2Y][Enemy2X + direc2X] == 0) {
-            cout << mapa[Enemy2Y + direc2Y][Enemy2X + direc2X] << Enemy2Y + direc2Y << Enemy2X + direc2X << endl;
+            //cout << mapa[Enemy2Y + direc2Y][Enemy2X + direc2X] << Enemy2Y + direc2Y << Enemy2X + direc2X << endl;
             Enemy2Y += direc2Y;
             Enemy2X += direc2X;
             enemigo2->setPos(enemigo2->pos().x() + direc2X*50, enemigo2->pos().y() + direc2Y*50);
@@ -400,7 +399,7 @@ void Level2::MoveThirdEnemy() {
     }
     else {
         if(mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] == 0) {
-            cout << mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] << Enemy3Y + direc3Y << Enemy3X + direc3X << endl;
+            //cout << mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] << Enemy3Y + direc3Y << Enemy3X + direc3X << endl;
             Enemy3Y += direc3Y;
             Enemy3X += direc3X;
             enemigo3->setPos(enemigo3->pos().x() + direc3X*50, enemigo3->pos().y() + direc3Y*50);
@@ -455,7 +454,7 @@ void Level2::MoveFourthEnemy() {
     }
     else {
         if(mapa[Enemy4Y + direc4Y][Enemy4X + direc4X] == 0) {
-            cout << mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] << Enemy3Y + direc3Y << Enemy3X + direc3X << endl;
+            //cout << mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] << Enemy3Y + direc3Y << Enemy3X + direc3X << endl;
             Enemy4Y += direc4Y;
             Enemy4X += direc4X;
             enemigo4->setPos(enemigo4->pos().x() + direc4X*50, enemigo4->pos().y() + direc4Y*50);
@@ -594,37 +593,56 @@ void Level2::setValues(int p, int v, int n){
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(900, 600);
 }
-bool Level2::backtracking(int ene2x, int ene2y, int pox, int poy){
-
-    if (ene2x == pox && ene2y == poy){ //la posicion del enemigo es la misma con el poder
-        return true;
+bool Level2::backtracking(int ene2x, int ene2y, int pox, int poy, int matriz[12][18], int matrizsolucion[11][17]){
+    //cout<<endl<<"ene2x: "<<ene2x<< " ene2y: "<<ene2y<<" posicion en matriz nueva: "<<matrizsolucion[ene2y][ene2x]<< endl;
+    for (int i = 0; i < 12; i++) {
+        for (int j = 0; j < 18; j++) {
+            cout << matrizsolucion[i][j] << " ";
+        }
+        cout << endl;
     }
-    if (mapa[ene2x][ene2y]==1){ //obstaculos
+    cout<<"matriz"<<endl;
+
+    if (ene2x <= 0 || ene2x >= 17 || ene2y <= 0 || ene2y >= 11 || matriz[ene2y][ene2x]==1 || matrizsolucion[ene2y][ene2x]==1){// Fuera de los límites de la matriz
+        cout<<"obstaculos en la matriz"<<endl;
         return false;
     }
-    solucion[ene2x][ene2y] == 0; // marcar el punto actual como visitado
-    //arriba
-    if (backtracking(ene2x-1, ene2y, pox, poy)) {
-        return true;
-    }
-    //abajo
-    if (backtracking(ene2x+1, ene2y, pox, poy)) {
-        return true;
-    }
-    //izquierda
-    if (backtracking(ene2x, ene2y-1, pox, poy)) {
+    matrizsolucion[ene2y][ene2x] = 1; // marcar el punto actual como visitado
+
+    if (ene2x == pox && ene2y == poy){ //la posicion del enemigo es la misma con el poder
+        cout<<"misma posicion"<<endl;
+        matrizsolucion[ene2y][ene2x] = 1;
         return true;
     }
     //derecha
-    if (backtracking(ene2x, ene2y+1, pox, poy)) {
+    if (ene2x < 17 && backtracking(ene2x+1, ene2y, pox, poy, matriz, matrizsolucion)) {
+        cout<<"quiero ir a la derecha"<<endl;
         return true;
     }
+    //abajo
+    if (ene2y < 12 && backtracking(ene2x, ene2y+1, pox, poy, matriz, matrizsolucion)) {
+        cout<<"quiero ir a la abajo"<<endl;
+        return true;
+    }
+    //izquierda
+    if (ene2x > 0 && backtracking(ene2x-1, ene2y, pox, poy,matriz, matrizsolucion)) {
+        cout<<"quiero ir a la izquierda"<<endl;
+        return true;
+    }
+    //arriba
+    if (ene2y > 0 && backtracking(ene2x, ene2y+1, pox, poy,matriz, matrizsolucion)) {
+        cout<<"quiero ir a la derecha"<<endl;
+        return true;
+    }
+
+    cout<<"no se encontro ruta por aqui"<<endl;
     // Si no se encontró el objeto, retroceder y desmarcar el punto actual
-    solucion[ene2x][ene2y] = 1;
+    matrizsolucion[ene2y][ene2x] = 0;
 
     return false;
 }
 void Level2::nuevaMatrizMovement(){
+    /*
     if(solucion[Enemy2X][Enemy2Y-1] == 0 ){ //arriba
         solucion[Enemy2X][Enemy2Y] == 1; //marcar la posicion ya visitada
         direc2X = 0;
@@ -656,7 +674,7 @@ void Level2::nuevaMatrizMovement(){
         Enemy2Y += direc2Y;
         Enemy2X += direc2X;
         enemigo2->setPos(enemigo2->pos().x() + direc2X*50, enemigo2->pos().y() + direc2Y*50);
-    }
+    }*/
 }
 
 void Level2::MoveMobile(){
@@ -805,9 +823,25 @@ void Level2::PlacePowerRandomPos(){
         powerY = colum;
         poder -> setPos((fila)*50, (colum)*50);
 
-        if (backtracking(Enemy2X, Enemy2Y, powerX, powerY) == true){
+        movementSecondEnemy->stop();
+        int solucion[11][17] = {0};
+        if (backtracking(Enemy2X, Enemy2Y, powerX, powerY, mapa, solucion) == true){
             cout<<"BACKTRACKING TRUE";
-            //movementSecondEnemy->stop();
+            for (int i = 0; i < 12; i++) {
+                for (int j = 0; j < 18; j++) {
+                    cout << solucion[i][j] << " ";
+                }
+                cout << endl;
+            }
+            cout<<"resetear matriz";
+            for (int i = 0; i < 11; i++) {
+                for (int j = 0; j < 17; j++) {
+                    solucion[i][j]=0;
+                    cout << solucion[i][j] << " ";
+                }
+                cout << endl;
+            }
+
             //encontrarpoder->start();
         }
 
