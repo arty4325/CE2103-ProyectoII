@@ -13,3 +13,6 @@ Enemigo1::Enemigo1(QGraphicsItem *parent)
     QPixmap imagen(direc.mid(0, direc.length() - 18) + "/Images/Fantasma1.png");
     setPixmap(imagen.scaled(50, 50));
 }
+
+
+

@@ -37,6 +37,8 @@ private:
 
     SimpleList<SimpleList<int>> route1;
 
+    bool isPowerActivated;
+
     QString pattern;
     int nivel = 1;
     int puntaje = 0;
@@ -141,6 +143,8 @@ private:
              int endX, int endY);
 
     void comerPoderes();
+
+    void pararEjecucion();
 };
 
 

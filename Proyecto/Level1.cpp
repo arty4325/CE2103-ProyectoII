@@ -32,6 +32,7 @@ Level1::Level1(QWidget * parent){
     scene -> setSceneRect(0, 0, 900, 600);
 
     puntoslista = new puntosLista();
+    isPowerActivated = false;
 
     for(int i = 0; i < 12; i++){
         SimpleList<SimpleList<int>> fila2;
@@ -294,6 +295,7 @@ void Level1::keyPressEvent(QKeyEvent *event)
         CreateLevels(nivel);
     }
     if (event->key() == Qt::Key_W) {
+        comerPoderes();
         if(mapa[pacmanY - 1][pacmanX] == 0) {
             pacmanY -= 1;
             playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() - 50);
@@ -306,6 +308,7 @@ void Level1::keyPressEvent(QKeyEvent *event)
         }
     }
     if (event->key() == Qt::Key_S) {
+        comerPoderes();
         //cout << pacmanX << pacmanY << endl;
         //cout << pacmanX << pacmanY + 1<< endl;
         //cout << mapa[pacmanY + 1][pacmanX] << endl;
@@ -322,6 +325,7 @@ void Level1::keyPressEvent(QKeyEvent *event)
         }
     }
     if (event->key() == Qt::Key_A) {
+        comerPoderes();
         //cout << pacmanX << pacmanY << endl;
         //cout << pacmanX - 1 << pacmanY << endl;
         //cout << mapa[pacmanY][pacmanX - 1] << endl;
@@ -338,6 +342,7 @@ void Level1::keyPressEvent(QKeyEvent *event)
         }
     }
     if (event->key() == Qt::Key_D) {
+        comerPoderes();
         //cout << pacmanX << pacmanY << endl;
         //cout << pacmanX + 1 << pacmanY << endl;
         //cout << mapa[pacmanX + 1][pacmanY] << endl;
@@ -382,17 +387,36 @@ void Level1::comerPuntos(){
 
 
 void Level1::revisarEnemigos(){
-    if (playerpacman->pos() == enemigo1->pos()){
-        vidas = vidas - 1;
-        labelVidas->setText("Vidas: "+ QString::number(vidas,10));
-    }
+    if(isPowerActivated == false) {
+        if (playerpacman->pos() == enemigo1->pos()) {
+            vidas = vidas - 1;
+            labelVidas->setText("Vidas: " + QString::number(vidas, 10));
+        }
 
-    if (vidas == 0){ //se pierden todas las vidas
-        GameOver *go;
-        go = new GameOver();
-        this->close();
-        revisarChoque -> stop();
-        go->show();
+        if (vidas == 0) { //se pierden todas las vidas
+            GameOver *go;
+            go = new GameOver();
+            this->close();
+            revisarChoque->stop();
+            go->show();
+        }
+    } else if (isPowerActivated) {
+        if (playerpacman->pos() == enemigo1->pos()) {
+            puntaje += 50;
+            //Hay que desaparecer el enemigo y aparecerlo en un lugar random
+            bool hasPositionedIt;
+            hasPositionedIt = false;
+            while(hasPositionedIt == false){
+                int tryPosX = QRandomGenerator::global() -> bounded(0, 18);
+                int tryPosY = QRandomGenerator::global() -> bounded(0, 12);
+                if(mapa[tryPosY][tryPosX] == 0){
+                    Enemy1X = tryPosX;
+                    Enemy1Y = tryPosY;
+                    enemigo1 -> setPos(tryPosX*50, tryPosY*50);
+                    hasPositionedIt = true;
+                }
+            }
+        }
     }
 }
 
@@ -401,6 +425,7 @@ void Level1::MoveMobile(){
         cout << "MOVIMIENTO" << endl;
         // Movimiento hacia arriba
         if (datosSerial.getPosVal(2) < -3) {
+            comerPoderes();
             if (mapa[pacmanY - 1][pacmanX] == 0) {
                 pacmanY -= 1;
                 playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() - 50);
@@ -409,6 +434,7 @@ void Level1::MoveMobile(){
                 revisarEnemigos();
             }
         } else if (datosSerial.getPosVal(2) > 3) {
+            comerPoderes();
             if (mapa[pacmanY + 1][pacmanX] == 0) {
                 pacmanY += 1;
                 playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() + 50);
@@ -417,6 +443,7 @@ void Level1::MoveMobile(){
                 revisarEnemigos();
             }
         } else if (datosSerial.getPosVal(1) < -3) {
+            comerPoderes();
             if (mapa[pacmanY][pacmanX - 1] == 0) {
                 pacmanX -= 1;
                 playerpacman->setPos(playerpacman->pos().x() - 50, playerpacman->pos().y());
@@ -425,6 +452,7 @@ void Level1::MoveMobile(){
                 revisarEnemigos();
             }
         } else if (datosSerial.getPosVal(1) > 3) {
+            comerPoderes();
             if (mapa[pacmanY][pacmanX + 1] == 0) {
                 pacmanX += 1;
                 //pacman->setPos(+50,+0);
@@ -645,9 +673,28 @@ void Level1::comerPoderes(){
     if(isTherePower){
         if(Enemy1X == powerX && Enemy1Y == powerY){
             poder -> setPos(-50, -50);
+            powerX = -1;
+            powerY = -1;
             // El enemigo se comio el poder
         }
+        if(pacmanX == powerX && pacmanY == powerY){
+            poder -> setPos(-50, -50);
+            powerX = -1;
+            powerY = -1;
+            cout << "El pacman llego al poder" << endl;
+            // Ahora por 5 segundos se tiene que ejecutar lo de que el compita persiga a los enemigos
+            QTimer::singleShot(5000, this, &Level1::pararEjecucion);
+            //revisarChoque -> stop();
+            // Ya con esto por 5 segundos se para lo de quitar vidas
+            isPowerActivated = true;
+        }
     }
+}
+
+void Level1::pararEjecucion(){
+    //revisarChoque -> setInterval(500);
+    //revisarChoque -> start();
+    isPowerActivated = false;
 }
 
 SimpleList<SimpleList<int>> Level1::PathfindingA(int beginX, int beginY, int endX, int endY){
