@@ -137,6 +137,7 @@ void Level1::startSocketServer(){
 
 /**
  * @brief Crea el mapa colocando las celdas y los puntos
+ * @param null
  */
 void Level1::CreateMap() {
     int ypos = 0;
@@ -498,7 +499,10 @@ void Level1::MoveFirstEnemy() {
 }
 
 
-
+/**
+ * @brief Implemenbtacion del socket que permite conectarse con al apliaccion del celular
+ * @param null
+ */
 void Level1::SocketServer() {
 
     //datosSerial.printList();
@@ -593,6 +597,10 @@ void Level1::SocketServer() {
 }
 
 
+/**
+ * @brief Coloca el poder en una celda random
+ * @param null
+ */
 void Level1::PlacePowerRandomPos(){
     isTherePower = true;
     int colum = QRandomGenerator::global() -> bounded(0, 12);
@@ -639,6 +647,14 @@ void Level1::pararEjecucion(){
     isPowerActivated = false;
 }
 
+/**
+ * @brief Implementacion del PathFInding
+ * @param beginX Coordenada de inicio en x
+ * @param beginY Coordenada de inicio en y
+ * @param endX  Coordenada de fin en X
+ * @param endY Coordenada de fin en Y
+ * @return
+ */
 SimpleList<SimpleList<int>> Level1::PathfindingA(int beginX, int beginY, int endX, int endY){
     //SimpleList<int> numeracionCasillas;
     cout << "\n" << endl;

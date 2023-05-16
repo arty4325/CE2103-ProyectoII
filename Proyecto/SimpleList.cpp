@@ -143,6 +143,12 @@ void SimpleList<T>::deletePos(int position) {
     delete temp;
 }
 
+/**
+ * @brief Premite modificar el valor en una posicion
+ * @tparam T El tipo de dato
+ * @param position La posicion en donde se esta modificando
+ * @param newValue El nuevo valor
+ */
 template <class T>
 void SimpleList<T>::modPos(int position, T newValue) {
     NodeList<T>* current = this->head;
@@ -157,6 +163,11 @@ void SimpleList<T>::modPos(int position, T newValue) {
     current->value = newValue;
 }
 
+/**
+ * @brief Se agrega dato al final
+ * @tparam T Tipo de dato
+ * @param value Dato
+ */
 template <class T>
 void SimpleList<T>::insertEnd(T value) {
     NodeList<T>* newNode = new NodeList<T>(value);
