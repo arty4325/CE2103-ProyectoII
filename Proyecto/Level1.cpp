@@ -391,6 +391,18 @@ void Level1::revisarEnemigos(){
         if (playerpacman->pos() == enemigo1->pos()) {
             vidas = vidas - 1;
             labelVidas->setText("Vidas: " + QString::number(vidas, 10));
+            bool haveMoveIt;
+            haveMoveIt = false;
+            while(haveMoveIt == false){
+                int tryY = QRandomGenerator::global() -> bounded(0, 12);
+                int tryX = QRandomGenerator::global() -> bounded(0, 18);
+                if(mapa[tryY][tryX] == 0){
+                    playerpacman ->setPos(tryX*50, tryY*50);
+                    pacmanX = tryX;
+                    pacmanY = tryY;
+                    haveMoveIt = true;
+                }
+            }
         }
 
         if (vidas == 0) { //se pierden todas las vidas
