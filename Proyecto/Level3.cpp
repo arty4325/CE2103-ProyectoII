@@ -38,7 +38,6 @@ Level3::Level3(QWidget * parent){
     puntoslista = new puntosLista();
     isPowerActivated = false;
 
-    cout << mapa[7][9] << endl;
 
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -115,9 +114,7 @@ void Level3::keyPressEvent(QKeyEvent *event)
         CreateLevels(nivel);
     }
     if (event->key() == Qt::Key_W) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX << pacmanY - 1 << endl;
-        cout << mapa[pacmanX][pacmanY - 1] << endl;
+        comerPoderes();
         if(mapa[pacmanY - 1][pacmanX] == 0) {
             pacmanY -= 1;
             playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() - 50);
@@ -130,9 +127,7 @@ void Level3::keyPressEvent(QKeyEvent *event)
         }
     }
     if (event->key() == Qt::Key_S) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX << pacmanY + 1<< endl;
-        cout << mapa[pacmanY + 1][pacmanX] << endl;
+        comerPoderes();
         //pacman->setPos(+0,-50);
         if(mapa[pacmanY + 1][pacmanX] == 0) {
             pacmanY += 1;
@@ -146,9 +141,7 @@ void Level3::keyPressEvent(QKeyEvent *event)
         }
     }
     if (event->key() == Qt::Key_A) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX - 1 << pacmanY << endl;
-        cout << mapa[pacmanY][pacmanX - 1] << endl;
+        comerPoderes();
         //pacman->setPos(-50,+0);
         if(mapa[pacmanY][pacmanX - 1] == 0) {
             pacmanX -= 1;
@@ -162,9 +155,7 @@ void Level3::keyPressEvent(QKeyEvent *event)
         }
     }
     if (event->key() == Qt::Key_D) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX + 1 << pacmanY << endl;
-        cout << mapa[pacmanX + 1][pacmanY] << endl;
+        comerPoderes();
         if(mapa[pacmanY][pacmanX + 1] == 0) {
             pacmanX += 1;
             playerpacman->setPos(playerpacman->pos().x() + 50, playerpacman->pos().y());
@@ -205,28 +196,111 @@ void Level3::comerPuntos(){
  * @brief Revisa si un enemigo se encuentra en las mismas coordenadas que el jugador
  */
 void Level3::revisarEnemigos(){
-    if (playerpacman->pos() == enemigo1->pos()){
-        vidas = vidas - 1;
-        labelVidas->setText("Vidas: "+ QString::number(vidas,10));
-    }
-    if (playerpacman->pos() == enemigo2->pos()){
-        vidas = vidas - 1;
-        labelVidas->setText("Vidas: "+ QString::number(vidas,10));
-    }
-    if (playerpacman->pos() == enemigo3->pos()){
-        vidas = vidas - 1;
-        labelVidas->setText("Vidas: "+ QString::number(vidas,10));
-    }
-    if (playerpacman->pos() == enemigo4->pos()){
-        vidas = vidas - 1;
-        labelVidas->setText("Vidas: "+ QString::number(vidas,10));
-    }
-    if (vidas == 0){ //se pierden todas las vidas
-        GameOver *go;
-        go = new GameOver();
-        this->close();
-        revisarChoque -> stop();
-        go->show();
+    if(isPowerActivated == false) {
+        if (playerpacman->pos() == enemigo1->pos()) {
+            vidas = vidas - 1;
+            labelVidas->setText("Vidas: " + QString::number(vidas, 10));
+            bool haveMoveIt;
+            haveMoveIt = false;
+            while (haveMoveIt == false) {
+                int tryY = QRandomGenerator::global()->bounded(0, 12);
+                int tryX = QRandomGenerator::global()->bounded(0, 18);
+                if (mapa[tryY][tryX] == 0) {
+                    playerpacman->setPos(tryX * 50, tryY * 50);
+                    pacmanX = tryX;
+                    pacmanY = tryY;
+                    haveMoveIt = true;
+                }
+            }
+        }
+        if (playerpacman->pos() == enemigo2->pos()) {
+            vidas = vidas - 1;
+            labelVidas->setText("Vidas: " + QString::number(vidas, 10));
+            bool haveMoveIt;
+            haveMoveIt = false;
+            while (haveMoveIt == false) {
+                int tryY = QRandomGenerator::global()->bounded(0, 12);
+                int tryX = QRandomGenerator::global()->bounded(0, 18);
+                if (mapa[tryY][tryX] == 0) {
+                    playerpacman->setPos(tryX * 50, tryY * 50);
+                    pacmanX = tryX;
+                    pacmanY = tryY;
+                    haveMoveIt = true;
+                }
+            }
+        }
+        if (playerpacman->pos() == enemigo3->pos()) {
+            vidas = vidas - 1;
+            labelVidas->setText("Vidas: " + QString::number(vidas, 10));
+            bool haveMoveIt;
+            haveMoveIt = false;
+            while (haveMoveIt == false) {
+                int tryY = QRandomGenerator::global()->bounded(0, 12);
+                int tryX = QRandomGenerator::global()->bounded(0, 18);
+                if (mapa[tryY][tryX] == 0) {
+                    playerpacman->setPos(tryX * 50, tryY * 50);
+                    pacmanX = tryX;
+                    pacmanY = tryY;
+                    haveMoveIt = true;
+                }
+            }
+        }
+        if (vidas == 0) { //se pierden todas las vidas
+            GameOver *go;
+            go = new GameOver();
+            this->close();
+            revisarChoque->stop();
+            go->show();
+        }
+    } else if (isPowerActivated) {
+        if (playerpacman->pos() == enemigo1->pos()) {
+            puntaje += 50;
+            //Hay que desaparecer el enemigo y aparecerlo en un lugar random
+            bool hasPositionedIt;
+            hasPositionedIt = false;
+            while(hasPositionedIt == false){
+                int tryPosX = QRandomGenerator::global() -> bounded(0, 18);
+                int tryPosY = QRandomGenerator::global() -> bounded(0, 12);
+                if(mapa[tryPosY][tryPosX] == 0){
+                    Enemy1X = tryPosX;
+                    Enemy1Y = tryPosY;
+                    enemigo1 -> setPos(tryPosX*50, tryPosY*50);
+                    hasPositionedIt = true;
+                }
+            }
+        }
+        if (playerpacman->pos() == enemigo2->pos()) {
+            puntaje += 50;
+            //Hay que desaparecer el enemigo y aparecerlo en un lugar random
+            bool hasPositionedIt;
+            hasPositionedIt = false;
+            while(hasPositionedIt == false){
+                int tryPosX = QRandomGenerator::global() -> bounded(0, 18);
+                int tryPosY = QRandomGenerator::global() -> bounded(0, 12);
+                if(mapa[tryPosY][tryPosX] == 0){
+                    Enemy2X = tryPosX;
+                    Enemy2Y = tryPosY;
+                    enemigo2 -> setPos(tryPosX*50, tryPosY*50);
+                    hasPositionedIt = true;
+                }
+            }
+        }
+        if (playerpacman->pos() == enemigo3->pos()) {
+            puntaje += 50;
+            //Hay que desaparecer el enemigo y aparecerlo en un lugar random
+            bool hasPositionedIt;
+            hasPositionedIt = false;
+            while(hasPositionedIt == false){
+                int tryPosX = QRandomGenerator::global() -> bounded(0, 18);
+                int tryPosY = QRandomGenerator::global() -> bounded(0, 12);
+                if(mapa[tryPosY][tryPosX] == 0){
+                    Enemy3X = tryPosX;
+                    Enemy3Y = tryPosY;
+                    enemigo3 -> setPos(tryPosX*50, tryPosY*50);
+                    hasPositionedIt = true;
+                }
+            }
+        }
     }
 }
 /**
@@ -440,17 +514,17 @@ void Level3::MoveThirdEnemy() {
         }
     } else if (isSearchingPower){
         for(int i = 0; i < route2.getSize(); i++){
-            enemigo1 -> setPos(route2.getPosVal(i).getPosVal(0)*50, route2.getPosVal(i).getPosVal(1)*50);
-            Enemy1X = route2.getPosVal(i).getPosVal(0);
-            Enemy1Y = route2.getPosVal(i).getPosVal(1);
+            enemigo3 -> setPos(route2.getPosVal(i).getPosVal(0)*50, route2.getPosVal(i).getPosVal(1)*50);
+            Enemy3X = route2.getPosVal(i).getPosVal(0);
+            Enemy3Y = route2.getPosVal(i).getPosVal(1);
         }
         if(route2.getSize() != 0){
-            enemigo1 -> setPos(route2.getPosVal(0).getPosVal(0)*50, route2.getPosVal(0).getPosVal(1)*50);
-            Enemy1X = route2.getPosVal(0).getPosVal(0);
-            Enemy1Y = route2.getPosVal(0).getPosVal(1);
+            enemigo3 -> setPos(route2.getPosVal(0).getPosVal(0)*50, route2.getPosVal(0).getPosVal(1)*50);
+            Enemy3X = route2.getPosVal(0).getPosVal(0);
+            Enemy3Y = route2.getPosVal(0).getPosVal(1);
             route2.deletePos(0);
         }
-        if(route1.getSize() == 0) {
+        if(route2.getSize() == 0) {
             comerPoderes();
             isSearchingPower = false;
         }
