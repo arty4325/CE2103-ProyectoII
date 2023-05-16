@@ -6,7 +6,10 @@
 #include <QDir>
 
 #include "Enemigo1.h"
-
+/**
+ * @brief Constructor para el enemigo 1 que se va a mostrar
+ * @param parent QGraphicsItem puntero
+ */
 Enemigo1::Enemigo1(QGraphicsItem *parent)
     : QGraphicsPixmapItem(parent) {
     QString direc = QDir::currentPath();

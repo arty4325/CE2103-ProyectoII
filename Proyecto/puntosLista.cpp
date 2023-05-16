@@ -8,11 +8,16 @@
 
 using namespace std;
 
-
+/**
+ * @brief Constructor para la lista de puntos
+ */
 puntosLista::puntosLista() {
     head= nullptr;
 }
-
+/**
+ * @brief Insertar puntos en la lista
+ * @param puntos Puntos puntero
+ */
 void puntosLista::insertarPuntos(Puntos *puntos) {
     puntos->next = nullptr;
 
@@ -29,7 +34,10 @@ void puntosLista::insertarPuntos(Puntos *puntos) {
         current -> next = puntos;
     }
 }
-
+/**
+ * @brief Devuelve la cantidad de puntos en la lista
+ * @return i cantidad de puntos
+ */
 int puntosLista::lenLista(){
     int i = 0;
     Puntos* current = head;
@@ -39,7 +47,11 @@ int puntosLista::lenLista(){
     }
     return i;
 }
-
+/**
+ * @brief Busca un punto con su id
+ * @param id int identificador
+ * @return punto encontrado
+ */
 Puntos* puntosLista::findPuntos(int id){
     Puntos *find = head;
     while((find != NULL) and (find->getId()!=id)){
@@ -47,7 +59,9 @@ Puntos* puntosLista::findPuntos(int id){
     }
     return find;
 }
-
+/**
+ * @brief mostrar todos los puntos en la lista
+ */
 void puntosLista::mostrar(){
     Puntos* current = head;
     while(current != nullptr){
@@ -55,6 +69,9 @@ void puntosLista::mostrar(){
         current = current ->next;
     }
 }
+/**
+ * @brief Elimina todos los puntos de la lista
+ */
 void puntosLista::eliminarLista() {
     Puntos* current = head;
     while (current != nullptr) {

@@ -62,6 +62,7 @@ private:
     QTimer* revisarChoque;
     QTimer* movementPacmanMobile;
     QTimer* exeMovementPacmanMobile;
+    QTimer* encontrarpoder;
 
     puntosLista* Fantasmas = new puntosLista();
 
@@ -87,10 +88,11 @@ private:
                     {1,1,1,1,0,0,1,0,0,0,0,1,0,0,1,1,1,1},
                     {1,0,0,0,0,1,1,1,0,0,1,1,1,0,0,0,0,1},
                     {1,0,1,1,0,1,1,0,0,0,0,1,1,0,1,1,0,1},
-                    {1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
+                    {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
                     {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
             };
 
+    int solucion[12][18];
 
     QLabel *labelVidas;
     QLabel *labelNivel;
@@ -140,6 +142,9 @@ private:
              int endX, int endY);
 
     SimpleList<SimpleList<int>> PathfindingA(int beginX, int beginY, int endX, int endY);
+    bool backtracking(int ene2x, int ene2y, int pox, int poy);
+
+    void nuevaMatrizMovement();
 };
 
 #endif //PACMAN_LEVEL2_H

@@ -28,110 +28,18 @@
 #include <QThread>
 
 using namespace std;
-
+/**
+ * @brief Constructor para la pantalla del segundo nivel
+ * @param parent QWidget puntero
+ */
 Level2::Level2(QWidget * parent){
     QGraphicsScene *scene = new QGraphicsScene(); // Se crea la escena
     scene -> setSceneRect(0, 0, 900, 600);
 
     puntoslista = new puntosLista();
     isPowerActivated = false;
-/*
-    for(int i = 0; i < 12; i++){
-        SimpleList<SimpleList<int>> fila;
-        for(int j = 0; j < 18; j++){
-            SimpleList<int> informacion;
-            fila.insertHead(informacion);
-        }
-        matriz.insertHead(fila);
-    }
 
 
-    matriz.getPosVal(0).getPosVal(0).insertHead(1);
-
-    // Se agrega el contorno del mapa como obstaculo
-    for(int w = 0; w < 18; w++){
-        matriz.getPosVal(0).getPosVal(w).insertHead(1);
-    }
-    for(int k = 1; k < 12; k++){
-        matriz.getPosVal(k).getPosVal(16).insertHead(1);
-    }
-    for(int z = 0; z < 17; z++){
-        matriz.getPosVal(11).getPosVal(z).insertHead(1);
-    }
-    for(int c = 1; c < 11; c++){
-        matriz.getPosVal(c).getPosVal(0).insertHead(1);
-    }
-
-
-    //Se agregan las paredes de la columna 1
-    matriz.getPosVal(1).getPosVal(3).insertHead(1);
-    matriz.getPosVal(1).getPosVal(15).insertHead(1);
-
-    // Se agregan laas paredes de la columna 2
-    matriz.getPosVal(2).getPosVal(6).insertHead(1);
-    matriz.getPosVal(2).getPosVal(7).insertHead(1);
-    matriz.getPosVal(2).getPosVal(8).insertHead(1);
-    matriz.getPosVal(2).getPosVal(9).insertHead(1);
-    matriz.getPosVal(2).getPosVal(10).insertHead(1);
-    matriz.getPosVal(2).getPosVal(11).insertHead(1);
-
-    //Se agregan las paredes de la columna 3
-    matriz.getPosVal(3).getPosVal(1).insertHead(1);
-    matriz.getPosVal(3).getPosVal(16).insertHead(1);
-
-    //Se agregan las paredes de la columna 4
-    matriz.getPosVal(4).getPosVal(4).insertHead(1);
-    matriz.getPosVal(4).getPosVal(5).insertHead(1);
-    matriz.getPosVal(4).getPosVal(6).insertHead(1);
-    matriz.getPosVal(4).getPosVal(7).insertHead(1);
-
-    matriz.getPosVal(4).getPosVal(10).insertHead(1);
-    matriz.getPosVal(4).getPosVal(11).insertHead(1);
-    matriz.getPosVal(4).getPosVal(12).insertHead(1);
-    matriz.getPosVal(4).getPosVal(13).insertHead(1);
-
-    //Se agregan las paredes de la columna 5
-    matriz.getPosVal(5).getPosVal(4).insertHead(1);
-    matriz.getPosVal(5).getPosVal(5).insertHead(1);
-    matriz.getPosVal(5).getPosVal(6).insertHead(1);
-
-    matriz.getPosVal(5).getPosVal(11).insertHead(1);
-    matriz.getPosVal(5).getPosVal(12).insertHead(1);
-    matriz.getPosVal(5).getPosVal(13).insertHead(1);
-
-    //Se agregaan las paredes de la columna 7
-    matriz.getPosVal(7).getPosVal(5).insertHead(1);
-    matriz.getPosVal(7).getPosVal(6).insertHead(1);
-    matriz.getPosVal(7).getPosVal(7).insertHead(1);
-    matriz.getPosVal(7).getPosVal(8).insertHead(1);
-    matriz.getPosVal(7).getPosVal(9).insertHead(1);
-    matriz.getPosVal(7).getPosVal(10).insertHead(1);
-    matriz.getPosVal(7).getPosVal(11).insertHead(1);
-    matriz.getPosVal(7).getPosVal(12).insertHead(1);
-
-    //Se agregan las paredes de la columna 8
-    matriz.getPosVal(8).getPosVal(1).insertHead(1);
-    matriz.getPosVal(8).getPosVal(8).insertHead(1);
-    matriz.getPosVal(8).getPosVal(9).insertHead(1);
-    matriz.getPosVal(8).getPosVal(16).insertHead(1);
-
-    //se agregan las paredes de la columna 9
-    matriz.getPosVal(9).getPosVal(1).insertHead(1);
-    matriz.getPosVal(9).getPosVal(2).insertHead(1);
-    matriz.getPosVal(9).getPosVal(3).insertHead(1);
-    matriz.getPosVal(9).getPosVal(8).insertHead(1);
-    matriz.getPosVal(9).getPosVal(9).insertHead(1);
-    matriz.getPosVal(9).getPosVal(14).insertHead(1);
-    matriz.getPosVal(9).getPosVal(15).insertHead(1);
-    matriz.getPosVal(9).getPosVal(16).insertHead(1);
-
-
-    //Se agregan las paredes de la columna 10
-    matriz.getPosVal(10).getPosVal(5).insertHead(1);
-    matriz.getPosVal(10).getPosVal(6).insertHead(1);
-    matriz.getPosVal(10).getPosVal(11).insertHead(1);
-    matriz.getPosVal(10).getPosVal(12).insertHead(1);
-*/
     cout << mapa[7][9] << endl;
 
     setScene(scene);
@@ -140,6 +48,9 @@ Level2::Level2(QWidget * parent){
 
     show();
 }
+/**
+ * @brief Crea el mapa colocando las celdas y los puntos
+ */
 void Level2::CreateMap() {
     int ypos = 0;
     int xpos = 7;
@@ -176,6 +87,10 @@ void Level2::CreateMap() {
         }
     }
 }
+/**
+ * @brief Funcion que se encarga de la interaccion con teclas
+ * @param event QKeyEvent evento de una tecla
+ */
 void Level2::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_K) { //La letra K crea nuevos niveles
@@ -261,7 +176,9 @@ void Level2::keyPressEvent(QKeyEvent *event)
         }
     }
 }
-
+/**
+ * @brief Revisa si el jugador se encuentra en las mismas coordenadas que un punto
+ */
 void Level2::comerPuntos(){
     for(int i = 0; i < puntoslista->lenLista();i++) {
         if (playerpacman->pos() == puntoslista->findPuntos(i)->pos()) {
@@ -283,6 +200,9 @@ void Level2::comerPuntos(){
         CreateLevels(nivel);
     }
 }
+/**
+ * @brief Revisa si un enemigo se encuentra en las mismas coordenadas que el jugador
+ */
 void Level2::revisarEnemigos(){
     if(isPowerActivated == false) {
         if (playerpacman->pos() == enemigo1->pos()) {
@@ -360,7 +280,10 @@ void Level2::revisarEnemigos(){
         }
     }
 }
-
+/**
+ * @brief Define un patron para mostrar las celdas
+ * @param lvl int nivel en que esta
+ */
 void Level2::CreateLevels(int lvl){
     switch(lvl){
         case 1:{
@@ -369,7 +292,7 @@ void Level2::CreateLevels(int lvl){
             break;
         }
         case 2:{
-            this-> pattern = "111111111111111111n100000001100000001n100110001100011001n100010001100010001n100000001100000001n100111000000111001n110001110011100011n111100100001001111n100001110011100001n101101100001101101n101000000000000101n111111111111111111";
+            this-> pattern = "111111111111111111n100000001100000001n100110001100011001n100010001100010001n100000001100000001n100111000000111001n110001110011100011n111100100001001111n100001110011100001n101101100001101101n100000000000000001n111111111111111111";
             CreateMap();
             break;
         }
@@ -385,7 +308,9 @@ void Level2::CreateLevels(int lvl){
         }
     }
 }
-
+/**
+ * @brief Funcion que revisa si el enemigo1 puede moverse en determinada direccion validando si hay obstaculos
+ */
 void Level2::MoveFirstEnemy() {
     if (isSearchingPower == false) {
         if (moving1 == false) {
@@ -455,7 +380,9 @@ void Level2::MoveFirstEnemy() {
         }
     }
 }
-
+/**
+ * @brief Funcion que revisa si el enemigo2 puede moverse en determinada direccion validando si hay obstaculos
+ */
 void Level2::MoveSecondEnemy() {
     if(moving2 == false){
         int num = QRandomGenerator::global() -> bounded(0, 4); // escoge numero random del 0 al 3
@@ -607,13 +534,78 @@ void Level2::setValues(int p, int v, int n){
     exeMovementPacmanMobile -> setInterval(500);
     exeMovementPacmanMobile -> start();
 
+    encontrarpoder = new QTimer(this);
+    connect(encontrarpoder, &QTimer::timeout, this, &Level2::nuevaMatrizMovement);
+    encontrarpoder -> setInterval(500);
+
     setScene(scene());
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(900, 600);
-
-
 }
+bool Level2::backtracking(int ene2x, int ene2y, int pox, int poy){
 
+    if (ene2x == pox && ene2y == poy){ //la posicion del enemigo es la misma con el poder
+        return true;
+    }
+    if (mapa[ene2x][ene2y]==1){ //obstaculos
+        return false;
+    }
+    solucion[ene2x][ene2y] == 0; // marcar el punto actual como visitado
+    //arriba
+    if (backtracking(ene2x-1, ene2y, pox, poy)) {
+        return true;
+    }
+    //abajo
+    if (backtracking(ene2x+1, ene2y, pox, poy)) {
+        return true;
+    }
+    //izquierda
+    if (backtracking(ene2x, ene2y-1, pox, poy)) {
+        return true;
+    }
+    //derecha
+    if (backtracking(ene2x, ene2y+1, pox, poy)) {
+        return true;
+    }
+    // Si no se encontró el objeto, retroceder y desmarcar el punto actual
+    solucion[ene2x][ene2y] = 1;
+
+    return false;
+}
+void Level2::nuevaMatrizMovement(){
+    if(solucion[Enemy2X][Enemy2Y-1] == 0 ){ //arriba
+        solucion[Enemy2X][Enemy2Y] == 1; //marcar la posicion ya visitada
+        direc2X = 0;
+        direc2Y = -1;
+        Enemy2Y += direc2Y;
+        Enemy2X += direc2X;
+        enemigo2->setPos(enemigo2->pos().x() + direc2X*50, enemigo2->pos().y() + direc2Y*50);
+    }
+    if(solucion[Enemy2X][Enemy2Y+1] == 0 ){ //abajo
+        solucion[Enemy2X][Enemy2Y] == 1; //marcar la posicion ya visitada
+        direc2X = 1;
+        direc2Y = 0;
+        Enemy2Y += direc2Y;
+        Enemy2X += direc2X;
+        enemigo2->setPos(enemigo2->pos().x() + direc2X*50, enemigo2->pos().y() + direc2Y*50);
+    }
+    if(solucion[Enemy2X-1][Enemy2Y] == 0 ){ //izquierda
+        solucion[Enemy2X][Enemy2Y] == 1; //marcar la posicion ya visitada
+        direc2X = -1;
+        direc2Y = 0;
+        Enemy2Y += direc2Y;
+        Enemy2X += direc2X;
+        enemigo2->setPos(enemigo2->pos().x() + direc2X*50, enemigo2->pos().y() + direc2Y*50);
+    }
+    if(solucion[Enemy2X+1][Enemy2Y] == 0 ){ //derecha
+        solucion[Enemy2X][Enemy2Y] == 1; //marcar la posicion ya visitada
+        direc2X = +1;
+        direc2Y = 0;
+        Enemy2Y += direc2Y;
+        Enemy2X += direc2X;
+        enemigo2->setPos(enemigo2->pos().x() + direc2X*50, enemigo2->pos().y() + direc2Y*50);
+    }
+}
 
 void Level2::MoveMobile(){
     if(datosSerial.getSize() == 3) {

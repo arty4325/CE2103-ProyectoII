@@ -6,7 +6,10 @@
 #include <QDir>
 #include "PlayerPacman.h"
 
-
+/**
+ * @brief Constructor para mostrar el pacman
+ * @param parent
+ */
 PlayerPacman::PlayerPacman(QGraphicsItem *parent)
     : QGraphicsPixmapItem(parent){
         QString direc = QDir::currentPath();

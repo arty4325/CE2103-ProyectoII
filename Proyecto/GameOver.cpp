@@ -10,7 +10,10 @@
 #include <QDir>
 #include "GameOver.h"
 using namespace std;
-
+/**
+ * @brief Constructor para la pantalla de perder el juego
+ * @param parent QWidget puntero
+ */
 GameOver::GameOver(QWidget *parent) {
     QGraphicsScene *scene = new QGraphicsScene();
     scene->setSceneRect(0, 0, 900, 600);

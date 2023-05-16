@@ -5,7 +5,10 @@
 #include <QGraphicsItem>
 #include <QDir>
 #include "Puntos.h"
-
+/**
+ * @brief Constructor para mostrar los puntos
+ * @param parent QGraphicsItem puntero
+ */
 Puntos::Puntos(QGraphicsItem *parent)
         : QGraphicsPixmapItem(parent) {
     QString direc = QDir::currentPath();
@@ -14,9 +17,17 @@ Puntos::Puntos(QGraphicsItem *parent)
     next = nullptr;
     eliminado = false;
 }
+/**
+ * @brief coloca un identificador a cada punto
+ * @param ide int identificador
+ */
 int Puntos::setId(int ide){
     this->id = ide;
 }
+/**
+ * @brief devuelve el identificador del punto
+ * @return id identificador
+ */
 int Puntos::getId(){
     return id;
 }

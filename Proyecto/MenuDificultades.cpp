@@ -15,8 +15,9 @@
 
 using namespace std;
 
-
-
+/**
+ * @brief Muestra el primer nivel
+ */
 void MenuDificultades::medium() {
     Level1 *medium;
     cout << "Funciona el otro boton de la interfaz" << endl;
@@ -24,9 +25,9 @@ void MenuDificultades::medium() {
     medium -> show();
     this -> close();
 }
-
-
-
+/**
+ * @brief Constructor para la pantalla de inicio
+ */
 MenuDificultades::MenuDificultades(QWidget *parent) {
     QGraphicsScene *scene = new QGraphicsScene();
     scene -> setSceneRect(0, 0, 900, 600);

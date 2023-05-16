@@ -4024,8 +4024,10 @@ CMakeFiles/Battle_Space.dir/GameOver.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ I
 
 CMakeFiles/Battle_Space.dir/Level1.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/Level1.cpp \
   /usr/include/stdc-predef.h \
-  /usr/include/qt/QtCore/QTimer \
-  /usr/include/qt/QtCore/qtimer.h \
+  /usr/include/qt/QtWidgets/QGraphicsRectItem \
+  /usr/include/qt/QtWidgets/qgraphicsitem.h \
+  /usr/include/qt/QtWidgets/qtwidgetsglobal.h \
+  /usr/include/qt/QtGui/qtguiglobal.h \
   /usr/include/qt/QtCore/qglobal.h \
   /usr/include/c++/12.2.1/type_traits \
   /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -4135,10 +4137,11 @@ CMakeFiles/Battle_Space.dir/Level1.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
   /usr/include/qt/QtCore/qglobalstatic.h \
   /usr/include/qt/QtCore/qnumeric.h \
   /usr/include/qt/QtCore/qversiontagging.h \
-  /usr/include/qt/QtCore/qbasictimer.h \
-  /usr/include/qt/QtCore/qnamespace.h \
+  /usr/include/qt/QtGui/qtgui-config.h \
+  /usr/include/qt/QtWidgets/qtwidgets-config.h \
   /usr/include/qt/QtCore/qobject.h \
   /usr/include/qt/QtCore/qobjectdefs.h \
+  /usr/include/qt/QtCore/qnamespace.h \
   /usr/include/qt/QtCore/qobjectdefs_impl.h \
   /usr/include/qt/QtCore/qstring.h \
   /usr/include/qt/QtCore/qchar.h \
@@ -4304,12 +4307,6 @@ CMakeFiles/Battle_Space.dir/Level1.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
   /usr/include/c++/12.2.1/limits \
   /usr/include/c++/12.2.1/ctime \
   /usr/include/c++/12.2.1/bits/parse_numbers.h \
-  /usr/include/qt/QtWidgets/QGraphicsRectItem \
-  /usr/include/qt/QtWidgets/qgraphicsitem.h \
-  /usr/include/qt/QtWidgets/qtwidgetsglobal.h \
-  /usr/include/qt/QtGui/qtguiglobal.h \
-  /usr/include/qt/QtGui/qtgui-config.h \
-  /usr/include/qt/QtWidgets/qtwidgets-config.h \
   /usr/include/qt/QtCore/qvariant.h \
   /usr/include/qt/QtCore/qmap.h \
   /usr/include/qt/QtCore/qhash.h \
@@ -4613,6 +4610,8 @@ CMakeFiles/Battle_Space.dir/Level1.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
   /usr/include/qt/QtCore/qthread.h \
   /usr/include/qt/QtCore/qthreadstorage.h \
   /usr/include/qt/QtCore/qtimeline.h \
+  /usr/include/qt/QtCore/qtimer.h \
+  /usr/include/qt/QtCore/qbasictimer.h \
   /usr/include/qt/QtCore/qtimezone.h \
   /usr/include/qt/QtCore/qtranslator.h \
   /usr/include/qt/QtCore/qtransposeproxymodel.h \
@@ -4997,6 +4996,7 @@ CMakeFiles/Battle_Space.dir/Level1.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
   /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/Level1.h \
   /usr/include/qt/QtWidgets/QGraphicsView \
   /usr/include/qt/QtWidgets/QGraphicsScene \
+  /usr/include/qt/QtCore/QTimer \
   /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/puntosLista.h \
   /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/Puntos.h \
   /usr/include/qt/QtWidgets/QGraphicsPixmapItem \
@@ -7091,11 +7091,8 @@ CMakeFiles/Battle_Space.dir/Level3.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
 
 CMakeFiles/Battle_Space.dir/Level4.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/Level4.cpp \
   /usr/include/stdc-predef.h \
-  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/Level4.h \
-  /usr/include/qt/QtWidgets/QGraphicsView \
-  /usr/include/qt/QtWidgets/qgraphicsview.h \
-  /usr/include/qt/QtWidgets/qtwidgetsglobal.h \
-  /usr/include/qt/QtGui/qtguiglobal.h \
+  /usr/include/qt/QtCore/QTimer \
+  /usr/include/qt/QtCore/qtimer.h \
   /usr/include/qt/QtCore/qglobal.h \
   /usr/include/c++/12.2.1/type_traits \
   /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -7205,12 +7202,15 @@ CMakeFiles/Battle_Space.dir/Level4.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
   /usr/include/qt/QtCore/qglobalstatic.h \
   /usr/include/qt/QtCore/qnumeric.h \
   /usr/include/qt/QtCore/qversiontagging.h \
-  /usr/include/qt/QtGui/qtgui-config.h \
-  /usr/include/qt/QtWidgets/qtwidgets-config.h \
-  /usr/include/qt/QtCore/qmetatype.h \
+  /usr/include/qt/QtCore/qbasictimer.h \
+  /usr/include/qt/QtCore/qnamespace.h \
+  /usr/include/qt/QtCore/qobject.h \
+  /usr/include/qt/QtCore/qobjectdefs.h \
+  /usr/include/qt/QtCore/qobjectdefs_impl.h \
+  /usr/include/qt/QtCore/qstring.h \
+  /usr/include/qt/QtCore/qchar.h \
   /usr/include/qt/QtCore/qbytearray.h \
   /usr/include/qt/QtCore/qrefcount.h \
-  /usr/include/qt/QtCore/qnamespace.h \
   /usr/include/qt/QtCore/qarraydata.h \
   /usr/include/string.h \
   /usr/include/strings.h \
@@ -7306,16 +7306,13 @@ CMakeFiles/Battle_Space.dir/Level4.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
   /usr/include/c++/12.2.1/typeinfo \
   /usr/include/c++/12.2.1/bits/nested_exception.h \
   /usr/include/c++/12.2.1/bits/streambuf.tcc \
-  /usr/include/qt/QtCore/qvarlengtharray.h \
-  /usr/include/qt/QtCore/qcontainerfwd.h \
-  /usr/include/qt/QtCore/qalgorithms.h \
-  /usr/include/qt/QtCore/qcontainertools_impl.h \
-  /usr/include/qt/QtCore/qhashfunctions.h \
-  /usr/include/qt/QtCore/qstring.h \
-  /usr/include/qt/QtCore/qchar.h \
   /usr/include/qt/QtCore/qstringliteral.h \
   /usr/include/qt/QtCore/qstringalgorithms.h \
   /usr/include/qt/QtCore/qstringview.h \
+  /usr/include/qt/QtCore/qlist.h \
+  /usr/include/qt/QtCore/qalgorithms.h \
+  /usr/include/qt/QtCore/qiterator.h \
+  /usr/include/qt/QtCore/qhashfunctions.h \
   /usr/include/qt/QtCore/qpair.h \
   /usr/include/c++/12.2.1/numeric \
   /usr/include/c++/12.2.1/bits/stl_numeric.h \
@@ -7340,31 +7337,12 @@ CMakeFiles/Battle_Space.dir/Level4.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
   /usr/include/c++/12.2.1/bits/vector.tcc \
   /usr/include/c++/12.2.1/array \
   /usr/include/c++/12.2.1/compare \
-  /usr/include/qt/QtCore/qobjectdefs.h \
-  /usr/include/qt/QtCore/qobjectdefs_impl.h \
+  /usr/include/qt/QtCore/qvector.h \
+  /usr/include/qt/QtCore/qcontainertools_impl.h \
   /usr/include/c++/12.2.1/list \
   /usr/include/c++/12.2.1/bits/stl_list.h \
   /usr/include/c++/12.2.1/bits/allocated_ptr.h \
   /usr/include/c++/12.2.1/bits/list.tcc \
-  /usr/include/c++/12.2.1/map \
-  /usr/include/c++/12.2.1/bits/stl_tree.h \
-  /usr/include/c++/12.2.1/bits/stl_map.h \
-  /usr/include/c++/12.2.1/bits/stl_multimap.h \
-  /usr/include/qt/QtGui/qpainter.h \
-  /usr/include/qt/QtCore/qrect.h \
-  /usr/include/qt/QtCore/qmargins.h \
-  /usr/include/qt/QtCore/qsize.h \
-  /usr/include/qt/QtCore/qpoint.h \
-  /usr/include/qt/QtCore/qscopedpointer.h \
-  /usr/include/qt/QtGui/qpixmap.h \
-  /usr/include/qt/QtGui/qpaintdevice.h \
-  /usr/include/qt/QtGui/qwindowdefs.h \
-  /usr/include/qt/QtGui/qcolor.h \
-  /usr/include/qt/QtGui/qrgb.h \
-  /usr/include/qt/QtCore/qstringlist.h \
-  /usr/include/qt/QtCore/qlist.h \
-  /usr/include/qt/QtCore/qiterator.h \
-  /usr/include/qt/QtCore/qvector.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include-fixed/limits.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include-fixed/syslimits.h \
   /usr/include/limits.h \
@@ -7375,14 +7353,17 @@ CMakeFiles/Battle_Space.dir/Level4.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
   /usr/include/bits/xopen_lim.h \
   /usr/include/bits/uio_lim.h \
   /usr/include/qt/QtCore/qbytearraylist.h \
+  /usr/include/qt/QtCore/qstringlist.h \
   /usr/include/qt/QtCore/qregexp.h \
   /usr/include/qt/QtCore/qstringmatcher.h \
-  /usr/include/qt/QtGui/qrgba64.h \
-  /usr/include/qt/QtCore/qsharedpointer.h \
-  /usr/include/qt/QtCore/qshareddata.h \
-  /usr/include/qt/QtCore/qhash.h \
-  /usr/include/qt/QtCore/qsharedpointer_impl.h \
-  /usr/include/qt/QtCore/qobject.h \
+  /usr/include/qt/QtCore/qscopedpointer.h \
+  /usr/include/qt/QtCore/qmetatype.h \
+  /usr/include/qt/QtCore/qvarlengtharray.h \
+  /usr/include/qt/QtCore/qcontainerfwd.h \
+  /usr/include/c++/12.2.1/map \
+  /usr/include/c++/12.2.1/bits/stl_tree.h \
+  /usr/include/c++/12.2.1/bits/stl_map.h \
+  /usr/include/c++/12.2.1/bits/stl_multimap.h \
   /usr/include/qt/QtCore/qobject_impl.h \
   /usr/include/c++/12.2.1/chrono \
   /usr/include/c++/12.2.1/bits/chrono.h \
@@ -7390,6 +7371,37 @@ CMakeFiles/Battle_Space.dir/Level4.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
   /usr/include/c++/12.2.1/limits \
   /usr/include/c++/12.2.1/ctime \
   /usr/include/c++/12.2.1/bits/parse_numbers.h \
+  /usr/include/qt/QtWidgets/QGraphicsRectItem \
+  /usr/include/qt/QtWidgets/qgraphicsitem.h \
+  /usr/include/qt/QtWidgets/qtwidgetsglobal.h \
+  /usr/include/qt/QtGui/qtguiglobal.h \
+  /usr/include/qt/QtGui/qtgui-config.h \
+  /usr/include/qt/QtWidgets/qtwidgets-config.h \
+  /usr/include/qt/QtCore/qvariant.h \
+  /usr/include/qt/QtCore/qmap.h \
+  /usr/include/qt/QtCore/qhash.h \
+  /usr/include/c++/12.2.1/variant \
+  /usr/include/qt/QtCore/qrect.h \
+  /usr/include/qt/QtCore/qmargins.h \
+  /usr/include/qt/QtCore/qsize.h \
+  /usr/include/qt/QtCore/qpoint.h \
+  /usr/include/qt/QtGui/qpainterpath.h \
+  /usr/include/qt/QtGui/qmatrix.h \
+  /usr/include/qt/QtGui/qpolygon.h \
+  /usr/include/qt/QtGui/qregion.h \
+  /usr/include/qt/QtGui/qwindowdefs.h \
+  /usr/include/qt/QtCore/qdatastream.h \
+  /usr/include/qt/QtCore/qiodevice.h \
+  /usr/include/qt/QtCore/qline.h \
+  /usr/include/qt/QtGui/qtransform.h \
+  /usr/include/qt/QtGui/qpixmap.h \
+  /usr/include/qt/QtGui/qpaintdevice.h \
+  /usr/include/qt/QtGui/qcolor.h \
+  /usr/include/qt/QtGui/qrgb.h \
+  /usr/include/qt/QtGui/qrgba64.h \
+  /usr/include/qt/QtCore/qsharedpointer.h \
+  /usr/include/qt/QtCore/qshareddata.h \
+  /usr/include/qt/QtCore/qsharedpointer_impl.h \
   /usr/include/c++/12.2.1/memory \
   /usr/include/c++/12.2.1/bits/stl_raw_storage_iter.h \
   /usr/include/c++/12.2.1/bits/align.h \
@@ -7402,68 +7414,6 @@ CMakeFiles/Battle_Space.dir/Level4.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
   /usr/include/c++/12.2.1/pstl/glue_memory_defs.h \
   /usr/include/qt/QtGui/qimage.h \
   /usr/include/qt/QtGui/qpixelformat.h \
-  /usr/include/qt/QtGui/qtransform.h \
-  /usr/include/qt/QtGui/qmatrix.h \
-  /usr/include/qt/QtGui/qpolygon.h \
-  /usr/include/qt/QtGui/qregion.h \
-  /usr/include/qt/QtCore/qdatastream.h \
-  /usr/include/qt/QtCore/qiodevice.h \
-  /usr/include/qt/QtCore/qline.h \
-  /usr/include/qt/QtGui/qtextoption.h \
-  /usr/include/qt/QtGui/qpen.h \
-  /usr/include/qt/QtGui/qbrush.h \
-  /usr/include/qt/QtGui/qfontinfo.h \
-  /usr/include/qt/QtGui/qfont.h \
-  /usr/include/qt/QtGui/qfontmetrics.h \
-  /usr/include/qt/QtWidgets/qscrollarea.h \
-  /usr/include/qt/QtWidgets/qabstractscrollarea.h \
-  /usr/include/qt/QtWidgets/qframe.h \
-  /usr/include/qt/QtWidgets/qwidget.h \
-  /usr/include/qt/QtGui/qpalette.h \
-  /usr/include/qt/QtWidgets/qsizepolicy.h \
-  /usr/include/qt/QtGui/qcursor.h \
-  /usr/include/qt/QtGui/qkeysequence.h \
-  /usr/include/qt/QtWidgets/qgraphicsscene.h \
-  /usr/include/qt/QtWidgets/QGraphicsScene \
-  /usr/include/qt/QtWidgets/qgraphicsscene.h \
-  /usr/include/c++/12.2.1/iostream \
-  /usr/include/c++/12.2.1/ostream \
-  /usr/include/c++/12.2.1/ios \
-  /usr/include/c++/12.2.1/bits/basic_ios.h \
-  /usr/include/c++/12.2.1/bits/locale_facets.h \
-  /usr/include/c++/12.2.1/cwctype \
-  /usr/include/wctype.h \
-  /usr/include/bits/wctype-wchar.h \
-  /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h \
-  /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/ctype_inline.h \
-  /usr/include/c++/12.2.1/bits/locale_facets.tcc \
-  /usr/include/c++/12.2.1/bits/basic_ios.tcc \
-  /usr/include/c++/12.2.1/bits/ostream.tcc \
-  /usr/include/c++/12.2.1/istream \
-  /usr/include/c++/12.2.1/bits/istream.tcc \
-  /usr/include/qt/QtWidgets/QLabel \
-  /usr/include/qt/QtWidgets/qlabel.h \
-  /usr/include/qt/QtCore/QTimer \
-  /usr/include/qt/QtCore/qtimer.h \
-  /usr/include/qt/QtCore/qbasictimer.h \
-  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/puntosLista.h \
-  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/Puntos.h \
-  /usr/include/qt/QtWidgets/QGraphicsPixmapItem \
-  /usr/include/qt/QtWidgets/qgraphicsitem.h \
-  /usr/include/qt/QtCore/qvariant.h \
-  /usr/include/qt/QtCore/qmap.h \
-  /usr/include/c++/12.2.1/variant \
-  /usr/include/qt/QtGui/qpainterpath.h \
-  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/Enemigo1.h \
-  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/PlayerPacman.h \
-  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/Enemigo2.h \
-  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/Enemigo3.h \
-  /usr/include/qt/QtWidgets/QGraphicsItem \
-  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/Enemigo4.h \
-  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/SimpleList.h \
-  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/NodeList.h \
-  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/PastillaPoder.h \
-  /usr/include/qt/QtWidgets/QGraphicsRectItem \
   /usr/include/qt/QtCore/QRandomGenerator \
   /usr/include/qt/QtCore/qrandom.h \
   /usr/include/c++/12.2.1/random \
@@ -7496,6 +7446,14 @@ CMakeFiles/Battle_Space.dir/Level4.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
   /usr/include/c++/12.2.1/bits/random.tcc \
   /usr/include/qt/QtWidgets/QWidget \
   /usr/include/qt/QtWidgets/qwidget.h \
+  /usr/include/qt/QtGui/qpalette.h \
+  /usr/include/qt/QtGui/qbrush.h \
+  /usr/include/qt/QtGui/qfont.h \
+  /usr/include/qt/QtGui/qfontmetrics.h \
+  /usr/include/qt/QtGui/qfontinfo.h \
+  /usr/include/qt/QtWidgets/qsizepolicy.h \
+  /usr/include/qt/QtGui/qcursor.h \
+  /usr/include/qt/QtGui/qkeysequence.h \
   /usr/include/qt/QtWidgets/QtWidgets \
   /usr/include/qt/QtWidgets/QtWidgetsDepends \
   /usr/include/qt/QtCore/QtCore \
@@ -7750,6 +7708,8 @@ CMakeFiles/Battle_Space.dir/Level4.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
   /usr/include/qt/QtGui/qvector2d.h \
   /usr/include/qt/QtGui/qtouchdevice.h \
   /usr/include/qt/QtGui/qtextformat.h \
+  /usr/include/qt/QtGui/qpen.h \
+  /usr/include/qt/QtGui/qtextoption.h \
   /usr/include/qt/QtGui/qglyphrun.h \
   /usr/include/qt/QtGui/qrawfont.h \
   /usr/include/qt/QtGui/qfontdatabase.h \
@@ -7855,6 +7815,7 @@ CMakeFiles/Battle_Space.dir/Level4.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
   /usr/include/qt/QtGui/qpagesize.h \
   /usr/include/qt/QtGui/qpaintengine.h \
   /usr/include/qt/QtGui/qpainter.h \
+  /usr/include/qt/QtGui/qpainter.h \
   /usr/include/qt/QtGui/qpainterpath.h \
   /usr/include/qt/QtGui/qpalette.h \
   /usr/include/qt/QtGui/qpdfwriter.h \
@@ -7904,6 +7865,7 @@ CMakeFiles/Battle_Space.dir/Level4.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
   /usr/include/qt/QtGui/qtguiversion.h \
   /usr/include/qt/QtWidgets/qtwidgetsglobal.h \
   /usr/include/qt/QtWidgets/qabstractbutton.h \
+  /usr/include/qt/QtWidgets/qwidget.h \
   /usr/include/qt/QtWidgets/qabstractitemdelegate.h \
   /usr/include/qt/QtWidgets/qstyleoption.h \
   /usr/include/qt/QtWidgets/qabstractspinbox.h \
@@ -7914,7 +7876,9 @@ CMakeFiles/Battle_Space.dir/Level4.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
   /usr/include/qt/QtWidgets/qtabbar.h \
   /usr/include/qt/QtWidgets/qtabwidget.h \
   /usr/include/qt/QtWidgets/qrubberband.h \
+  /usr/include/qt/QtWidgets/qframe.h \
   /usr/include/qt/QtWidgets/qabstractitemview.h \
+  /usr/include/qt/QtWidgets/qabstractscrollarea.h \
   /usr/include/qt/QtCore/qitemselectionmodel.h \
   /usr/include/qt/QtWidgets/qabstractitemdelegate.h \
   /usr/include/qt/QtWidgets/qabstractscrollarea.h \
@@ -7985,9 +7949,13 @@ CMakeFiles/Battle_Space.dir/Level4.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
   /usr/include/qt/QtWidgets/qgraphicslinearlayout.h \
   /usr/include/qt/QtWidgets/qgraphicsproxywidget.h \
   /usr/include/qt/QtWidgets/qgraphicswidget.h \
+  /usr/include/qt/QtWidgets/qgraphicsscene.h \
   /usr/include/qt/QtWidgets/qgraphicssceneevent.h \
   /usr/include/qt/QtWidgets/qgraphicstransform.h \
   /usr/include/qt/QtGui/QVector3D \
+  /usr/include/qt/QtWidgets/qgraphicsview.h \
+  /usr/include/qt/QtWidgets/qscrollarea.h \
+  /usr/include/qt/QtWidgets/qgraphicsscene.h \
   /usr/include/qt/QtWidgets/qgraphicswidget.h \
   /usr/include/qt/QtWidgets/qgridlayout.h \
   /usr/include/qt/QtWidgets/qgroupbox.h \
@@ -7999,6 +7967,7 @@ CMakeFiles/Battle_Space.dir/Level4.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
   /usr/include/qt/QtWidgets/qkeyeventtransition.h \
   /usr/include/qt/QtCore/qeventtransition.h \
   /usr/include/qt/QtWidgets/qkeysequenceedit.h \
+  /usr/include/qt/QtWidgets/qlabel.h \
   /usr/include/qt/QtWidgets/qlayoutitem.h \
   /usr/include/qt/QtWidgets/qlcdnumber.h \
   /usr/include/qt/QtWidgets/qlineedit.h \
@@ -8073,9 +8042,40 @@ CMakeFiles/Battle_Space.dir/Level4.cpp.o: /home/oscaraad/TEC/2023SEMI/Datos\ II/
   /usr/include/qt/QtWidgets/qwidgetaction.h \
   /usr/include/qt/QtWidgets/qwizard.h \
   /usr/include/qt/QtWidgets/qtwidgetsversion.h \
+  /usr/include/qt/QtWidgets/QLabel \
+  /usr/include/c++/12.2.1/iostream \
+  /usr/include/c++/12.2.1/ostream \
+  /usr/include/c++/12.2.1/ios \
+  /usr/include/c++/12.2.1/bits/basic_ios.h \
+  /usr/include/c++/12.2.1/bits/locale_facets.h \
+  /usr/include/c++/12.2.1/cwctype \
+  /usr/include/wctype.h \
+  /usr/include/bits/wctype-wchar.h \
+  /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h \
+  /usr/include/c++/12.2.1/x86_64-pc-linux-gnu/bits/ctype_inline.h \
+  /usr/include/c++/12.2.1/bits/locale_facets.tcc \
+  /usr/include/c++/12.2.1/bits/basic_ios.tcc \
+  /usr/include/c++/12.2.1/bits/ostream.tcc \
+  /usr/include/c++/12.2.1/istream \
+  /usr/include/c++/12.2.1/bits/istream.tcc \
   /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/Cell.h \
+  /usr/include/qt/QtWidgets/QGraphicsPixmapItem \
+  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/Enemigo1.h \
+  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/Puntos.h \
   /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/GameFinished.h \
+  /usr/include/qt/QtWidgets/QGraphicsView \
+  /usr/include/qt/QtWidgets/QGraphicsScene \
   /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/GameOver.h \
+  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/Level4.h \
+  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/puntosLista.h \
+  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/PlayerPacman.h \
+  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/Enemigo2.h \
+  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/Enemigo3.h \
+  /usr/include/qt/QtWidgets/QGraphicsItem \
+  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/Enemigo4.h \
+  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/SimpleList.h \
+  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/NodeList.h \
+  /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/PastillaPoder.h \
   /home/oscaraad/TEC/2023SEMI/Datos\ II/CE2103-ProyectoII/Proyecto/SocketThread4.h \
   /usr/include/qt/QtCore/QThread \
   /usr/include/c++/12.2.1/cstring \

@@ -9,53 +9,104 @@
   <component name="CMakeReloadState">
     <option name="reloaded" value="true" />
   </component>
-  <component name="CMakeRunConfigurationManager">
-    <generated>
-      <config projectName="Pacman" targetName="Battle_Space" />
-    </generated>
-  </component>
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="748ca08c-f005-43cf-a87c-e9fda4db17f0" name="Changes" comment="Merge">
-      <change afterPath="$PROJECT_DIR$/GameFinished.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameFinished.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/gameFinished.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/gameOver.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/puntos.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Puntos.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Puntos.h" afterDir="false" />
+    <list default="true" id="2d70dfbe-9ab5-46db-a104-fd78efe72e84" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Images/fantasma asustado.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/GameWindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/GameWindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Fantasma1.pixil" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Fantasma1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Fantasma1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Fantasma2.pixil" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Fantasma2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Fantasma2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Fantasma3.pixil" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Fantasma3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Fantasma3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Fantasma4.pixil" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Fantasma4.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Fantasma4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/fondo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/pacman1.pixil" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Battle_Space" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Battle_Space" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Battle_Space_autogen/deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Battle_Space_autogen/deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space_autogen.dir/AutogenInfo.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space_autogen.dir/AutogenInfo.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space_autogen.dir/ParseCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space_autogen.dir/ParseCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cell.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Cell.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enemigo1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Enemigo1.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enemigo2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Enemigo2.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enemigo3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Enemigo3.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enemigo4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Enemigo4.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameFinished.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/GameFinished.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameOver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/GameOver.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Level1.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Level2.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level2.h" beforeDir="false" afterPath="$PROJECT_DIR$/Level2.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Level3.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level3.h" beforeDir="false" afterPath="$PROJECT_DIR$/Level3.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Level4.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level4.h" beforeDir="false" afterPath="$PROJECT_DIR$/Level4.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuDificultades.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MenuDificultades.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlayerPacman.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/PlayerPacman.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Puntos.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Puntos.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Socket.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Socket.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketThread.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SocketThread.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-8f1be94d6bb6cf7cc8cc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-dd1ec33c78e8bcda9a35.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-148f429ce5b2a35b6286.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2023-05-14T21-15-08-0953.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-Battle_Space-Debug-f842766a8ba2d0608c1a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-Battle_Space_autogen-Debug-b81f286ecb7707197b0b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-5e864d45b6495c775afc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Battle_Space" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Battle_Space.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Battle_Space_autogen/EWIEGA46WW/moc_Socket.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Battle_Space_autogen/EWIEGA46WW/moc_SocketThread.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Battle_Space_autogen/EWIEGA46WW/moc_SocketThread2.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Battle_Space_autogen/EWIEGA46WW/moc_SocketThread3.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Battle_Space_autogen/EWIEGA46WW/moc_SocketThread4.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Battle_Space_autogen/deps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Battle_Space_autogen/include/nave_jugador.moc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Battle_Space_autogen/moc_predefs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Battle_Space_autogen/mocs_compilation.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Battle_Space_autogen/timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.25.2/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.25.2/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.25.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.25.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.25.2/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.25.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.25.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space.dir/compiler_depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space.dir/compiler_depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space.dir/compiler_depend.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space_autogen.dir/AutogenInfo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space_autogen.dir/AutogenUsed.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space_autogen.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space_autogen.dir/ParseCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space_autogen.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space_autogen.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space_autogen.dir/compiler_depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space_autogen.dir/compiler_depend.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Battle_Space_autogen.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeRuleHashes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Pacman.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/puntosLista.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/puntosLista.cpp" afterDir="false" />
     </list>
-=======
-    <list default="true" id="748ca08c-f005-43cf-a87c-e9fda4db17f0" name="Changes" comment="Se crean los mapas para los niveles" />
->>>>>>> Arturo
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,120 +117,58 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$/.." value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectApplicationVersion">
-    <option name="ide" value="CLion" />
-    <option name="majorVersion" value="2023" />
-    <option name="minorVersion" value="1.1" />
-  </component>
-  <component name="ProjectId" id="2OytkI2xK8roRPM9LLBKf3sc4GF" />
+  <component name="ProjectId" id="2PqrlmTiwPglC5D3r2UWCbXEgbo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-Proyecto1&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-ProyectoII/Proyecto&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-=======
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "last_opened_file_path": "/home/oscaraad/TEC/2023SEMI/Datos II/CE2103-Proyecto1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
->>>>>>> Arturo
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Images" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Images" />
-    </key>
-  </component>
   <component name="RunManager">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CEPacman" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pacman" TARGET_NAME="Battle_Space" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Pacman" RUN_TARGET_NAME="Battle_Space">
+    <configuration name="Battle_Space" type="CMakeRunConfiguration" factoryName="Application" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pacman" TARGET_NAME="Battle_Space" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Pacman" RUN_TARGET_NAME="Battle_Space">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="CMake Application.Battle_Space" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="748ca08c-f005-43cf-a87c-e9fda4db17f0" name="Changes" comment="" />
-      <created>1682544790508</created>
+      <changelist id="2d70dfbe-9ab5-46db-a104-fd78efe72e84" name="Changes" comment="" />
+      <created>1684195614459</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1682544790508</updated>
-      <workItem from="1682544791532" duration="104000" />
-      <workItem from="1682603414690" duration="78000" />
-      <workItem from="1682603580933" duration="5030000" />
-      <workItem from="1682609007951" duration="9000" />
-      <workItem from="1682609072765" duration="1632000" />
-      <workItem from="1682647431970" duration="5292000" />
-      <workItem from="1682879117906" duration="12165000" />
-      <workItem from="1683421850132" duration="1980000" />
-      <workItem from="1683598449553" duration="553000" />
-      <workItem from="1683677845198" duration="632000" />
-      <workItem from="1683958568148" duration="11089000" />
+      <updated>1684195614459</updated>
+      <workItem from="1684195616388" duration="68000" />
+      <workItem from="1684195703797" duration="10000" />
+      <workItem from="1684195750790" duration="41000" />
+      <workItem from="1684195825812" duration="45000" />
+      <workItem from="1684246953000" duration="230000" />
+      <workItem from="1684247212875" duration="100000" />
+      <workItem from="1684247357155" duration="17000" />
     </task>
-    <task id="LOCAL-00001" summary="Se agregan imagenes y una ventana">
-      <created>1682651133334</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1682651133334</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Se crean los mapas para los niveles">
-      <created>1682886368634</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1682886368634</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Merge">
-      <created>1683738987880</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1683738987880</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,35 +179,5 @@
     <isAutomaticCheckingOnLaunch value="false" />
     <isAutomaticFoundErrors value="true" />
     <isAutomaticFoundErrors value="true" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="Arturo" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Se agregan imagenes y una ventana" />
-    <MESSAGE value="Se crean los mapas para los niveles" />
-    <MESSAGE value="Se agregan labels" />
-    <MESSAGE value="Merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge" />
   </component>
 </project>

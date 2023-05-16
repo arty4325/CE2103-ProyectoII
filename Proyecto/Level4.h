@@ -15,7 +15,6 @@
 #include "puntosLista.h"
 #include "Enemigo1.h"
 #include "PlayerPacman.h"
-
 #include "Enemigo2.h"
 #include "Enemigo3.h"
 #include "Enemigo4.h"

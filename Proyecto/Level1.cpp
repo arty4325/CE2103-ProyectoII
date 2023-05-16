@@ -1,7 +1,6 @@
 //
 // Created by monicaegm on 4/27/23.
 //
-#include <QTimer>
 #include <QGraphicsRectItem>
 #include <QRandomGenerator>
 #include <QWidget>
@@ -26,7 +25,10 @@
 #include "Level2.h"
 
 using namespace std;
-
+/**
+ * @brief Constructor para la pantalla del primer nivel
+ * @param parent QWidget puntero
+ */
 Level1::Level1(QWidget * parent){
     QGraphicsScene *scene = new QGraphicsScene(); // Se crea la escena
     scene -> setSceneRect(0, 0, 900, 600);
@@ -47,7 +49,6 @@ Level1::Level1(QWidget * parent){
     scene -> addItem(playerpacman);
     pacmanX = 8;
     pacmanY = 6;
-
 
     Enemy1X = 7;
     Enemy1Y = 10;
@@ -90,7 +91,7 @@ Level1::Level1(QWidget * parent){
     connect(revisarChoque, &QTimer::timeout, this, &Level1::revisarEnemigos);
     revisarChoque -> setInterval(500);
     revisarChoque -> start();
-    
+
     movementPacmanMobile = new QTimer(this);
     connect(movementPacmanMobile, &QTimer::timeout, this, &Level1::startSocketServer);
     movementPacmanMobile -> setInterval(500);
@@ -100,9 +101,6 @@ Level1::Level1(QWidget * parent){
     connect(exeMovementPacmanMobile, &QTimer::timeout, this, &Level1::MoveMobile);
     exeMovementPacmanMobile -> setInterval(500);
     exeMovementPacmanMobile -> start();
-
-
-
 
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -137,6 +135,9 @@ void Level1::startSocketServer(){
     socketThread -> start();
 }
 
+/**
+ * @brief Crea el mapa colocando las celdas y los puntos
+ */
 void Level1::CreateMap() {
     int ypos = 0;
     int xpos = 7;
@@ -173,6 +174,10 @@ void Level1::CreateMap() {
         }
     }
 }
+/**
+ * @brief Funcion que se encarga de la interaccion con teclas
+ * @param event QKeyEvent evento de una tecla
+ */
 void Level1::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_K) { //La letra K crea nuevos niveles
@@ -262,7 +267,9 @@ void Level1::keyPressEvent(QKeyEvent *event)
         }
     }
 }
-
+/**
+ * @brief Revisa si el jugador se encuentra en las mismas coordenadas que un punto
+ */
 void Level1::comerPuntos(){
     for(int i = 0; i < puntoslista->lenLista();i++) {
         if (playerpacman->pos() == puntoslista->findPuntos(i)->pos()) {
@@ -285,11 +292,9 @@ void Level1::comerPuntos(){
         CreateLevels(nivel);
     }
 }
-
-
-
-
-
+/**
+ * @brief Revisa si un enemigo se encuentra en las mismas coordenadas que el jugador
+ */
 void Level1::revisarEnemigos(){
     if(isPowerActivated == false) {
         if (playerpacman->pos() == enemigo1->pos()) {
@@ -335,7 +340,9 @@ void Level1::revisarEnemigos(){
         }
     }
 }
-
+/**
+ * @brief Movimiento del jugador con el celular
+ */
 void Level1::MoveMobile(){
     if(datosSerial.getSize() == 3) {
         cout << "MOVIMIENTO" << endl;
@@ -380,8 +387,10 @@ void Level1::MoveMobile(){
         }
     }
 }
-
-
+/**
+ * @brief Define un patron para mostrar las celdas
+ * @param lvl int nivel en que esta
+ */
 void Level1::CreateLevels(int lvl){
     switch(lvl){
         case 1:{
@@ -406,7 +415,9 @@ void Level1::CreateLevels(int lvl){
         }
     }
 }
-
+/**
+ * @brief Funcion que revisa si el enemigo1 puede moverse en determinada direccion validando si hay obstaculos
+ */
 void Level1::MoveFirstEnemy() {
     if (isSearchingPower == false) {
         if (moving1 == false) {
