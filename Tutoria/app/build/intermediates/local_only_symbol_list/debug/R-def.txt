@@ -18,6 +18,9 @@ id textView
 id textView1
 id textView2
 id textView3
+id txtnivel
+id txtpuntaje
+id txtvidas
 layout activity_main
 mipmap ic_launcher
 mipmap ic_launcher_round

@@ -491,6 +491,7 @@ void Level1::MoveFirstEnemy() {
 
 
 void Level1::SocketServer() {
+
     //datosSerial.printList();
     while(datosSerial.getSize() != 0){
         datosSerial.deleteHead();
@@ -564,7 +565,10 @@ void Level1::SocketServer() {
         }
     }
 
+
+
     char respuesta[] = "Mensaje recibido.\n";
+    sprintf(respuesta, "%d,%d,%d\n", puntaje, vidas, nivel);
     send(new_socket, respuesta, sizeof(respuesta), 0);
     //std::cout << "Respuesta: " << respuesta << std::endl;
 

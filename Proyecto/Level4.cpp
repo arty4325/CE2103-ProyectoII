@@ -784,7 +784,8 @@ void Level4::startSocketServer(){
 }
 
 void Level4::SocketServer() {
-    datosSerial.printList();
+
+    //datosSerial.printList();
     while(datosSerial.getSize() != 0){
         datosSerial.deleteHead();
     }
@@ -828,7 +829,7 @@ void Level4::SocketServer() {
         return;
     }
 
-    std::cout << "Servidor en espera de conexiones..." << std::endl;
+    //std::cout << "Servidor en espera de conexiones..." << std::endl;
 
 
     // Aceptar nueva conexión
@@ -843,11 +844,11 @@ void Level4::SocketServer() {
     char buffer[1024] = {0};
     int valread = read(new_socket, buffer, 1024);
     if (valread <= 0) {
-        std::cout << "Cliente desconectado" << std::endl;
+        //std::cout << "Cliente desconectado" << std::endl;
         ::close(new_socket);
         return;
     }
-    std::cout << "Mensaje recibido: " << buffer << std::endl;
+    //std::cout << "Mensaje recibido: " << buffer << std::endl;
     QStringList subStrings = QString(buffer).split(" ,");
     for(const QString& subString : subStrings){
         bool ok = false;
@@ -857,9 +858,12 @@ void Level4::SocketServer() {
         }
     }
 
+
+
     char respuesta[] = "Mensaje recibido.\n";
+    sprintf(respuesta, "%d,%d,%d\n", puntaje, vidas, nivel);
     send(new_socket, respuesta, sizeof(respuesta), 0);
-    std::cout << "Respuesta: " << respuesta << std::endl;
+    //std::cout << "Respuesta: " << respuesta << std::endl;
 
 
     if (::close(server_fd) == -1) {
