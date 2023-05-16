@@ -10,7 +10,11 @@ class Enemigo1 : public QGraphicsPixmapItem{
 public:
     Enemigo1(QGraphicsItem *parent = nullptr);
 
-    // Hacer metodos si despues se determina que se ocupan para los enemigos
+    void Asustado();
+
+// Hacer metodos si despues se determina que se ocupan para los enemigos
+void backToNormal();
+
 };
 
 

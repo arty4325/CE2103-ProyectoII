@@ -908,6 +908,10 @@ void Level4::comerPoderes(){
             cout << "El pacman llego al poder" << endl;
             // Ahora por 5 segundos se tiene que ejecutar lo de que el compita persiga a los enemigos
             QTimer::singleShot(5000, this, &Level4::pararEjecucion);
+            enemigo1 -> Asustado();
+            enemigo2 -> Asustado();
+            enemigo3 -> Asustado();
+            enemigo4 -> Asustado();
             //revisarChoque -> stop();
             // Ya con esto por 5 segundos se para lo de quitar vidas
             isPowerActivated = true;
@@ -925,6 +929,10 @@ void Level4::comerPoderes(){
 void Level4::pararEjecucion(){
     //revisarChoque -> setInterval(500);
     //revisarChoque -> start();
+    enemigo1 -> backToNormal();
+    enemigo2 -> backToNormal();
+    enemigo3 -> backToNormal();
+    enemigo4 -> backToNormal();
     isPowerActivated = false;
 }
 

@@ -624,6 +624,7 @@ void Level1::comerPoderes(){
             cout << "El pacman llego al poder" << endl;
             // Ahora por 5 segundos se tiene que ejecutar lo de que el compita persiga a los enemigos
             QTimer::singleShot(5000, this, &Level1::pararEjecucion);
+            enemigo1 -> Asustado();
             //revisarChoque -> stop();
             // Ya con esto por 5 segundos se para lo de quitar vidas
             isPowerActivated = true;
@@ -634,6 +635,7 @@ void Level1::comerPoderes(){
 void Level1::pararEjecucion(){
     //revisarChoque -> setInterval(500);
     //revisarChoque -> start();
+    enemigo1 -> backToNormal();
     isPowerActivated = false;
 }
 

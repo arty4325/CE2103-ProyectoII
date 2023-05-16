@@ -11,6 +11,10 @@
 class Enemigo4 : public QGraphicsPixmapItem{
 public:
     Enemigo4(QGraphicsItem *parent = nullptr);
+
+    void Asustado();
+
+    void backToNormal();
 };
 
 
