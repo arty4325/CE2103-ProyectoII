@@ -33,7 +33,9 @@ public:
 
 private:
 
+    bool isSearchingPower;
 
+    SimpleList<SimpleList<int>> route1;
 
     QString pattern;
     int nivel = 1;
@@ -131,7 +133,7 @@ private:
 
     void PlacePowerRandomPos();
 
-    void PathfindingA(int beginX, int beginY, int endX, int endY);
+    SimpleList<SimpleList<int>> PathfindingA(int beginX, int beginY, int endX, int endY);
 
 
     SimpleList<SimpleList<int>> FindPath(SimpleList<SimpleList<int>> completeCasillas, SimpleList<SimpleList<int>> hCasillas, int beginX,

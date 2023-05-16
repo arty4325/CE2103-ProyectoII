@@ -136,7 +136,7 @@ Level1::Level1(QWidget * parent){
     setFixedSize(900, 600);
 
     CreateLevels(nivel);
-
+    isSearchingPower = false;
     playerpacman = new PlayerPacman();
     playerpacman -> setPos(400, 300);
     scene -> addItem(playerpacman);
@@ -501,54 +501,70 @@ void Level1::CreateLevels(int lvl){
 }
 
 void Level1::MoveFirstEnemy() {
-    if (moving1 == false){
-        int num = QRandomGenerator::global() -> bounded(0, 4); // escoge numero random del 0 al 3
-        if(num == 0){
-            // Me quiero mover hacia arriba
-            // Tengo que revisar si puedo
-            if(mapa[Enemy1Y -  1][Enemy1X] == 0){
-                moving1 = true;
-                direc1X = 0;
-                direc1Y = -1;
-            } else {
-                return MoveFirstEnemy();
-            }
-        } else if(num == 1){
-            if(mapa[Enemy1Y][Enemy1X + 1] == 0){
-                moving1 = true;
-                direc1X = 1;
-                direc1Y = 0;
-            } else {
-                return MoveFirstEnemy();
-            }
+    if (isSearchingPower == false) {
+        if (moving1 == false) {
+            int num = QRandomGenerator::global()->bounded(0, 4); // escoge numero random del 0 al 3
+            if (num == 0) {
+                // Me quiero mover hacia arriba
+                // Tengo que revisar si puedo
+                if (mapa[Enemy1Y - 1][Enemy1X] == 0) {
+                    moving1 = true;
+                    direc1X = 0;
+                    direc1Y = -1;
+                } else {
+                    return MoveFirstEnemy();
+                }
+            } else if (num == 1) {
+                if (mapa[Enemy1Y][Enemy1X + 1] == 0) {
+                    moving1 = true;
+                    direc1X = 1;
+                    direc1Y = 0;
+                } else {
+                    return MoveFirstEnemy();
+                }
 
-        } else if(num == 2){
-            if(mapa[Enemy1Y + 1][Enemy1X] == 0){
-                moving1 = true;
-                direc1X = 0;
-                direc1Y =  1;
-            } else {
-                return MoveFirstEnemy();
-            }
+            } else if (num == 2) {
+                if (mapa[Enemy1Y + 1][Enemy1X] == 0) {
+                    moving1 = true;
+                    direc1X = 0;
+                    direc1Y = 1;
+                } else {
+                    return MoveFirstEnemy();
+                }
 
-        } else if(num == 3){
-            if(mapa[Enemy1Y][Enemy1X - 1] == 0){
-                moving1 = true;
-                direc1X = -1;
-                direc1Y = 0;
+            } else if (num == 3) {
+                if (mapa[Enemy1Y][Enemy1X - 1] == 0) {
+                    moving1 = true;
+                    direc1X = -1;
+                    direc1Y = 0;
+                } else {
+                    return MoveFirstEnemy();
+                }
+            }
+        } else {
+            if (mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] == 0) {
+                //cout << mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] << Enemy1Y + direc1Y << Enemy1X + direc1X << endl;
+                Enemy1Y += direc1Y;
+                Enemy1X += direc1X;
+                enemigo1->setPos(enemigo1->pos().x() + direc1X * 50, enemigo1->pos().y() + direc1Y * 50);
             } else {
-                return MoveFirstEnemy();
+                moving1 = false;
             }
         }
-    }
-    else {
-        if(mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] == 0) {
-            //cout << mapa[Enemy1Y + direc1Y][Enemy1X + direc1X] << Enemy1Y + direc1Y << Enemy1X + direc1X << endl;
-            Enemy1Y += direc1Y;
-            Enemy1X += direc1X;
-            enemigo1->setPos(enemigo1->pos().x() + direc1X*50, enemigo1->pos().y() + direc1Y*50);
-        } else {
-            moving1 = false;
+    } else if (isSearchingPower){
+        for(int i = 0; i < route1.getSize(); i++){
+            enemigo1 -> setPos(route1.getPosVal(i).getPosVal(0)*50, route1.getPosVal(i).getPosVal(1)*50);
+            Enemy1X = route1.getPosVal(i).getPosVal(0);
+            Enemy1Y = route1.getPosVal(i).getPosVal(1);
+        }
+        if(route1.getSize() != 0){
+            enemigo1 -> setPos(route1.getPosVal(0).getPosVal(0)*50, route1.getPosVal(0).getPosVal(1)*50);
+            Enemy1X = route1.getPosVal(0).getPosVal(0);
+            Enemy1Y = route1.getPosVal(0).getPosVal(1);
+            route1.deletePos(0);
+        }
+        if(route1.getSize() == 0) {
+            isSearchingPower = false;
         }
     }
 }
@@ -811,13 +827,15 @@ void Level1::PlacePowerRandomPos(){
         powerX = fila;
         powerY = colum;
         poder -> setPos((fila)*50, (colum)*50);
-        PathfindingA(Enemy1X, Enemy1Y, powerX, powerY);
+        //PathfindingA(Enemy1X, Enemy1Y, powerX, powerY);
+        route1 = PathfindingA(Enemy1X, Enemy1Y, powerX, powerY);
+        isSearchingPower = true;
     } else {
         return PlacePowerRandomPos();
     }
 }
 
-void Level1::PathfindingA(int beginX, int beginY, int endX, int endY){
+SimpleList<SimpleList<int>> Level1::PathfindingA(int beginX, int beginY, int endX, int endY){
     //SimpleList<int> numeracionCasillas;
     cout << "\n" << endl;
     cout << beginX << " " << beginY << endl;
@@ -1088,13 +1106,14 @@ void Level1::PathfindingA(int beginX, int beginY, int endX, int endY){
 
                 cout << "LISTA FINAL" << endl;
                 cout << beginX << " Comienzo de la esto " << beginY << endl;
-                cout << endX << " Fin de la esto " << endY << endl; 
+                cout << endX << " Fin de la esto " << endY << endl;
                 for(int i = 0; i < temp.getSize(); i++){
                     temp.getPosVal(i).printList();
                 }
 
 
                 isRunning = false;
+                return temp;
             }
         }
     }
@@ -1150,12 +1169,16 @@ SimpleList<SimpleList<int>> Level1::FindPath(SimpleList<SimpleList<int>> complet
         SimpleList<int> pathVec;
         pathVec.insertEnd(tempSelectionX);
         pathVec.insertEnd(tempSelectionY);
-        finalPath.insertEnd(pathVec);
+        finalPath.insertHead(pathVec);
 
         tempY = tempSelectionY;
         tempX = tempSelectionX;
 
         if(tempY == beginY && tempX == beginX){
+            SimpleList<int> endVec;
+            endVec.insertEnd(endX);
+            endVec.insertEnd(endY);
+            finalPath.insertEnd(endVec);
             continueSearching = false;
             return finalPath;
         }
