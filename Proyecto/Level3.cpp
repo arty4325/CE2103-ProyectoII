@@ -509,10 +509,10 @@ void Level3::setValues(int p, int v, int n){
     CreateLevels(nivel);
 
     playerpacman = new PlayerPacman();
-    playerpacman -> setPos(400, 300);
+    playerpacman -> setPos(400, 250);
     scene() -> addItem(playerpacman);
     pacmanX = 8;
-    pacmanY = 6;
+    pacmanY = 5;
 
     Enemy1X = 7;
     Enemy1Y = 10;

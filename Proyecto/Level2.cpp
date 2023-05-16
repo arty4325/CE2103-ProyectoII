@@ -116,9 +116,6 @@ void Level2::keyPressEvent(QKeyEvent *event)
         CreateLevels(nivel);
     }
     if (event->key() == Qt::Key_W) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX << pacmanY - 1 << endl;
-        cout << mapa[pacmanX][pacmanY - 1] << endl;
         if(mapa[pacmanY - 1][pacmanX] == 0) {
             pacmanY -= 1;
             playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() - 50);
@@ -131,10 +128,6 @@ void Level2::keyPressEvent(QKeyEvent *event)
         }
     }
     if (event->key() == Qt::Key_S) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX << pacmanY + 1<< endl;
-        cout << mapa[pacmanY + 1][pacmanX] << endl;
-        //pacman->setPos(+0,-50);
         if(mapa[pacmanY + 1][pacmanX] == 0) {
             pacmanY += 1;
             playerpacman->setPos(playerpacman->pos().x(), playerpacman->pos().y() + 50);
@@ -147,10 +140,6 @@ void Level2::keyPressEvent(QKeyEvent *event)
         }
     }
     if (event->key() == Qt::Key_A) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX - 1 << pacmanY << endl;
-        cout << mapa[pacmanY][pacmanX - 1] << endl;
-        //pacman->setPos(-50,+0);
         if(mapa[pacmanY][pacmanX - 1] == 0) {
             pacmanX -= 1;
             playerpacman->setPos(playerpacman->pos().x() - 50, playerpacman->pos().y());
@@ -163,9 +152,6 @@ void Level2::keyPressEvent(QKeyEvent *event)
         }
     }
     if (event->key() == Qt::Key_D) {
-        cout << pacmanX << pacmanY << endl;
-        cout << pacmanX + 1 << pacmanY << endl;
-        cout << mapa[pacmanX + 1][pacmanY] << endl;
         if(mapa[pacmanY][pacmanX + 1] == 0) {
             pacmanX += 1;
             playerpacman->setPos(playerpacman->pos().x() + 50, playerpacman->pos().y());
@@ -242,7 +228,7 @@ void Level2::CreateLevels(int lvl){
             break;
         }
         case 2:{
-            this-> pattern = "111111111111111111n100000001100000001n100110001100011001n100010001100010001n100000001100000001n100111000000111001n110001110011100011n111100100001001111n100001110011100001n101101100001101101n101000000000000101n111111111111111111";
+            this-> pattern = "111111111111111111n100000001100000001n100110001100011001n100010001100010001n100000001100000001n100111000000111001n110001110011100011n111100100001001111n100001110011100001n101101100001101101n100000000000000001n111111111111111111";
             CreateMap();
             break;
         }
@@ -600,11 +586,78 @@ void Level2::setValues(int p, int v, int n){
     exeMovementPacmanMobile -> setInterval(500);
     exeMovementPacmanMobile -> start();
 
+    encontrarpoder = new QTimer(this);
+    connect(encontrarpoder, &QTimer::timeout, this, &Level2::nuevaMatrizMovement);
+    encontrarpoder -> setInterval(500);
+
     setScene(scene());
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(900, 600);
 }
+bool Level2::backtracking(int ene2x, int ene2y, int pox, int poy){
 
+    if (ene2x == pox && ene2y == poy){ //la posicion del enemigo es la misma con el poder
+        return true;
+    }
+    if (mapa[ene2x][ene2y]==1){ //obstaculos
+        return false;
+    }
+    solucion[ene2x][ene2y] == 0; // marcar el punto actual como visitado
+    //arriba
+    if (backtracking(ene2x-1, ene2y, pox, poy)) {
+        return true;
+    }
+    //abajo
+    if (backtracking(ene2x+1, ene2y, pox, poy)) {
+        return true;
+    }
+    //izquierda
+    if (backtracking(ene2x, ene2y-1, pox, poy)) {
+        return true;
+    }
+    //derecha
+    if (backtracking(ene2x, ene2y+1, pox, poy)) {
+        return true;
+    }
+    // Si no se encontró el objeto, retroceder y desmarcar el punto actual
+    solucion[ene2x][ene2y] = 1;
+
+    return false;
+}
+void Level2::nuevaMatrizMovement(){
+    if(solucion[Enemy2X][Enemy2Y-1] == 0 ){ //arriba
+        solucion[Enemy2X][Enemy2Y] == 1; //marcar la posicion ya visitada
+        direc2X = 0;
+        direc2Y = -1;
+        Enemy2Y += direc2Y;
+        Enemy2X += direc2X;
+        enemigo2->setPos(enemigo2->pos().x() + direc2X*50, enemigo2->pos().y() + direc2Y*50);
+    }
+    if(solucion[Enemy2X][Enemy2Y+1] == 0 ){ //abajo
+        solucion[Enemy2X][Enemy2Y] == 1; //marcar la posicion ya visitada
+        direc2X = 1;
+        direc2Y = 0;
+        Enemy2Y += direc2Y;
+        Enemy2X += direc2X;
+        enemigo2->setPos(enemigo2->pos().x() + direc2X*50, enemigo2->pos().y() + direc2Y*50);
+    }
+    if(solucion[Enemy2X-1][Enemy2Y] == 0 ){ //izquierda
+        solucion[Enemy2X][Enemy2Y] == 1; //marcar la posicion ya visitada
+        direc2X = -1;
+        direc2Y = 0;
+        Enemy2Y += direc2Y;
+        Enemy2X += direc2X;
+        enemigo2->setPos(enemigo2->pos().x() + direc2X*50, enemigo2->pos().y() + direc2Y*50);
+    }
+    if(solucion[Enemy2X+1][Enemy2Y] == 0 ){ //derecha
+        solucion[Enemy2X][Enemy2Y] == 1; //marcar la posicion ya visitada
+        direc2X = +1;
+        direc2Y = 0;
+        Enemy2Y += direc2Y;
+        Enemy2X += direc2X;
+        enemigo2->setPos(enemigo2->pos().x() + direc2X*50, enemigo2->pos().y() + direc2Y*50);
+    }
+}
 
 void Level2::MoveMobile(){
     if(datosSerial.getSize() == 3) {
@@ -751,6 +804,13 @@ void Level2::PlacePowerRandomPos(){
         powerX = fila;
         powerY = colum;
         poder -> setPos((fila)*50, (colum)*50);
+
+        if (backtracking(Enemy2X, Enemy2Y, powerX, powerY) == true){
+            cout<<"BACKTRACKING TRUE";
+            //movementSecondEnemy->stop();
+            //encontrarpoder->start();
+        }
+
     } else {
         return PlacePowerRandomPos();
     }
