@@ -819,6 +819,10 @@ void Level1::PlacePowerRandomPos(){
 
 void Level1::PathfindingA(int beginX, int beginY, int endX, int endY){
     //SimpleList<int> numeracionCasillas;
+    cout << "\n" << endl;
+    cout << beginX << " " << beginY << endl;
+    cout << endX << " " << endY << endl;
+
     SimpleList<SimpleList<int>> whereICome;
     SimpleList<SimpleList<int>> hCasillas;
     SimpleList<SimpleList<int>> fCasillas;
@@ -826,141 +830,27 @@ void Level1::PathfindingA(int beginX, int beginY, int endX, int endY){
     SimpleList<SimpleList<int>> openList;
     SimpleList<SimpleList<int>> closedList;
 
-    SimpleList<int> initialVal;
-    initialVal.insertHead(beginX);
-    initialVal.insertHead(beginY);
-
-    closedList.insertHead(initialVal);
-
-    SimpleList<int> open1;
-    SimpleList<int> open2;
-    SimpleList<int> open3;
-    SimpleList<int> open4;
-    SimpleList<int> open5;
-    SimpleList<int> open6;
-    SimpleList<int> open7;
-    SimpleList<int> open8;
-
-
-    open1.insertHead(beginX + 1);
-    open1.insertHead(beginY);
-    open2.insertHead(beginX - 1);
-    open2.insertHead(beginY);
-    open3.insertHead(beginX);
-    open3.insertHead(beginY - 1);
-    open4.insertHead(beginX);
-    open4.insertHead(beginY + 1);
-
-    open5.insertHead(beginX - 1);
-    open5.insertHead(beginY - 1);
-    open6.insertHead(beginX + 1);
-    open6.insertHead(beginY - 1);
-    open7.insertHead(beginX + 1);
-    open7.insertHead(beginY + 1);
-    open8.insertHead(beginX - 1);
-    open8.insertHead(beginY + 1);
-
-    openList.insertHead(open1);
-    openList.insertHead(open2);
-    openList.insertHead(open3);
-    openList.insertHead(open4);
-    openList.insertHead(open5);
-    openList.insertHead(open6);
-    openList.insertHead(open7);
-    openList.insertHead(open8);
-
-
-
-
-    bool haveFound;
-    haveFound = false;
-
-
-
-    for(int i = 0; i < 12; i++){
-        SimpleList<int> col;
-        for(int w = 0; w < 18; w++){
-            col.insertHead(-1);
-        }
-        whereICome.insertHead(col);
-    }
-
-
-    for(int w = 0; w < 12; w++){
-        SimpleList<int> col;
-        for(int z = 0; z < 18; z++){
-            col.insertHead(0);
-        }
-        fCasillas.insertHead(col);
-    }
-
-
-    for(int i = 0; i < 12; i++){
-        SimpleList<int> col;
-        for(int k = 0; k < 18; k++){
-            col.insertHead(0);
-        }
-        completeCasillas.insertHead(col);
-    }
-
-
     // Primero se tiene que calcular el valor de H para cada casilla
     for(int i = 0; i < 12; i++){
         SimpleList<int> columna;
-        for(int k = 0; i < 18; i++){
-            int H = abs(endX - beginX) + abs(endY - beginY);
+        for(int k = 0; k < 18; k++){
+            int H = abs(endX - k) + abs(endY - i);
+            cout << i << " " << k << endl;
+            cout << H << endl;
             columna.insertHead(H);
         }
+        cout << "Se incerta fila" << endl;
         hCasillas.insertHead(columna);
     }
 
-    while(haveFound == false){
-        // Se revisa si se selecciono alguna casilla adyacente
-        for(int i = 0; i < closedList.getSize(); i++){
-            int valX = closedList.getPosVal(i).getPosVal(0);
-            int valY = closedList.getPosVal(i).getPosVal(1);
-            if(hCasillas.getPosVal(valY).getPosVal(valX) == 1){
-                haveFound = true;
-            }
+
+    for(int i = 0; i < 12; i++){
+        for(int k = 0; k < 18; k++){
+            //cout << hCasillas.getPosVal(i).getPosVal(k) << endl;
         }
-
-
-        // Comienza la implementacion del algoritmo
-
-        //Primero se va a revisar dentro de los valores que estan en OpenList
-        // Cual tiene el valor mas pequeño
-        int tempSmall = 10000;
-        int selecTempX;
-        int selecTempY;
-        for(int i = 0; i < openList.getSize(); i++){
-            int tempValX = openList.getPosVal(i).getPosVal(0);
-            int tempValY = openList.getPosVal(i).getPosVal(1);
-            if(hCasillas.getPosVal(tempValY).getPosVal(tempValX) < tempSmall){
-                tempSmall = hCasillas.getPosVal(tempValY).getPosVal(tempValX);
-                selecTempX = tempValX;
-                selecTempY = tempValY;
-            }
-        }
-        cout << beginX << " begin " << beginY << endl;
-        cout << endX << " end " << endY << endl;
-        cout << selecTempX << " " << selecTempY << endl;
-        // De los que estan en el open list ya se tiene el val mas pequeno
-        // Cunado se tiene el mas pequeño, se quita de open list y se agrega a closed list
-        for(int i = 0; i < openList.getSize(); i++){
-            if(selecTempX == openList.getPosVal(i).getPosVal(0) && selecTempY == openList.getPosVal(i).getPosVal(0)){
-                openList.deletePos(i);
-                SimpleList<int> vec;
-                vec.insertHead(selecTempX);
-                vec.insertHead(selecTempY);
-                closedList.insertHead(vec);
-            }
-        }
-
-
-    haveFound = true;
-
-
+        //cout << "Cambio de fila" << endl;
     }
+
 
 
 };
