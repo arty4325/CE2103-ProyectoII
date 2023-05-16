@@ -55,6 +55,9 @@ private:
     bool isSearchingPower;
 
     SimpleList<SimpleList<int>> route1;
+    SimpleList<std::pair<int, int>> route2;
+
+
     QTimer* movementFirstEnemy;
     QTimer* movementSecondEnemy;
     QTimer* movementThirdEnemy;
@@ -145,6 +148,11 @@ private:
     bool backtracking(int ene2x, int ene2y, int pox, int poy);
 
     void nuevaMatrizMovement();
+
+
+    bool isValidPosition(int mapa[12][18], int x, int y);
+    bool backtrack(int mapa[12][18], int startX, int startY, int targetX, int targetY, SimpleList<std::pair<int, int>>& ruta);
+    SimpleList<std::pair<int, int>> encontrarRuta(int mapa[12][18], int startX, int startY, int targetX, int targetY);
 };
 
 #endif //PACMAN_LEVEL2_H

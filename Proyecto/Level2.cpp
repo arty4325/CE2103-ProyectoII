@@ -1141,4 +1141,3 @@ SimpleList<SimpleList<int>> Level2::FindPath(SimpleList<SimpleList<int>> complet
     }
 
 }
-
