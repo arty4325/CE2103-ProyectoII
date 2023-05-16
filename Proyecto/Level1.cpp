@@ -147,14 +147,6 @@ Level1::Level1(QWidget * parent){
     Enemy1X = 7;
     Enemy1Y = 10;
 
-    Enemy2X = 8;
-    Enemy2Y = 1;
-
-    Enemy3X = 9;
-    Enemy3Y = 1;
-
-    Enemy4X = 10;
-    Enemy4Y = 10;
 
     direc1X = 0;
     direc1Y = 0;
@@ -176,17 +168,7 @@ Level1::Level1(QWidget * parent){
     enemigo1 -> setPos(350, 500);
     scene -> addItem(enemigo1);
 
-    enemigo2 = new Enemigo2();
-    enemigo2 -> setPos(400, 50);
-    scene -> addItem(enemigo2);
 
-    enemigo3 = new Enemigo3();
-    enemigo3 -> setPos(450, 50);
-    scene -> addItem(enemigo3);
-
-    enemigo4 = new Enemigo4();
-    enemigo4 -> setPos(500, 500);
-    scene -> addItem(enemigo4);
 
     poder = new PastillaPoder();
     poder -> setPos(-50, -50);
@@ -197,20 +179,7 @@ Level1::Level1(QWidget * parent){
     movementFirstEnemy ->setInterval(500);
     movementFirstEnemy -> start();
 
-    movementSecondEnemy = new QTimer(this);
-    connect(movementSecondEnemy, &QTimer::timeout, this, &Level1::MoveSecondEnemy);
-    movementSecondEnemy ->setInterval(500);
-    movementSecondEnemy -> start();
 
-    movementThirdEnemy =  new QTimer(this);
-    connect(movementThirdEnemy, &QTimer::timeout, this, &Level1::MoveThirdEnemy);
-    movementThirdEnemy -> setInterval(500);
-    movementThirdEnemy -> start();
-
-    movementFourthEnemy = new QTimer(this);
-    connect(movementFourthEnemy, &QTimer::timeout, this, &Level1::MoveFourthEnemy);
-    movementFourthEnemy -> setInterval(500);
-    movementFourthEnemy -> start();
 
     revisarChoque = new QTimer(this);
     connect(revisarChoque, &QTimer::timeout, this, &Level1::revisarEnemigos);
@@ -407,23 +376,17 @@ void Level1::comerPuntos(){
         CreateLevels(nivel);
     }
 }
+
+
+
+
+
 void Level1::revisarEnemigos(){
     if (playerpacman->pos() == enemigo1->pos()){
         vidas = vidas - 1;
         labelVidas->setText("Vidas: "+ QString::number(vidas,10));
     }
-    if (playerpacman->pos() == enemigo2->pos()){
-        vidas = vidas - 1;
-        labelVidas->setText("Vidas: "+ QString::number(vidas,10));
-    }
-    if (playerpacman->pos() == enemigo3->pos()){
-        vidas = vidas - 1;
-        labelVidas->setText("Vidas: "+ QString::number(vidas,10));
-    }
-    if (playerpacman->pos() == enemigo4->pos()){
-        vidas = vidas - 1;
-        labelVidas->setText("Vidas: "+ QString::number(vidas,10));
-    }
+
     if (vidas == 0){ //se pierden todas las vidas
         GameOver *go;
         go = new GameOver();
@@ -564,169 +527,12 @@ void Level1::MoveFirstEnemy() {
             route1.deletePos(0);
         }
         if(route1.getSize() == 0) {
+            comerPoderes();
             isSearchingPower = false;
         }
     }
 }
 
-void Level1::MoveSecondEnemy() {
-    if(moving2 == false){
-        int num = QRandomGenerator::global() -> bounded(0, 4); // escoge numero random del 0 al 3
-        if(num == 0){
-            // Me quiero mover hacia arriba
-            // Tengo que revisar si puedo
-            if(mapa[Enemy2Y -  1][Enemy2X] == 0){
-                moving2 = true;
-                direc2X = 0;
-                direc2Y = -1;
-            } else {
-                return MoveSecondEnemy();
-            }
-        } else if(num == 1){
-            if(mapa[Enemy2Y][Enemy2X + 1] == 0){
-                moving2 = true;
-                direc2X = 1;
-                direc2Y = 0;
-            } else {
-                return MoveSecondEnemy();
-            }
-
-        } else if(num == 2){
-            if(mapa[Enemy2Y + 1][Enemy2X] == 0){
-                moving2 = true;
-                direc2X = 0;
-                direc2Y =  1;
-            } else {
-                return MoveSecondEnemy();
-            }
-
-        } else if(num == 3){
-            if(mapa[Enemy2Y][Enemy2X - 1] == 0){
-                moving2 = true;
-                direc2X = -1;
-                direc2Y = 0;
-            } else {
-                return MoveSecondEnemy();
-            }
-        }
-    }
-    else {
-        if(mapa[Enemy2Y + direc2Y][Enemy2X + direc2X] == 0) {
-            //cout << mapa[Enemy2Y + direc2Y][Enemy2X + direc2X] << Enemy2Y + direc2Y << Enemy2X + direc2X << endl;
-            Enemy2Y += direc2Y;
-            Enemy2X += direc2X;
-            enemigo2->setPos(enemigo2->pos().x() + direc2X*50, enemigo2->pos().y() + direc2Y*50);
-        } else {
-            moving2 = false;
-        }
-    }
-}
-
-void Level1::MoveThirdEnemy() {
-    if(moving3 == false){
-        int num = QRandomGenerator::global() -> bounded(0, 4); // escoge numero random del 0 al 3
-        if(num == 0){
-            // Me quiero mover hacia arriba
-            // Tengo que revisar si puedo
-            if(mapa[Enemy3Y -  1][Enemy3X] == 0){
-                moving3 = true;
-                direc3X = 0;
-                direc3Y = -1;
-            } else {
-                return MoveSecondEnemy();
-            }
-        } else if(num == 1){
-            if(mapa[Enemy3Y][Enemy3X + 1] == 0){
-                moving3 = true;
-                direc3X = 1;
-                direc3Y = 0;
-            } else {
-                return MoveThirdEnemy();
-            }
-
-        } else if(num == 2){
-            if(mapa[Enemy3Y + 1][Enemy3X] == 0){
-                moving3 = true;
-                direc3X = 0;
-                direc3Y =  1;
-            } else {
-                return MoveThirdEnemy();
-            }
-
-        } else if(num == 3){
-            if(mapa[Enemy3Y][Enemy3X - 1] == 0){
-                moving3 = true;
-                direc3X = -1;
-                direc3Y = 0;
-            } else {
-                return MoveThirdEnemy();
-            }
-        }
-    }
-    else {
-        if(mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] == 0) {
-            //cout << mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] << Enemy3Y + direc3Y << Enemy3X + direc3X << endl;
-            Enemy3Y += direc3Y;
-            Enemy3X += direc3X;
-            enemigo3->setPos(enemigo3->pos().x() + direc3X*50, enemigo3->pos().y() + direc3Y*50);
-        } else {
-            moving3 = false;
-        }
-    }
-}
-
-void Level1::MoveFourthEnemy() {
-    if(moving4 == false){
-        int num = QRandomGenerator::global() -> bounded(0, 4); // escoge numero random del 0 al 3
-        if(num == 0){
-            // Me quiero mover hacia arriba
-            // Tengo que revisar si puedo
-            if(mapa[Enemy4Y -  1][Enemy4X] == 0){
-                moving4 = true;
-                direc4X = 0;
-                direc4Y = -1;
-            } else {
-                return MoveFourthEnemy();
-            }
-        } else if(num == 1){
-            if(mapa[Enemy4Y][Enemy4X + 1] == 0){
-                moving4 = true;
-                direc4X = 1;
-                direc4Y = 0;
-            } else {
-                return MoveFourthEnemy();
-            }
-
-        } else if(num == 2){
-            if(mapa[Enemy4Y + 1][Enemy4X] == 0){
-                moving4 = true;
-                direc4X = 0;
-                direc4Y =  1;
-            } else {
-                return MoveFourthEnemy();
-            }
-
-        } else if(num == 3){
-            if(mapa[Enemy4Y][Enemy4X - 1] == 0){
-                moving4 = true;
-                direc4X = -1;
-                direc4Y = 0;
-            } else {
-                return MoveFourthEnemy();
-            }
-        }
-    }
-    else {
-        if(mapa[Enemy4Y + direc4Y][Enemy4X + direc4X] == 0) {
-            //cout << mapa[Enemy3Y + direc3Y][Enemy3X + direc3X] << Enemy3Y + direc3Y << Enemy3X + direc3X << endl;
-            Enemy4Y += direc4Y;
-            Enemy4X += direc4X;
-            enemigo4->setPos(enemigo4->pos().x() + direc4X*50, enemigo4->pos().y() + direc4Y*50);
-        } else {
-            moving4 = false;
-        }
-    }
-}
 
 
 void Level1::SocketServer() {
@@ -832,6 +638,15 @@ void Level1::PlacePowerRandomPos(){
         isSearchingPower = true;
     } else {
         return PlacePowerRandomPos();
+    }
+}
+
+void Level1::comerPoderes(){
+    if(isTherePower){
+        if(Enemy1X == powerX && Enemy1Y == powerY){
+            poder -> setPos(-50, -50);
+            // El enemigo se comio el poder
+        }
     }
 }
 

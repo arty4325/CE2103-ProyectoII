@@ -139,6 +139,8 @@ private:
     SimpleList<SimpleList<int>> FindPath(SimpleList<SimpleList<int>> completeCasillas, SimpleList<SimpleList<int>> hCasillas, int beginX,
              int beginY,
              int endX, int endY);
+
+    void comerPoderes();
 };
 
 
