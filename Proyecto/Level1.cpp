@@ -823,7 +823,8 @@ void Level1::PathfindingA(int beginX, int beginY, int endX, int endY){
     cout << beginX << " " << beginY << endl;
     cout << endX << " " << endY << endl;
 
-    SimpleList<SimpleList<int>> whereICome;
+
+    SimpleList<SimpleList<int>> path;
     SimpleList<SimpleList<int>> hCasillas;
     SimpleList<SimpleList<int>> fCasillas;
     SimpleList<SimpleList<int>> completeCasillas;
@@ -831,6 +832,11 @@ void Level1::PathfindingA(int beginX, int beginY, int endX, int endY){
     SimpleList<SimpleList<int>> closedList;
 
     bool isRunning = true;
+
+    SimpleList<int> begginCoordinates;
+    begginCoordinates.insertEnd(beginX);
+    begginCoordinates.insertEnd(beginY);
+    path.insertEnd(begginCoordinates);
 
     // Primero se tiene que calcular el valor de H para cada casilla
     for(int i = 0; i < 12; i++){
@@ -873,7 +879,6 @@ void Level1::PathfindingA(int beginX, int beginY, int endX, int endY){
         }
         completeCasillas.insertEnd(columna);
     }
-
     // Una ves hecho esto, se va a poner el punto de inicio en openList
     SimpleList<int> puntoInicio;
     puntoInicio.insertEnd(beginX);
@@ -888,7 +893,6 @@ void Level1::PathfindingA(int beginX, int beginY, int endX, int endY){
     while(isRunning){
         // Lo primero que quiero hacer es obtener el valor mas pequeño del openList
         int tempLess = 10000000;
-
         int selecOpenX;
         int selecOpenY;
 
@@ -1067,19 +1071,98 @@ void Level1::PathfindingA(int beginX, int beginY, int endX, int endY){
 
         //isRunning = false;
         for(int i = 0; i < closedList.getSize(); i++){
+
             int tempCheckEndX = closedList.getPosVal(i).getPosVal(0);
             int tempCheckEndY = closedList.getPosVal(i).getPosVal(1);
             if(hCasillas.getPosVal(tempCheckEndY).getPosVal(tempCheckEndX) == 1){
+                // Aqui deberia de hacer un metodo que consiga el camino
+                SimpleList<SimpleList<int>> temp;
+                temp = FindPath(
+                        completeCasillas,
+                        hCasillas,
+                        beginX,
+                        beginY,
+                        endX,
+                        endY
+                        );
+
+                cout << "LISTA FINAL" << endl;
+                cout << beginX << " Comienzo de la esto " << beginY << endl;
+                cout << endX << " Fin de la esto " << endY << endl; 
+                for(int i = 0; i < temp.getSize(); i++){
+                    temp.getPosVal(i).printList();
+                }
+
+
                 isRunning = false;
             }
         }
     }
-
-
-
-
-
 };
+
+
+SimpleList<SimpleList<int>> Level1::FindPath(SimpleList<SimpleList<int>> completeCasillas, SimpleList<SimpleList<int>> hCasillas, int beginX, int beginY, int endX, int endY){
+    SimpleList<SimpleList<int>> finalPath;
+    SimpleList<SimpleList<int>> paths;
+    bool continueSearching;
+    int tempX;
+    int tempY;
+    tempX = endX;
+    tempY = endY;
+
+    while(continueSearching){
+        int smallestValue;
+        int tempSelectionX;
+        int tempSelectionY;
+        smallestValue = 10000;
+
+        //Arriba
+        if(completeCasillas.getPosVal(tempY - 1).getPosVal(tempX) < smallestValue){
+            // mimomimo
+            smallestValue = completeCasillas.getPosVal(tempY - 1).getPosVal(tempX);
+            tempSelectionX = tempX;
+            tempSelectionY = tempY - 1;
+        }
+        //Abajo
+        if(completeCasillas.getPosVal(tempY + 1).getPosVal(tempX) < smallestValue){
+            // mimomimo
+            smallestValue = completeCasillas.getPosVal(tempY + 1).getPosVal(tempX);
+            tempSelectionX = tempX;
+            tempSelectionY = tempY + 1;
+        }
+
+        // Izquierda
+        if(completeCasillas.getPosVal(tempY).getPosVal(tempX - 1) < smallestValue){
+            // mimomimo
+            smallestValue = completeCasillas.getPosVal(tempY).getPosVal(tempX - 1);
+            tempSelectionX = tempX - 1;
+            tempSelectionY = tempY;
+        }
+
+        // Derecha
+        if(completeCasillas.getPosVal(tempY).getPosVal(tempX + 1) < smallestValue){
+            // mimomimo
+            smallestValue = completeCasillas.getPosVal(tempY).getPosVal(tempX + 1);
+            tempSelectionX = tempX + 1;
+            tempSelectionY = tempY;
+        }
+
+        SimpleList<int> pathVec;
+        pathVec.insertEnd(tempSelectionX);
+        pathVec.insertEnd(tempSelectionY);
+        finalPath.insertEnd(pathVec);
+
+        tempY = tempSelectionY;
+        tempX = tempSelectionX;
+
+        if(tempY == beginY && tempX == beginX){
+            continueSearching = false;
+            return finalPath;
+        }
+    }
+
+}
+
 
 
 

@@ -132,6 +132,11 @@ private:
     void PlacePowerRandomPos();
 
     void PathfindingA(int beginX, int beginY, int endX, int endY);
+
+
+    SimpleList<SimpleList<int>> FindPath(SimpleList<SimpleList<int>> completeCasillas, SimpleList<SimpleList<int>> hCasillas, int beginX,
+             int beginY,
+             int endX, int endY);
 };
 
 
